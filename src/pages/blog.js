@@ -1,3 +1,4 @@
+import { imgSrc } from '../lib/assets.js';
 import { icon } from '../lib/icons.js';
 import { esc } from '../lib/layout.js';
 import { img, btn, answerBlock, ctaBand, faqList } from '../lib/components.js';
@@ -25,7 +26,7 @@ export function blogIndex(cfg) {
           <a class="bezel bezel-interactive group block cursor-pointer" href="/blog/${esc(p.slug)}/" data-reveal data-reveal-delay="${i * 70}">
             <article class="bezel-core flex h-full flex-col">
               <div class="overflow-hidden">
-                ${img(`/assets/img/post-${i + 1}.svg`, `Header image for the article: ${p.title}`, {
+                ${img(imgSrc(`post-${i + 1}`), `Header image for the article: ${p.title}`, {
                   w: 760, h: 520, priority: i === 0,
                   className: 'h-52 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]',
                 })}
@@ -98,7 +99,7 @@ export function blogPost(cfg, post) {
 
           <div class="bezel mb-10" data-reveal data-reveal-delay="60">
             <div class="bezel-core overflow-hidden">
-              ${img(`/assets/img/post-${idx + 1}.svg`, `Header image for the article: ${post.title}`, { w: 760, h: 520, priority: true, className: 'aspect-[19/13] w-full object-cover' })}
+              ${img(imgSrc(`post-${idx + 1}`), `Header image for the article: ${post.title}`, { w: 760, h: 520, priority: true, className: 'aspect-[19/13] w-full object-cover' })}
             </div>
           </div>
 

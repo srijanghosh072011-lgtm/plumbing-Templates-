@@ -105,7 +105,7 @@ by design**, because the demo data is still in place. That is the control workin
 | Status | Item | Enforcement |
 |---|---|---|
 | [x] AUTO | No lorem ipsum | `verify.mjs --launch` |
-| [x] AUTO | No stand-in imagery | Manifest-driven; all 23 illustrations flagged |
+| [x] AUTO | No stand-in imagery | Checks what pages actually *reference*, not what sits in the folder — so it clears as each slot gets a real photo |
 | [x] AUTO | No fake phone numbers | Blocks the 555-01XX reserved range |
 | [x] AUTO | No placeholder email / domain | Blocks `.example` and `example@` |
 | [x] AUTO | No placeholder address | Blocks "123 Main St" |
@@ -116,7 +116,7 @@ by design**, because the demo data is still in place. That is the control workin
 | [x] AUTO | No TODO / FIXME left in output | `verify.mjs` warns |
 | [x] AUTO | No accidental `noindex` | `verify.mjs` errors |
 | [ ] CLIENT | Purge test submissions from the CRM before launch | Keeps lead attribution clean |
-| [ ] CLIENT | Replace all 23 illustrations with **real job and team photos** | Illustrations ship as a designed stand-in; real photos still win on local trust, GBP and AI signals |
+| [ ] CLIENT | Replace all 23 illustrations with **real job and team photos** | `npm run photos` (Openverse/Pexels), or drop `<slot>.jpg` into `src/assets/img` — raster wins automatically, no code change. Real photos of *your own* jobs beat stock for local trust, GBP and AI signals. |
 
 ---
 
@@ -276,7 +276,11 @@ by design**, because the demo data is still in place. That is the control workin
 $EDITOR site.config.json
 
 # 2. Replace all 23 illustrations with real client photos
-#    (see dist/assets/img/art.manifest.json for subject + recommended size)
+#    npm run photos                     # fetch licensed stock, or
+#    cp your-photo.jpg src/assets/img/hero-primary.jpg   # drop your own in
+#    (see src/assets/img/art.manifest.json for subject + recommended size)
+#    If you used npm run photos, check photo-credits.json for licences that
+#    REQUIRE visible attribution and add a credits page.
 
 # 3. Point the contact form at a real handler
 $EDITOR src/pages/contact.js     # form action="…"

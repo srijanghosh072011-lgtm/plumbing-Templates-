@@ -179,16 +179,37 @@ if (LAUNCH) {
     }
   }
 
-  // Placeholder artwork must be replaced with real client photography
+  // Generated illustrations must be replaced with real client photography.
+  //
+  // This checks what the built pages actually REFERENCE, not what sits in the
+  // folder. `npm run build` regenerates every illustration on each run, so a
+  // file-presence check would keep failing forever even after real photos were
+  // added — the SVG is still on disk, it is just no longer used. The asset
+  // registry prefers raster over vector, so a slot is genuinely resolved once
+  // no page still points at its .svg.
   const manifest = await readFile(join(DIST, 'assets', 'img', 'art.manifest.json'), 'utf8').catch(() => null);
   if (manifest) {
-    const { replaceBeforeLaunch } = JSON.parse(manifest);
-    const stillThere = [];
-    for (const item of replaceBeforeLaunch) {
-      if (existing.has(`/assets/img/${item.file}`)) stillThere.push(item.file);
+    const illustrationFiles = new Set(JSON.parse(manifest).replaceBeforeLaunch.map((i) => i.file));
+    const referenced = new Set();
+
+    for (const file of pages) {
+      const html = await readFile(file, 'utf8');
+      for (const m of html.matchAll(/<img\b[^>]*\ssrc="\/assets\/img\/([^"]+)"/gi)) {
+        if (illustrationFiles.has(m[1])) referenced.add(m[1]);
+      }
+      // the LCP preload points at an image too
+      const pre = /<link rel="preload" href="\/assets\/img\/([^"]+)" as="image"/i.exec(html);
+      if (pre && illustrationFiles.has(pre[1])) referenced.add(pre[1]);
     }
-    if (stillThere.length) {
-      err('assets/img/', `${stillThere.length} generated placeholder images still present — replace with real client photos (${stillThere.slice(0, 3).join(', ')}…)`);
+
+    if (referenced.size) {
+      const list = [...referenced].sort();
+      err(
+        'assets/img/',
+        `${list.length} generated illustration(s) still in use — replace with real client photos ` +
+        `(${list.slice(0, 3).join(', ')}${list.length > 3 ? '…' : ''}). ` +
+        `Run \`npm run photos\`, or drop <slot>.jpg into src/assets/img — raster wins automatically.`
+      );
     }
   }
 

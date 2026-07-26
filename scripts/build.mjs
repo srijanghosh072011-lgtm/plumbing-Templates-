@@ -12,6 +12,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { page } from '../src/lib/layout.js';
+import { setAssetRegistry, imgSrc } from '../src/lib/assets.js';
 import * as S from '../src/lib/schema.js';
 
 import home from '../src/pages/home.js';
@@ -65,7 +66,7 @@ function routes() {
     title: 'Home',
     description: cfg.seo.defaultDescription,
     body: home(cfg),
-    preloadImage: '/assets/img/hero-primary.svg',
+    preloadImage: imgSrc('hero-primary'),
     // Ratings are attached HERE and only here: the homepage is the page that
     // actually renders the testimonial section on screen.
     schemas: [S.localBusiness(cfg, { withRatings: true }), site, S.faqPage(cfg, cfg.generalFaqs, '/')],
@@ -341,6 +342,11 @@ async function copyDir(from, to) {
 }
 
 async function main() {
+  // Resolve image base names to whatever files actually exist BEFORE rendering.
+  // Dropping hero-primary.jpg beside hero-primary.svg swaps a real photo in
+  // with no code change — raster always wins over the generated illustration.
+  const assetCount = setAssetRegistry(await readdir(join(SRC, 'assets', 'img')));
+
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
 
@@ -374,7 +380,7 @@ async function main() {
   await writeFile(join(DIST, 'site.webmanifest'), webmanifest());
 
   console.log(
-    `Built ${list.length} pages + 404 -> dist/` +
+    `Built ${list.length} pages + 404 from ${assetCount} image assets -> dist/` +
     (BASE_PATH ? ` (BASE_PATH="${BASE_PATH}" applied for subpath hosting)` : '')
   );
 }

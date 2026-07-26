@@ -24,7 +24,9 @@
     "preflight": "npm run build && npm run verify:launch && npm run contrast",
     "qa": "node tests/qa.mjs",
     "shots": "node tests/screenshot.mjs",
-    "rasterize": "node scripts/rasterize.mjs"
+    "rasterize": "node scripts/rasterize.mjs",
+    "photos": "node scripts/photos.mjs",
+    "photos:selftest": "node scripts/photos.selftest.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",

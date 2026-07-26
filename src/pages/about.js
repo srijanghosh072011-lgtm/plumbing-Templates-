@@ -1,3 +1,4 @@
+import { imgSrc } from '../lib/assets.js';
 import { icon } from '../lib/icons.js';
 import { esc } from '../lib/layout.js';
 import { img, btn, sectionHead, answerBlock, trustRow, stars, ctaBand } from '../lib/components.js';
@@ -39,7 +40,7 @@ export default function about(cfg) {
         <div data-reveal>
           <div class="bezel">
             <div class="bezel-core overflow-hidden">
-              ${img('/assets/img/about-team.svg', `The ${cfg.brand.name} team outside their service vehicles`, { w: 900, h: 700, className: 'aspect-[9/7] w-full object-cover', priority: true })}
+              ${img(imgSrc('about-team'), `The ${cfg.brand.name} team outside their service vehicles`, { w: 900, h: 700, className: 'aspect-[9/7] w-full object-cover', priority: true })}
             </div>
           </div>
         </div>
@@ -116,7 +117,7 @@ export default function about(cfg) {
           </div>
           <div class="bezel" data-reveal data-reveal-delay="80">
             <div class="bezel-core overflow-hidden">
-              ${img('/assets/img/about-detail.svg', 'Workshop bench with plumbing tools laid out', { w: 560, h: 700, className: 'aspect-[4/3] w-full object-cover' })}
+              ${img(imgSrc('about-detail'), 'Workshop bench with plumbing tools laid out', { w: 560, h: 700, className: 'aspect-[4/3] w-full object-cover' })}
             </div>
           </div>
         </div>

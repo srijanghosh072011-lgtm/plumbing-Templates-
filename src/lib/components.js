@@ -1,3 +1,4 @@
+import { imgSrc } from './assets.js';
 import { icon } from './icons.js';
 import { esc } from './layout.js';
 
@@ -72,7 +73,7 @@ export function serviceCard(cfg, s, index, { priority = false } = {}) {
     <a class="bezel bezel-interactive group block h-full cursor-pointer" href="/services/${esc(s.slug)}/" data-reveal data-reveal-delay="${index * 70}">
       <article class="bezel-core flex h-full flex-col">
         <div class="relative overflow-hidden">
-          ${img(`/assets/img/service-${(index % 6) + 1}.svg`, `${s.name} — ${esc(s.short)}`, { w: 720, h: 560, className: 'h-56 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]', priority })}
+          ${img(imgSrc(`service-${(index % 6) + 1}`), `${s.name} — ${esc(s.short)}`, { w: 720, h: 560, className: 'h-56 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]', priority })}
           <span class="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-accent text-on-accent shadow-[var(--shadow-lift)]" aria-hidden="true">${icon(s.icon, { size: 20 })}</span>
         </div>
         <div class="flex flex-1 flex-col p-6 md:p-7">
@@ -181,7 +182,7 @@ export function ctaBand(cfg) {
         <div class="hidden md:block" data-reveal data-reveal-delay="120">
           <div class="bezel bezel-deep w-[19rem]">
             <div class="bezel-core overflow-hidden">
-              ${img('/assets/img/cta-figure.svg', 'Northline emergency plumber ready for dispatch', { w: 520, h: 620, className: 'h-[22rem] w-full object-cover' })}
+              ${img(imgSrc('cta-figure'), 'Northline emergency plumber ready for dispatch', { w: 520, h: 620, className: 'h-[22rem] w-full object-cover' })}
             </div>
           </div>
         </div>

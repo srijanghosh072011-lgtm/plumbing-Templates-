@@ -77,6 +77,45 @@ production.
 
 ---
 
+## Getting real photographs
+
+The site ships with authored illustrations as a stand-in. To replace them with
+real photography:
+
+```bash
+npm run photos                     # Openverse — CC-licensed, no API key
+PEXELS_API_KEY=xxx npm run photos  # Pexels — better trade photography (free key)
+npm run photos -- --dry-run        # show what would be fetched
+npm run photos -- --slots hero-primary,service-1
+```
+
+Photos land in `src/assets/img/<slot>.jpg`. **No code change is needed** — the
+asset registry in `src/lib/assets.js` resolves each image by base name and
+prefers raster over vector, so the next `npm run build` picks them up
+automatically, including the LCP preload.
+
+The same applies to your own photography: name a file after its slot
+(`hero-primary.jpg`, `service-3.jpg`, …) and drop it in. Run
+`npm run photos -- --dry-run` to see every slot name, or read
+`src/assets/img/art.manifest.json` for each one's intended subject and
+recommended resolution.
+
+**Attribution.** Every fetched photo is recorded in `photo-credits.json` with
+its licence and creator. Openverse aggregates CC-licensed work and most of
+those licences **require visible credit** — the script prints which ones and
+you must add a credits page or captions before launch. Pexels does not require
+attribution, but the record is written either way so provenance is provable.
+
+> **Verification note.** `scripts/photos.mjs` could not be run end-to-end in
+> the sandbox it was written in, which blocks every image host at the proxy.
+> `npm run photos:selftest` covers the parts that do not depend on a provider
+> API — download, content-type check, size guard, write, registry resolution,
+> and raster-beats-vector precedence — by running the identical code against a
+> reachable URL (11 checks). What is unverified is the JSON shape of each
+> provider's search response.
+
+---
+
 ## Seeing it / hosting it
 
 **Locally**

@@ -1,3 +1,4 @@
+import { imgSrc } from '../lib/assets.js';
 import { icon } from '../lib/icons.js';
 import { esc } from '../lib/layout.js';
 import {
@@ -130,7 +131,7 @@ export function servicePage(cfg, s) {
           <div class="mb-12">
             <div class="bezel" data-reveal>
               <div class="bezel-core overflow-hidden">
-                ${img(`/assets/img/service-${(idx % 6) + 1}.svg`, `${s.name} being carried out by a ${cfg.brand.name} technician`, { w: 720, h: 560, className: 'aspect-[9/7] w-full object-cover' })}
+                ${img(imgSrc(`service-${(idx % 6) + 1}`), `${s.name} being carried out by a ${cfg.brand.name} technician`, { w: 720, h: 560, className: 'aspect-[9/7] w-full object-cover' })}
               </div>
             </div>
           </div>

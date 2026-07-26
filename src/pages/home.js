@@ -1,3 +1,4 @@
+import { imgSrc } from '../lib/assets.js';
 import { icon } from '../lib/icons.js';
 import { esc, tornEdge } from '../lib/layout.js';
 import {
@@ -45,7 +46,7 @@ function hero(cfg) {
           <div class="relative mx-auto w-full max-w-md lg:max-w-none" data-reveal data-reveal-delay="140">
             <div class="bezel bezel-deep md:rotate-[2.5deg]">
               <div class="bezel-core overflow-hidden">
-                ${img('/assets/img/hero-primary.svg', `A licensed ${cfg.brand.name} plumber on a service call in ${cfg.contact.addressLocality}`, {
+                ${img(imgSrc('hero-primary'), `A licensed ${cfg.brand.name} plumber on a service call in ${cfg.contact.addressLocality}`, {
                   w: 900, h: 1100, priority: true,
                   className: 'aspect-[9/11] w-full object-cover',
                 })}
@@ -55,7 +56,7 @@ function hero(cfg) {
             <div class="absolute -bottom-8 -left-4 hidden w-40 md:block md:-rotate-[4deg]">
               <div class="bezel bezel-deep rounded-full p-1.5">
                 <div class="bezel-core overflow-hidden rounded-full">
-                  ${img('/assets/img/hero-inset.svg', 'Close-up of a compression fitting being tightened', { w: 520, h: 520, className: 'aspect-square w-full object-cover' })}
+                  ${img(imgSrc('hero-inset'), 'Close-up of a compression fitting being tightened', { w: 520, h: 520, className: 'aspect-square w-full object-cover' })}
                 </div>
               </div>
             </div>
@@ -124,13 +125,13 @@ function about(cfg) {
         <div class="relative" data-reveal>
           <div class="bezel">
             <div class="bezel-core overflow-hidden">
-              ${img('/assets/img/about-team.svg', `The ${cfg.brand.name} team outside their service vehicles`, { w: 900, h: 700, className: 'aspect-[9/7] w-full object-cover' })}
+              ${img(imgSrc('about-team'), `The ${cfg.brand.name} team outside their service vehicles`, { w: 900, h: 700, className: 'aspect-[9/7] w-full object-cover' })}
             </div>
           </div>
           <div class="absolute -bottom-10 right-4 hidden w-44 sm:block md:-right-8">
             <div class="bezel">
               <div class="bezel-core overflow-hidden">
-                ${img('/assets/img/about-detail.svg', 'Workshop bench with plumbing tools laid out', { w: 560, h: 700, className: 'aspect-[4/5] w-full object-cover' })}
+                ${img(imgSrc('about-detail'), 'Workshop bench with plumbing tools laid out', { w: 560, h: 700, className: 'aspect-[4/5] w-full object-cover' })}
               </div>
             </div>
           </div>
@@ -212,7 +213,7 @@ function process(cfg) {
           <div class="mx-auto hidden w-64 lg:block" data-reveal data-reveal-delay="120">
             <div class="bezel rounded-full p-2">
               <div class="bezel-core overflow-hidden rounded-full">
-                ${img('/assets/img/process-portrait.svg', 'Plumber diagnosing a fixture during a service call', { w: 640, h: 640, className: 'aspect-square w-full object-cover' })}
+                ${img(imgSrc('process-portrait'), 'Plumber diagnosing a fixture during a service call', { w: 640, h: 640, className: 'aspect-square w-full object-cover' })}
               </div>
             </div>
           </div>
@@ -266,7 +267,7 @@ function projects(cfg) {
               (p, i) => `
             <li class="bezel bezel-deep bezel-interactive">
               <article class="bezel-core flex h-full flex-col overflow-hidden">
-                ${img(`/assets/img/project-${i + 1}.svg`, `${p.title} — ${p.category} project in ${p.location}`, { w: 760, h: 600, className: 'h-52 w-full object-cover' })}
+                ${img(imgSrc(`project-${i + 1}`), `${p.title} — ${p.category} project in ${p.location}`, { w: 760, h: 600, className: 'h-52 w-full object-cover' })}
                 <div class="flex flex-1 flex-col p-6">
                   <div class="mb-3 flex flex-wrap items-center gap-2">
                     <span class="rounded-full bg-accent px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-on-accent">${esc(p.category)}</span>
@@ -303,7 +304,7 @@ function testimonials(cfg) {
         <div data-reveal>
           <div class="bezel">
             <div class="bezel-core overflow-hidden">
-              ${img('/assets/img/testimonial.svg', 'A completed bathroom plumbing installation by Northline', { w: 820, h: 640, className: 'aspect-[41/32] w-full object-cover' })}
+              ${img(imgSrc('testimonial'), 'A completed bathroom plumbing installation by Northline', { w: 820, h: 640, className: 'aspect-[41/32] w-full object-cover' })}
             </div>
           </div>
         </div>
@@ -387,7 +388,7 @@ function blog(cfg) {
           <a class="bezel bezel-interactive group block cursor-pointer" href="/blog/${esc(p.slug)}/" data-reveal data-reveal-delay="${i * 80}">
             <article class="bezel-core flex h-full flex-col">
               <div class="overflow-hidden">
-                ${img(`/assets/img/post-${i + 1}.svg`, `Header image for the article: ${p.title}`, { w: 760, h: 520, className: 'h-48 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]' })}
+                ${img(imgSrc(`post-${i + 1}`), `Header image for the article: ${p.title}`, { w: 760, h: 520, className: 'h-48 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]' })}
               </div>
               <div class="flex flex-1 flex-col p-6">
                 <div class="mb-3 flex items-center gap-2 text-[0.75rem] text-ink-faint">
