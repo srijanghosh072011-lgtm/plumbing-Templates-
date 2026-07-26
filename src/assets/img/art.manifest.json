@@ -1,0 +1,121 @@
+{
+  "__note": "Generated placeholder art. Every file listed here MUST be replaced with real client photography before launch. `npm run verify:launch` fails while this manifest lists any file that is still present in dist/.",
+  "generatedBy": "scripts/art.mjs",
+  "replaceBeforeLaunch": [
+    {
+      "file": "hero-primary.svg",
+      "intendedSubject": "Licensed plumber on a Regina service call",
+      "recommendedPixels": "1800x2200"
+    },
+    {
+      "file": "hero-inset.svg",
+      "intendedSubject": "Close-up of a pipe fitting being tightened",
+      "recommendedPixels": "1040x1040"
+    },
+    {
+      "file": "hero-secondary.svg",
+      "intendedSubject": "Technician preparing equipment at a work van",
+      "recommendedPixels": "1240x920"
+    },
+    {
+      "file": "about-team.svg",
+      "intendedSubject": "The Northline Plumbing team",
+      "recommendedPixels": "1800x1400"
+    },
+    {
+      "file": "about-detail.svg",
+      "intendedSubject": "Workshop detail with plumbing tools",
+      "recommendedPixels": "1120x1400"
+    },
+    {
+      "file": "process-portrait.svg",
+      "intendedSubject": "Plumber diagnosing a fixture on site",
+      "recommendedPixels": "1280x1280"
+    },
+    {
+      "file": "testimonial.svg",
+      "intendedSubject": "Completed bathroom plumbing installation",
+      "recommendedPixels": "1640x1280"
+    },
+    {
+      "file": "cta-figure.svg",
+      "intendedSubject": "Emergency plumber ready for dispatch",
+      "recommendedPixels": "1040x1240"
+    },
+    {
+      "file": "service-1.svg",
+      "intendedSubject": "Plumbing service photograph 1",
+      "recommendedPixels": "1440x1120"
+    },
+    {
+      "file": "service-2.svg",
+      "intendedSubject": "Plumbing service photograph 2",
+      "recommendedPixels": "1440x1120"
+    },
+    {
+      "file": "service-3.svg",
+      "intendedSubject": "Plumbing service photograph 3",
+      "recommendedPixels": "1440x1120"
+    },
+    {
+      "file": "service-4.svg",
+      "intendedSubject": "Plumbing service photograph 4",
+      "recommendedPixels": "1440x1120"
+    },
+    {
+      "file": "service-5.svg",
+      "intendedSubject": "Plumbing service photograph 5",
+      "recommendedPixels": "1440x1120"
+    },
+    {
+      "file": "service-6.svg",
+      "intendedSubject": "Plumbing service photograph 6",
+      "recommendedPixels": "1440x1120"
+    },
+    {
+      "file": "project-1.svg",
+      "intendedSubject": "Completed project photograph 1",
+      "recommendedPixels": "1520x1200"
+    },
+    {
+      "file": "project-2.svg",
+      "intendedSubject": "Completed project photograph 2",
+      "recommendedPixels": "1520x1200"
+    },
+    {
+      "file": "project-3.svg",
+      "intendedSubject": "Completed project photograph 3",
+      "recommendedPixels": "1520x1200"
+    },
+    {
+      "file": "project-4.svg",
+      "intendedSubject": "Completed project photograph 4",
+      "recommendedPixels": "1520x1200"
+    },
+    {
+      "file": "project-5.svg",
+      "intendedSubject": "Completed project photograph 5",
+      "recommendedPixels": "1520x1200"
+    },
+    {
+      "file": "project-6.svg",
+      "intendedSubject": "Completed project photograph 6",
+      "recommendedPixels": "1520x1200"
+    },
+    {
+      "file": "post-1.svg",
+      "intendedSubject": "Blog article header image 1",
+      "recommendedPixels": "1520x1040"
+    },
+    {
+      "file": "post-2.svg",
+      "intendedSubject": "Blog article header image 2",
+      "recommendedPixels": "1520x1040"
+    },
+    {
+      "file": "post-3.svg",
+      "intendedSubject": "Blog article header image 3",
+      "recommendedPixels": "1520x1040"
+    }
+  ]
+}

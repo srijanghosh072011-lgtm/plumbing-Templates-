@@ -1,0 +1,699 @@
+{
+  "__demo": true,
+  "__demoNotice": "DEMO DATA. Every value below is fictional and safe: the domain uses the IANA-reserved .example TLD (RFC 2606, can never be registered) and the phone uses the 555-01XX reserved fictional range (never routes to a real line). `npm run verify:launch` HARD FAILS while __demo is true or while any .example / 555-01 value remains. Replace this whole file per client, set __demo to false, then re-run the gate.",
+  "theme": "forest-lime",
+  "brand": {
+    "name": "Northline Plumbing Co.",
+    "legalName": "Northline Plumbing Co. Ltd.",
+    "shortName": "Northline",
+    "tagline": "Trusted Plumbing Experts",
+    "foundingYear": 2009,
+    "priceRange": "$$",
+    "logoMark": "N",
+    "description": "Northline Plumbing Co. is a licensed and insured plumbing contractor serving Regina and southern Saskatchewan, offering 24/7 emergency repair, drain cleaning, water heater replacement and leak detection."
+  },
+  "contact": {
+    "phoneDisplay": "(306) 555-0142",
+    "phoneE164": "+13065550142",
+    "emergencyPhoneDisplay": "(306) 555-0199",
+    "emergencyPhoneE164": "+13065550199",
+    "email": "service@northlineplumbing.example",
+    "serviceAreaBusiness": true,
+    "streetAddress": null,
+    "addressLocality": "Regina",
+    "addressRegion": "SK",
+    "postalCode": "S4P",
+    "addressCountry": "CA",
+    "latitude": 50.4452,
+    "longitude": -104.6189,
+    "serviceRadiusKm": 120
+  },
+  "hours": {
+    "emergency24_7": true,
+    "regular": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "07:00",
+        "closes": "18:00"
+      },
+      {
+        "days": [
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "16:00"
+      },
+      {
+        "days": [
+          "Sunday"
+        ],
+        "opens": null,
+        "closes": null,
+        "closed": true
+      }
+    ]
+  },
+  "credentials": {
+    "licenceLabel": "SK Journeyperson Plumber Licence",
+    "licenceNumber": "SK-PL-000000",
+    "insuranceLabel": "$2M General Liability",
+    "bonded": true,
+    "wcbCovered": true
+  },
+  "__areaNotice": "Each area page needs GENUINELY LOCAL content. Cloning a city page and swapping the town name is a duplicate-content penalty risk and reads as spam to both Google and AI engines. The fields below drive real differentiation — rewrite them per client with the owner's actual local knowledge.",
+  "areaServed": [
+    {
+      "name": "Regina",
+      "slug": "regina",
+      "distanceKm": 0,
+      "responseMinutes": 90,
+      "note": "Full city coverage including Harbour Landing, Lakeview, Cathedral and the Warehouse District.",
+      "neighbourhoods": [
+        "Cathedral",
+        "Lakeview",
+        "Harbour Landing",
+        "Warehouse District",
+        "Normanview",
+        "Albert Park"
+      ],
+      "housingStock": "A wide split between pre-1950 character homes with original galvanised supply lines and post-2005 suburban builds on PEX.",
+      "commonIssue": "Galvanised riser failure in the older core. These pipes corrode from the inside until the flow chokes, then fail at a seam — usually in a wall cavity, usually overnight.",
+      "localFactor": "Regina's heavy clay soil expands and contracts dramatically with moisture, which stresses buried lines and is the single biggest driver of sewer offsets in the city."
+    },
+    {
+      "name": "Moose Jaw",
+      "slug": "moose-jaw",
+      "distanceKm": 77,
+      "responseMinutes": 95,
+      "note": "Serviced daily with the same 90-minute emergency target.",
+      "neighbourhoods": [
+        "Downtown",
+        "Palliser Heights",
+        "Westmount",
+        "Sunningdale"
+      ],
+      "housingStock": "A large stock of early-1900s homes, many with cast-iron drainage still in service well past its design life.",
+      "commonIssue": "Cast-iron drain scaling. Decades of buildup narrow the bore until a routine clog becomes a recurring one, and snaking alone stops helping.",
+      "localFactor": "The high mineral content in the local supply accelerates scale, so water heaters and drain lines both age faster here than the manufacturer figures suggest."
+    },
+    {
+      "name": "White City",
+      "slug": "white-city",
+      "distanceKm": 22,
+      "responseMinutes": 75,
+      "note": "Acreage and rural well-system experience.",
+      "neighbourhoods": [
+        "White City proper",
+        "Emerald Ridge",
+        "surrounding acreages"
+      ],
+      "housingStock": "Largely newer executive homes and acreage properties, many on private wells and septic rather than municipal service.",
+      "commonIssue": "Pressure tank and well pump faults, which present exactly like a municipal supply problem but need a completely different diagnosis.",
+      "localFactor": "Acreage properties mean long private service runs. A leak between the well and the house can go unnoticed for months because there is no water bill to spike."
+    },
+    {
+      "name": "Pilot Butte",
+      "slug": "pilot-butte",
+      "distanceKm": 18,
+      "responseMinutes": 70,
+      "note": "Frozen-line thaw specialists through the winter months.",
+      "neighbourhoods": [
+        "Pilot Butte village",
+        "adjacent acreages"
+      ],
+      "housingStock": "A mix of 1970s-80s bungalows and newer infill, with a high proportion of unheated crawlspaces.",
+      "commonIssue": "Frozen supply lines. Shallow service runs plus unheated crawlspace exposure make this the community we take the most winter thaw calls from.",
+      "localFactor": "Exposed elevation means wind chill strips heat from crawlspaces faster than ambient temperature alone predicts, so lines freeze here at temperatures that spare sheltered Regina properties."
+    },
+    {
+      "name": "Emerald Park",
+      "slug": "emerald-park",
+      "distanceKm": 20,
+      "responseMinutes": 72,
+      "note": "New-build rough-in and warranty work.",
+      "neighbourhoods": [
+        "Emerald Park",
+        "Great Plains",
+        "Aspen Grove"
+      ],
+      "housingStock": "Predominantly post-2010 construction, still inside or just past builder warranty windows.",
+      "commonIssue": "Builder-grade fixture and valve failure at the 5-to-8-year mark — cartridges, shutoffs and supply lines specified to the minimum standard.",
+      "localFactor": "Because the stock is new and uniform, we see the same fixture models fail in waves across the neighbourhood, which means we usually already carry the part."
+    },
+    {
+      "name": "Lumsden",
+      "slug": "lumsden",
+      "distanceKm": 32,
+      "responseMinutes": 80,
+      "note": "Valley properties with sump and backflow needs.",
+      "neighbourhoods": [
+        "Lumsden townsite",
+        "Qu'Appelle Valley properties"
+      ],
+      "housingStock": "Valley-floor homes with a high water table and near-universal sump systems.",
+      "commonIssue": "Sump pump failure and backflow risk during spring melt, when the valley water table rises fast and a dead pump becomes a flooded basement within hours.",
+      "localFactor": "Qu'Appelle Valley melt timing means a concentrated spring risk window. We recommend battery backup sumps here more than anywhere else we serve."
+    }
+  ],
+  "stats": [
+    {
+      "value": 10,
+      "suffix": "+",
+      "label": "Years of Experience"
+    },
+    {
+      "value": 4200,
+      "suffix": "+",
+      "label": "Jobs Completed"
+    },
+    {
+      "value": 90,
+      "suffix": "min",
+      "label": "Average Emergency Response"
+    },
+    {
+      "value": 4.9,
+      "suffix": "/5",
+      "label": "Average Customer Rating"
+    }
+  ],
+  "reviews": {
+    "ratingValue": 4.9,
+    "reviewCount": 287,
+    "bestRating": 5
+  },
+  "services": [
+    {
+      "slug": "emergency-plumbing",
+      "name": "24/7 Emergency Plumbing",
+      "short": "Burst pipes, major leaks and no-water emergencies answered around the clock.",
+      "answerFirst": "Northline Plumbing provides 24/7 emergency plumbing in Regina with an average on-site response of 90 minutes. Emergency call-outs start at $149 for the diagnostic visit, which is credited toward the repair if you approve the work the same day.",
+      "priceFrom": 149,
+      "priceUnit": "call-out",
+      "duration": "1-3 hours",
+      "icon": "siren",
+      "bullets": [
+        "Live dispatcher answers every call, day or night",
+        "Fully stocked trucks — most repairs finished on the first visit",
+        "Water shut-off guidance over the phone while you wait",
+        "No overtime surcharge on evenings, weekends or holidays"
+      ],
+      "faqs": [
+        {
+          "q": "What counts as a plumbing emergency?",
+          "a": "Anything actively causing water damage or leaving you without safe water: a burst or frozen pipe, a failed water heater, sewage backing up into the home, or a leak you cannot shut off. If water is spreading and you cannot stop it, treat it as an emergency and call immediately."
+        },
+        {
+          "q": "How fast can you actually get here?",
+          "a": "Our average on-site arrival across Regina is 90 minutes, and we hold that same target for Moose Jaw and White City. During an extreme cold snap, when frozen-line calls spike city-wide, arrival can extend to three or four hours — the dispatcher will give you a realistic window when you call rather than an optimistic one."
+        },
+        {
+          "q": "Do you charge extra at night or on weekends?",
+          "a": "No. Northline charges the same $149 diagnostic call-out at 2am on a Sunday as at 2pm on a Tuesday. Overtime surcharges are one of the most common complaints about emergency plumbing, so we removed them entirely."
+        }
+      ],
+      "seoTitle": "Emergency Plumber"
+    },
+    {
+      "slug": "drain-cleaning",
+      "name": "Drain Cleaning & Unclogging",
+      "short": "Camera-inspected drain and sewer clearing that fixes the cause, not just the symptom.",
+      "answerFirst": "Drain cleaning in Regina typically costs between $180 and $450 depending on whether the blockage is in a fixture branch or the main sewer line. Northline includes a camera inspection with every main-line clearing so you can see what caused the clog before deciding on further work.",
+      "priceFrom": 180,
+      "priceTo": 450,
+      "priceUnit": "job",
+      "duration": "1-2 hours",
+      "icon": "drain",
+      "bullets": [
+        "Camera inspection included on all main-line work",
+        "Hydro-jetting for grease, scale and root intrusion",
+        "Root-cause report so the same clog does not return",
+        "Fixed quote before we start — no hourly creep"
+      ],
+      "faqs": [
+        {
+          "q": "How much does drain cleaning cost in Regina?",
+          "a": "Expect $180 to $280 for a single slow fixture such as a kitchen sink or tub, and $320 to $450 for a main sewer line clearing that includes camera inspection. Heavy root intrusion needing hydro-jetting runs higher; we quote that separately once the camera shows what is actually in the line."
+        },
+        {
+          "q": "Why does my drain keep clogging after it is cleared?",
+          "a": "A repeat clog almost always means the blockage was pushed through rather than removed, or there is a structural cause — a belly in the pipe, root intrusion at a joint, or scale buildup narrowing the line. That is why we camera every main line: clearing without looking is how the same clog comes back in six weeks."
+        },
+        {
+          "q": "Are chemical drain cleaners a bad idea?",
+          "a": "For older Regina homes with cast-iron or ABS drains, yes. Caustic cleaners generate heat, can soften ABS joints and accelerate corrosion in cast iron, and they rarely clear a full blockage — they channel a narrow hole through it. Mechanical clearing costs more once but does not damage the pipe."
+        }
+      ],
+      "seoTitle": "Drain Cleaning"
+    },
+    {
+      "slug": "water-heater-repair",
+      "name": "Water Heater Repair & Install",
+      "short": "Tank and tankless diagnosis, replacement and same-day hot water restoration.",
+      "answerFirst": "Water heater replacement in Regina generally runs $1,400 to $2,600 installed for a standard 40-50 gallon gas tank, and $3,200 to $5,400 for a tankless system. Northline carries common tank sizes on the truck, so most failed heaters are replaced the same day you call.",
+      "priceFrom": 1400,
+      "priceTo": 5400,
+      "priceUnit": "installed",
+      "duration": "2-4 hours",
+      "icon": "flame",
+      "bullets": [
+        "Same-day replacement on common tank sizes",
+        "Tank and tankless — honest advice on which fits your home",
+        "Permit pulled and inspection handled for you",
+        "Old unit hauled away and recycled at no charge"
+      ],
+      "faqs": [
+        {
+          "q": "How much does a new water heater cost in Regina?",
+          "a": "A standard 40-50 gallon gas tank runs $1,400 to $2,600 fully installed, including permit, venting check and disposal of the old unit. Tankless conversion is $3,200 to $5,400 because it usually needs gas line resizing and new venting. Electric tanks sit at the lower end, around $1,200 to $1,900."
+        },
+        {
+          "q": "Is it worth repairing my water heater or should I replace it?",
+          "a": "Under eight years old with a failed thermocouple, element or thermostat, repair is usually worth it — those are $180 to $400 fixes. Past twelve years, or if the tank itself is leaking from the shell, replace it. A leaking tank cannot be repaired; the steel has corroded through and it will fail completely, often while nobody is home."
+        },
+        {
+          "q": "How long does a water heater last in Saskatchewan?",
+          "a": "Eight to twelve years for a tank unit. Regina's water hardness accelerates sediment buildup, which insulates the burner from the water and shortens life, so annual flushing genuinely matters here more than in soft-water regions. Tankless units run fifteen to twenty years with descaling."
+        }
+      ],
+      "seoTitle": "Water Heater Repair"
+    },
+    {
+      "slug": "leak-detection",
+      "name": "Leak Detection & Repair",
+      "short": "Acoustic and thermal location of hidden leaks before they wreck your drywall.",
+      "answerFirst": "Northline locates hidden water leaks using acoustic and thermal imaging equipment, typically for $220 to $380 for the detection visit. Non-invasive location means we open one small access point instead of exploratory demolition across a wall or ceiling.",
+      "priceFrom": 220,
+      "priceTo": 380,
+      "priceUnit": "detection",
+      "duration": "1-2 hours",
+      "icon": "droplet",
+      "bullets": [
+        "Acoustic and thermal imaging — no exploratory demolition",
+        "Slab, wall and underground line location",
+        "Written report suitable for an insurance claim",
+        "Detection fee credited toward the repair"
+      ],
+      "faqs": [
+        {
+          "q": "How do I know if I have a hidden leak?",
+          "a": "The usual signs are a water bill that climbed without a change in habits, a warm spot on a floor, musty smell with no visible water, or a meter that keeps creeping when every fixture is off. That last one is the definitive test: shut everything off, note the meter, wait an hour. Movement means water is escaping somewhere."
+        },
+        {
+          "q": "Will you have to cut open my walls to find it?",
+          "a": "Rarely. Acoustic listening equipment picks up the specific frequency of pressurized water escaping a pipe, and thermal imaging shows temperature differentials through drywall. Between the two we can usually locate a leak to within a few centimetres and open one small access point rather than a whole wall."
+        },
+        {
+          "q": "Does home insurance cover a hidden water leak?",
+          "a": "Most Canadian policies cover the resulting sudden water damage but not the failed pipe itself, and they typically exclude damage from a leak that was gradual and left unaddressed. That is why we provide a written, dated detection report — it documents when the leak was found and acted on, which is what an adjuster asks for."
+        }
+      ],
+      "seoTitle": "Leak Detection"
+    },
+    {
+      "slug": "faucet-fixture-installation",
+      "name": "Faucet & Fixture Installation",
+      "short": "Taps, toilets, sinks and shower valves fitted clean and leak-free.",
+      "answerFirst": "Fixture installation with Northline starts at $160 for a straightforward faucet swap and $240 for a toilet replacement, including removal and disposal of the old unit. We also correct the shutoff valve while we are under there, which is the part that usually fails next.",
+      "priceFrom": 160,
+      "priceUnit": "fixture",
+      "duration": "1-2 hours",
+      "icon": "faucet",
+      "bullets": [
+        "Faucets, toilets, sinks, shower and tub valves",
+        "Old fixture removed and disposed of",
+        "Shutoff valves replaced while access is open",
+        "Workmanship guaranteed for two years"
+      ],
+      "faqs": [
+        {
+          "q": "Can I supply my own faucet or toilet?",
+          "a": "Yes, and plenty of customers do. We install customer-supplied fixtures at the same labour rate and warranty our workmanship either way. The only thing we cannot warranty is the fixture itself — if a bargain cartridge fails in eight months, that is between you and the manufacturer."
+        },
+        {
+          "q": "How long does installing a new toilet take?",
+          "a": "About 60 to 90 minutes for a straight swap, including pulling the old unit, replacing the wax ring and flange bolts, setting and levelling the new one, and confirming no rock or seep. Add time if the flange itself is corroded or sits below finished floor level, which is common in older Regina basements."
+        },
+        {
+          "q": "Why replace the shutoff valve during a fixture install?",
+          "a": "Because the old multi-turn valves seize. When a fixture is being changed, the valve is already exposed and drained — swapping it to a quarter-turn ball valve adds a few minutes then, versus an emergency call later when it will not close during a leak. It is the cheapest insurance in the trade."
+        }
+      ],
+      "seoTitle": "Fixture Installation"
+    },
+    {
+      "slug": "sewer-line-repair",
+      "name": "Sewer Line Repair",
+      "short": "Camera diagnosis, spot repair and full replacement for failed main lines.",
+      "answerFirst": "Sewer line repair in Regina ranges from $900 for a localized spot repair to $9,000 or more for a full main-line replacement under a driveway. Northline always cameras and locates the failure first, so you are quoting an actual defect rather than a guess at the length of pipe.",
+      "priceFrom": 900,
+      "priceTo": 9000,
+      "priceUnit": "job",
+      "duration": "1-3 days",
+      "icon": "pipe",
+      "bullets": [
+        "Camera and sonde location before any excavation",
+        "Spot repair when the rest of the line is sound",
+        "Trenchless options where the route allows",
+        "City permit and locate coordination handled"
+      ],
+      "faqs": [
+        {
+          "q": "How much does sewer line replacement cost?",
+          "a": "A localized spot repair where one joint or section has failed runs $900 to $2,400. A full replacement from the house to the property line is $4,500 to $9,000 depending on depth, length and what is on top of it — replacing under a mature driveway or landscaping costs meaningfully more than under open lawn."
+        },
+        {
+          "q": "What causes sewer lines to fail in Regina?",
+          "a": "Three things dominate here: root intrusion at joints on older clay tile, ground movement from our expansive clay soil creating bellies and offsets, and simple age on cast iron that has corroded from the inside. The freeze-thaw cycle accelerates all three, which is why Regina sees more line failures than milder-climate cities."
+        },
+        {
+          "q": "Can a sewer line be repaired without digging up the yard?",
+          "a": "Sometimes. Trenchless pipe lining or pipe bursting works when the existing line is intact enough to host a liner and the route has access pits at both ends. It is not viable if the line has collapsed, has a severe offset, or runs under obstacles that prevent pit placement. The camera survey tells us which is realistic before you commit."
+        }
+      ],
+      "seoTitle": "Sewer Line Repair"
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Request Your Fix",
+      "body": "Call or book online and describe what is happening. Our dispatcher gives you a real arrival window and, in an emergency, talks you through shutting off the water while we roll."
+    },
+    {
+      "step": "02",
+      "title": "We Diagnose On Site",
+      "body": "The technician inspects, cameras where relevant, and identifies the actual cause rather than the visible symptom. You see what we see before anything is decided."
+    },
+    {
+      "step": "03",
+      "title": "You Get A Fixed Quote",
+      "body": "A written, flat quote before any work begins. It does not move once you approve it, and the diagnostic fee comes off the total."
+    },
+    {
+      "step": "04",
+      "title": "Fixed & Guaranteed",
+      "body": "We complete the repair, clean the workspace, and back the workmanship for two years. You get photos of the finished work by email."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Burst Riser, Cathedral Character Home",
+      "category": "Emergency Repair",
+      "location": "Regina",
+      "summary": "A failed 1940s galvanized riser flooded two floors overnight. Full riser replacement in copper, completed in eleven hours."
+    },
+    {
+      "title": "Restaurant Grease Line Recovery",
+      "category": "Hydro-Jetting",
+      "location": "Warehouse District",
+      "summary": "Twenty metres of grease-choked main line jetted and cameraed, with a quarterly maintenance schedule set up to keep it clear."
+    },
+    {
+      "title": "Tankless Conversion, New Build",
+      "category": "Water Heater",
+      "location": "Harbour Landing",
+      "summary": "Gas line resized and vented for a high-efficiency tankless unit, freeing a full closet of mechanical room space."
+    },
+    {
+      "title": "Root-Intruded Clay Tile Replacement",
+      "category": "Sewer Line",
+      "location": "Lakeview",
+      "summary": "Sixteen metres of collapsed clay tile replaced under a mature yard, with the boulevard tree preserved by hand excavation."
+    },
+    {
+      "title": "Slab Leak Located Under Finished Floor",
+      "category": "Leak Detection",
+      "location": "White City",
+      "summary": "Acoustic location pinpointed a pinhole to within eight centimetres, saving the homeowner from tearing out 40 square metres of engineered hardwood."
+    },
+    {
+      "title": "Frozen Main Thaw, Acreage",
+      "category": "Emergency Repair",
+      "location": "Pilot Butte",
+      "summary": "A rural service line frozen at the road thawed and re-insulated at minus 34, restoring water the same afternoon."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Water was coming through the kitchen ceiling at 11pm and Northline had someone at the door in under an hour. He found the failed joint, showed me the camera footage, and had it fixed before 2am. No overtime charge, exactly what the dispatcher quoted.",
+      "author": "Rakib K.",
+      "role": "Homeowner, Cathedral",
+      "rating": 5
+    },
+    {
+      "quote": "We had three plumbers tell us the whole sewer line needed replacing. Northline cameraed it, found the failure was one offset joint near the house, and did a spot repair for a fraction of the quotes. That kind of honesty is rare.",
+      "author": "Danielle M.",
+      "role": "Homeowner, Lakeview",
+      "rating": 5
+    },
+    {
+      "quote": "They maintain the drains at both of our restaurant locations. Quarterly jetting, always after close so we never lose service, and they send photos of the line condition every visit. Zero backups in two years.",
+      "author": "Tomás R.",
+      "role": "Operations Manager, Warehouse District",
+      "rating": 5
+    },
+    {
+      "quote": "Our water heater died on a Saturday of a long weekend. I expected to wait until Tuesday and pay a premium. They had a new tank in and running that afternoon at the regular rate.",
+      "author": "Priya S.",
+      "role": "Homeowner, Harbour Landing",
+      "rating": 5
+    }
+  ],
+  "posts": [
+    {
+      "slug": "spot-a-plumbing-leak-early",
+      "title": "10 Quiet Signs You Have a Plumbing Leak Behind a Wall",
+      "excerpt": "Most hidden leaks announce themselves months before the drywall stains. Here is what to watch and the one meter test that settles it.",
+      "date": "2026-06-18",
+      "category": "Maintenance",
+      "readingMinutes": 6,
+      "answerFirst": "The most reliable way to confirm a hidden leak is the water meter test: shut off every fixture in the house, note the meter reading, wait one hour without using water, then read it again. Any movement means water is escaping somewhere in the system. Common early warning signs before that point include an unexplained bill increase, a musty smell with no visible water, warm spots on the floor, and a water heater that cycles when nothing is running.",
+      "sections": [
+        {
+          "heading": "Why hidden leaks matter more than obvious ones",
+          "paragraphs": [
+            "A dripping tap is annoying but harmless — you can see it, so you fix it. A leak inside a wall cavity or under a slab is the expensive one precisely because nothing tells you it is there. By the time a stain appears on drywall, water has usually been escaping for weeks or months, and the damage is no longer just the pipe.",
+            "That delay is also what causes insurance friction. Most Canadian policies cover sudden water damage but exclude damage from gradual seepage that went unaddressed. The longer a leak runs undetected, the more likely an adjuster classifies it as gradual."
+          ]
+        },
+        {
+          "heading": "The ten signs, in the order they usually appear",
+          "paragraphs": [
+            "These roughly follow the sequence we see on service calls, from earliest to most advanced:"
+          ],
+          "list": [
+            "Water bill climbs with no change in household habits — often the very first signal.",
+            "The water meter creeps when every fixture is off.",
+            "A musty or earthy smell in one room that does not clear with ventilation.",
+            "Reduced pressure at one fixture while the rest of the house is normal.",
+            "A warm patch on a floor, which usually means a hot-water slab leak.",
+            "The water heater or recirculation pump cycling while nobody is using water.",
+            "Faint running-water sound in a wall when the house is quiet.",
+            "Paint or wallpaper bubbling, or baseboards cupping away from the wall.",
+            "Visible mould in a corner with no obvious moisture source.",
+            "Foundation cracking or a persistently soggy patch of lawn over the service line."
+          ]
+        },
+        {
+          "heading": "How to run the meter test properly",
+          "paragraphs": [
+            "Turn off every tap, appliance and ice maker, and tell everyone in the house not to use water for the duration. Find your meter and note the exact reading, including the small sweep hand or leak indicator triangle if it has one. Wait a full hour, then read it again.",
+            "Any change at all means water moved. If the leak indicator spins even slowly with everything closed, you have a live leak. This test costs nothing and settles the question definitively, which is why it is worth doing before calling anyone."
+          ]
+        },
+        {
+          "heading": "What happens when you call us",
+          "paragraphs": [
+            "We locate leaks acoustically and thermally rather than by opening walls speculatively. Acoustic equipment picks up the specific frequency pressurised water makes escaping a pipe, and thermal imaging shows temperature differentials through drywall. Between the two we can usually pin a leak to within a few centimetres.",
+            "That matters financially: exploratory demolition to find a leak often costs more than the repair itself. Locating first means one small access point instead of a wall."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Can a hidden leak stop on its own?",
+          "a": "No. Pressurised supply leaks only get worse as the opening erodes. What can change is whether you notice it — a leak draining into a floor cavity or out to soil may stop showing symptoms while continuing to run, which is the most expensive scenario of all."
+        },
+        {
+          "q": "How much water does a small hidden leak waste?",
+          "a": "A pinhole leak in a pressurised line can waste 900 to 1,800 litres a day. That is enough to show clearly on a bill, which is why an unexplained increase is such a reliable early signal."
+        }
+      ],
+      "seoTitle": "Signs of a Hidden Plumbing Leak"
+    },
+    {
+      "slug": "winterize-plumbing-saskatchewan",
+      "title": "Winterizing Saskatchewan Plumbing: A Realistic October Checklist",
+      "excerpt": "Frozen lines are the single largest cause of emergency calls we take between December and February. Almost all of it is preventable in an afternoon.",
+      "date": "2026-05-30",
+      "category": "Seasonal",
+      "readingMinutes": 8,
+      "answerFirst": "To winterize plumbing in Saskatchewan, complete five tasks before the first hard freeze: disconnect and drain every outdoor hose, shut off and drain exterior hose bibs from the interior valve, insulate any supply line running through an unheated crawlspace or garage, seal air leaks where pipes pass through the building envelope, and locate your main shutoff so you can find it in the dark. Together these take an afternoon and prevent the overwhelming majority of frozen-line calls we take.",
+      "sections": [
+        {
+          "heading": "Why prairie freezing is a different problem",
+          "paragraphs": [
+            "Pipes do not burst because ice takes up more room where the ice is. They burst because a growing ice plug pushes water ahead of it toward a closed tap, and pressure builds in the trapped section until the weakest point fails. That failure is often well away from the frozen part.",
+            "Saskatchewan makes this worse in two specific ways. Our frost line is deep, so buried service lines are vulnerable further down than in milder provinces. And our wind chill strips heat out of crawlspaces and rim joists far faster than the ambient temperature alone would suggest — which is why lines freeze here on nights that would spare an identical house elsewhere."
+          ]
+        },
+        {
+          "heading": "The five tasks that actually matter",
+          "paragraphs": [
+            "Done properly in early-to-mid October, these prevent most winter emergencies:"
+          ],
+          "list": [
+            "Disconnect every garden hose. A connected hose traps water in the bib and the ice plug propagates back inside the wall — this single oversight causes more burst bibs than anything else.",
+            "Shut off exterior bib supply at the interior valve, then open the exterior tap to drain the line and leave it open all winter.",
+            "Insulate supply lines in unheated crawlspaces, garages and rim joists with proper pipe sleeve, not loose fibreglass.",
+            "Seal air leaks where pipes penetrate the envelope. A finger-width gap admitting a cold draft directly onto a pipe defeats insulation entirely.",
+            "Find and label the main shutoff, and check that it actually turns. Discovering a seized valve during a burst is the worst possible time."
+          ]
+        },
+        {
+          "heading": "During an extreme cold snap",
+          "paragraphs": [
+            "When temperatures fall past roughly minus 30, open the cabinet doors under sinks on exterior walls so household heat reaches the pipes. Let a single tap on the most vulnerable run drip slightly overnight — moving water freezes far more slowly than still water, and the open tap prevents pressure building behind any plug that does form.",
+            "If a tap suddenly delivers nothing while others work normally, that line is already freezing. Open it, apply gentle heat with a hair dryer working back from the tap toward the frozen section, and never use an open flame. If you cannot restore flow within an hour, call — a line that stays frozen usually splits."
+          ]
+        },
+        {
+          "heading": "What we do not recommend",
+          "paragraphs": [
+            "Heat tape is widely sold and widely misused. Applied to the wrong pipe material, overlapped on itself, or left on an unmonitored circuit, it is a genuine fire risk. If a run truly needs supplemental heat, it usually needs rerouting or better insulation instead — the tape is treating a symptom.",
+            "We also see people leave the furnace off in an empty property to save money. Never set a Saskatchewan property below 13 degrees in winter. The heating savings are trivial next to a burst line discovered days later."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "q": "When is it too late to winterize?",
+          "a": "Once a hard freeze has already happened you can still complete every task on this list, and you should. The point of doing it in October is that it is comfortable work — but late is far better than not at all."
+        },
+        {
+          "q": "Do I need to winterize a newer home?",
+          "a": "Yes, though usually less of it. Newer builds tend to have better-sealed envelopes and interior-routed supply lines, but exterior hose bibs still freeze regardless of build year, and a disconnected hose costs nothing."
+        }
+      ],
+      "seoTitle": "Winterizing Saskatchewan Plumbing"
+    },
+    {
+      "slug": "tankless-vs-tank-water-heater",
+      "title": "Tankless vs Tank in a Prairie Climate: An Honest Comparison",
+      "excerpt": "Tankless is not automatically the upgrade. Incoming water temperature in Saskatchewan changes the maths considerably.",
+      "date": "2026-05-11",
+      "category": "Buying Guide",
+      "readingMinutes": 7,
+      "answerFirst": "For most Saskatchewan homes, a conventional tank water heater remains the better value: $1,400 to $2,600 installed against $3,200 to $5,400 for tankless, with the efficiency gap narrowed by our cold incoming water. Tankless genuinely wins in three cases — households that regularly exhaust a tank's capacity, homes where the mechanical space is worth reclaiming, and owners planning to stay 15-plus years so the longer service life pays back the premium.",
+      "sections": [
+        {
+          "heading": "Why the prairie changes the calculation",
+          "paragraphs": [
+            "Tankless efficiency claims are usually quoted against incoming water around 15 degrees. Saskatchewan municipal water arrives closer to 4 degrees in winter. That larger temperature rise means the unit works harder for the same output, which reduces both effective flow rate and the real-world efficiency advantage.",
+            "Practically, a tankless unit sized on a manufacturer's chart for a milder region can underperform badly here in January — the classic symptom being a shower that runs lukewarm when the dishwasher starts. Correct sizing for our incoming temperature is the single most important part of the decision, and it is where most disappointing installs go wrong."
+          ]
+        },
+        {
+          "heading": "Honest cost comparison",
+          "paragraphs": [
+            "Installed costs in the Regina area, including permit, venting and removal of the old unit:"
+          ],
+          "list": [
+            "Gas tank, 40-50 gallon: $1,400 to $2,600. Service life 8 to 12 years here.",
+            "Electric tank: $1,200 to $1,900. Similar service life, higher running cost.",
+            "Gas tankless: $3,200 to $5,400, because conversion usually needs gas line resizing and new venting. Service life 15 to 20 years with annual descaling.",
+            "Annual maintenance: negligible for a tank beyond flushing; $150 to $250 for tankless descaling, which our water hardness makes non-optional."
+          ]
+        },
+        {
+          "heading": "When tankless is genuinely the right call",
+          "paragraphs": [
+            "If your household regularly runs out of hot water — a full house of teenagers, back-to-back showers, a large soaker tub — tankless solves a problem a tank structurally cannot. Continuous supply is its real advantage, more than efficiency.",
+            "It also makes sense when mechanical room space has value, since a wall-mounted unit frees an entire closet, and when you intend to stay long enough for the longer lifespan to matter. Over 20 years you would buy roughly two tanks against one tankless."
+          ]
+        },
+        {
+          "heading": "When to just replace the tank",
+          "paragraphs": [
+            "If your current tank meets demand, the space is not needed, and you may move within a decade, replacing like-for-like is the financially sound choice. The payback period on tankless in our climate frequently exceeds how long people actually stay in a house.",
+            "One thing worth spending on either way: a quality expansion tank and a modern shutoff. Both are cheap during an install and expensive to retrofit."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Does tankless really never run out of hot water?",
+          "a": "It never runs out, but it is flow-limited. Exceed the unit's litres-per-minute at your required temperature rise and the temperature drops rather than the supply stopping. In our winter incoming temperatures that ceiling is meaningfully lower than the sticker figure suggests."
+        },
+        {
+          "q": "How long does a water heater last in Saskatchewan?",
+          "a": "Eight to twelve years for a tank. Local water hardness accelerates sediment buildup, which insulates the burner from the water and shortens life, so annual flushing matters more here than in soft-water regions."
+        }
+      ],
+      "seoTitle": "Tankless vs Tank Water Heaters"
+    }
+  ],
+  "generalFaqs": [
+    {
+      "q": "Do you offer 24/7 emergency plumbing service?",
+      "a": "Yes. Northline Plumbing answers emergency calls 24 hours a day, every day of the year, including statutory holidays. A live dispatcher picks up rather than an answering service, and the average on-site arrival across Regina is 90 minutes. There is no overtime surcharge for nights, weekends or holidays."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "Regina and the surrounding communities within roughly 120 kilometres, including Moose Jaw, White City, Pilot Butte, Emerald Park and Lumsden. If you are outside that radius, call anyway — we will tell you honestly whether we can reach you in a reasonable time or refer you to someone closer."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. Northline holds a Saskatchewan Journeyperson Plumber licence, carries $2 million in general liability insurance, is bonded, and all technicians are covered under WCB. We provide licence and insurance documentation on request before work begins."
+    },
+    {
+      "q": "How much do you charge for a service call?",
+      "a": "The diagnostic call-out is $149, and that amount is credited toward the repair if you approve the work the same day. After diagnosis you receive a written flat quote for the repair itself — we do not bill open-ended hourly, so the number you approve is the number you pay."
+    },
+    {
+      "q": "Do you guarantee your work?",
+      "a": "All workmanship is guaranteed for two years. Manufacturer warranties on parts and fixtures apply separately and we register those for you where applicable. If something we repaired fails within the guarantee period, we return and correct it at no charge."
+    },
+    {
+      "q": "Can you help with insurance claims?",
+      "a": "Yes. We provide dated written reports with photos and camera footage where relevant, which is the documentation adjusters typically request. We cannot advocate with your insurer on your behalf, but we make sure you have evidence that clearly establishes what failed and when it was addressed."
+    }
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/northlineplumbing.example",
+    "instagram": "https://www.instagram.com/northlineplumbing.example",
+    "linkedin": "https://www.linkedin.com/company/northlineplumbing.example",
+    "googleBusiness": "https://www.google.com/maps/place/northlineplumbing.example"
+  },
+  "seo": {
+    "siteUrl": "https://www.northlineplumbing.example",
+    "locale": "en_CA",
+    "lang": "en-CA",
+    "titleTemplate": "%s | Northline Plumbing Co.",
+    "defaultTitle": "Emergency Plumber Regina | Northline Plumbing Co.",
+    "defaultDescription": "Licensed 24/7 emergency plumbers in Regina, SK. Drain cleaning, water heaters and leak detection with a 90-minute average response.",
+    "ogImage": "/assets/img/og-default.png",
+    "twitterHandle": null,
+    "organizationType": "Plumber"
+  },
+  "analytics": {
+    "ga4MeasurementId": null,
+    "gtmContainerId": null,
+    "clarityProjectId": null,
+    "note": "Leave null to omit the tag entirely. When set, the loader is injected with the CSP nonce/hash already accounted for in deploy/ configs."
+  },
+  "legal": {
+    "jurisdiction": "Saskatchewan, Canada",
+    "privacyRegime": "PIPEDA",
+    "casl": true,
+    "privacyContactEmail": "privacy@northlineplumbing.example",
+    "privacyOfficer": "Privacy Officer"
+  }
+}

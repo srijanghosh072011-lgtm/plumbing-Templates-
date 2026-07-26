@@ -1,0 +1,31 @@
+{
+  "name": "plumbing-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Config-driven, security-hardened, SEO/AEO-optimised static site template for plumbing and home-service trades.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "fonts": "node scripts/fonts.mjs",
+    "build:html": "node scripts/build.mjs",
+    "build:css": "tailwindcss -i src/styles/app.css -o dist/assets/css/site.css --minify",
+    "build": "npm run build:html && npm run build:css && npm run hash",
+    "hash": "node scripts/hash.mjs",
+    "verify": "node scripts/verify.mjs",
+    "verify:launch": "node scripts/verify.mjs --launch",
+    "serve": "node scripts/serve.mjs",
+    "dev": "npm run build && npm run serve",
+    "test": "npm run build && npm run verify && npm run contrast",
+    "contrast": "node scripts/contrast.mjs",
+    "qa": "node tests/qa.mjs",
+    "shots": "node tests/screenshot.mjs",
+    "preflight": "npm run build && npm run verify:launch && npm run contrast"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

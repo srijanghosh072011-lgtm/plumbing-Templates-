@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="900" height="1100" role="img" aria-label="Licensed plumber on a Regina service call">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b4a3b"/>
+      <stop offset="55%" stop-color="#123a2e"/>
+      <stop offset="100%" stop-color="#2f6b55"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.51" cy="0.50" r="0.75">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="clip"><rect width="900" height="1100"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="900" height="1100" fill="url(#g)"/>
+    <rect width="900" height="1100" fill="url(#glow)"/>
+    <g transform="rotate(0.3 450 550)"><path d="M-90.0,288.8 L135.0,288.8 L135.0,362.8 L414.8,362.8 L414.8,447.1 L741.5,447.1 L741.5,238.6 L1072.0,238.6 L1072.0,614.0 L1357.5,614.0 L1357.5,837.8 L990.0,837.8" fill="none" stroke="#f6f4ec" stroke-width="4.099878754233941" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/><path d="M-90.0,644.8 L153.4,644.8 L153.4,179.0 L520.1,179.0 L520.1,949.3 L774.9,949.3 L774.9,254.5 L990.0,254.5" fill="none" stroke="#c6ee3e" stroke-width="6.0269240632187575" stroke-linecap="round" stroke-linejoin="round" opacity="0.15"/><path d="M-90.0,609.0 L303.1,609.0 L303.1,251.7 L697.2,251.7 L697.2,817.8 L974.1,817.8 L974.1,153.2 L1173.5,153.2 L1173.5,835.3 L990.0,835.3" fill="none" stroke="#f6f4ec" stroke-width="5.7177572515793145" stroke-linecap="round" stroke-linejoin="round" opacity="0.10"/></g>
+    <circle cx="463" cy="554" r="181.3" fill="none" stroke="#c6ee3e" stroke-width="2.4" opacity="0.19"/><circle cx="463" cy="554" r="269.9" fill="none" stroke="#c6ee3e" stroke-width="1.3" opacity="0.18"/><circle cx="463" cy="554" r="358.5" fill="none" stroke="#c6ee3e" stroke-width="2.1" opacity="0.17"/><circle cx="463" cy="554" r="447.1" fill="none" stroke="#c6ee3e" stroke-width="1.9" opacity="0.23"/>
+    <circle cx="448" cy="579" r="1.3" fill="#c6ee3e" opacity="0.18"/><circle cx="661" cy="98" r="2.1" fill="#c6ee3e" opacity="0.09"/><circle cx="400" cy="698" r="2.8" fill="#c6ee3e" opacity="0.17"/><circle cx="420" cy="388" r="0.9" fill="#c6ee3e" opacity="0.23"/><circle cx="377" cy="835" r="1.4" fill="#c6ee3e" opacity="0.19"/><circle cx="313" cy="927" r="1.1" fill="#c6ee3e" opacity="0.10"/><circle cx="567" cy="686" r="1.1" fill="#c6ee3e" opacity="0.15"/><circle cx="340" cy="1031" r="2.5" fill="#c6ee3e" opacity="0.21"/><circle cx="370" cy="1011" r="2.0" fill="#c6ee3e" opacity="0.17"/><circle cx="277" cy="566" r="0.8" fill="#c6ee3e" opacity="0.26"/><circle cx="271" cy="449" r="1.0" fill="#c6ee3e" opacity="0.10"/><circle cx="671" cy="599" r="1.8" fill="#c6ee3e" opacity="0.10"/><circle cx="504" cy="684" r="2.6" fill="#c6ee3e" opacity="0.27"/><circle cx="538" cy="664" r="1.9" fill="#c6ee3e" opacity="0.18"/><circle cx="85" cy="717" r="2.1" fill="#c6ee3e" opacity="0.28"/><circle cx="639" cy="149" r="1.1" fill="#c6ee3e" opacity="0.21"/><circle cx="875" cy="378" r="2.7" fill="#c6ee3e" opacity="0.16"/><circle cx="685" cy="719" r="0.9" fill="#c6ee3e" opacity="0.14"/><circle cx="598" cy="542" r="2.1" fill="#c6ee3e" opacity="0.13"/><circle cx="646" cy="346" r="1.0" fill="#c6ee3e" opacity="0.19"/><circle cx="343" cy="199" r="2.4" fill="#c6ee3e" opacity="0.27"/><circle cx="676" cy="6" r="1.7" fill="#c6ee3e" opacity="0.25"/><circle cx="512" cy="770" r="2.1" fill="#c6ee3e" opacity="0.08"/><circle cx="446" cy="540" r="1.1" fill="#c6ee3e" opacity="0.24"/><circle cx="57" cy="93" r="2.8" fill="#c6ee3e" opacity="0.20"/><circle cx="634" cy="918" r="2.6" fill="#c6ee3e" opacity="0.28"/>
+    <rect width="900" height="1100" filter="url(#grain)" opacity="0.05"/>
+  </g>
+</svg>

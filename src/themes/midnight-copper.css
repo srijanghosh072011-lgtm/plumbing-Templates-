@@ -1,0 +1,53 @@
+/* ============================================================================
+   THEME — Midnight Copper
+   Vibe archetype: Ethereal Glass. Near-OLED charcoal ground, warm copper
+   accent, high-contrast editorial serif display face.
+   Reads as premium/after-hours — suits emergency-led positioning.
+   All ratios below are MEASURED, not estimated — `npm run contrast` re-checks
+   every pair and exits non-zero on any regression. Re-run it after any colour change.
+   ========================================================================= */
+[data-theme="midnight-copper"] {
+  --t-font-display: "Instrument Serif";
+
+  /* Deep charcoal ground */
+  --t-canvas: #12100e;
+  --t-canvas-sunk: #1c1917;
+
+  /* Raised surfaces sit lighter than canvas in a dark theme */
+  --t-deep: #24201c;
+  --t-deep-soft: #2f2a25;
+  --t-deep-line: rgb(255 255 255 / 0.1);
+
+  /* Copper accent */
+  --t-accent: #e08a4c;
+  --t-accent-soft: #7a4a26;
+
+  /* Ink on charcoal — 16.8:1 */
+  --t-ink: #f5f0ea;
+  /* Muted — 8.6:1 */
+  --t-ink-muted: #b8ad9f;
+  /* Faint — 5.2:1 */
+  --t-ink-faint: #8e8578;
+
+  --t-on-deep: #f5f0ea;
+  --t-on-deep-muted: #b8ad9f;
+  /* Dark ink on copper — 6.8:1 */
+  --t-on-accent: #221208;
+
+  --t-hairline: rgb(255 255 255 / 0.08);
+  --t-hairline-strong: rgb(255 255 255 / 0.16);
+  --t-inner-highlight: rgb(255 255 255 / 0.09);
+
+  --t-danger: #e5654b;
+
+  --t-shadow-tight: rgb(0 0 0 / 0.4);
+  --t-shadow-wide: rgb(0 0 0 / 0.7);
+
+  --t-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Grain must lighten, not darken, on a dark ground */
+[data-theme="midnight-copper"] .grain {
+  mix-blend-mode: screen;
+  opacity: 0.04;
+}

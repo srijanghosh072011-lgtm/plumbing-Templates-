@@ -1,0 +1,50 @@
+/* ============================================================================
+   THEME — Forest Lime
+   Reference-matched: deep pine green, acid lime, warm cream paper.
+   Vibe archetype: Editorial Luxury (warm paper ground + film grain).
+   All contrast pairs verified >= 4.5:1 for text, >= 3:1 for UI components.
+   All ratios below are MEASURED, not estimated — `npm run contrast` re-checks
+   every pair and exits non-zero on any regression. Re-run it after any colour change.
+   ========================================================================= */
+:root,
+[data-theme="forest-lime"] {
+  --t-font-display: "Bricolage Grotesque";
+
+  /* Paper ground */
+  --t-canvas: #f6f4ec;
+  --t-canvas-sunk: #eae7db;
+
+  /* Deep pine surfaces */
+  --t-deep: #123a2e;
+  --t-deep-soft: #1b4a3b;
+  --t-deep-line: rgb(255 255 255 / 0.13);
+
+  /* Acid lime accent */
+  --t-accent: #c6ee3e;
+  --t-accent-soft: #dff58e;
+
+  /* Ink on paper — 14.6:1 */
+  --t-ink: #16241e;
+  /* Muted body copy — 6.6:1 */
+  --t-ink-muted: #4a5b52;
+  /* Faint metadata — 4.8:1, still AA */
+  --t-ink-faint: #616f66;
+
+  /* Ink on pine — 11.4:1 */
+  --t-on-deep: #f2f5f0;
+  /* Muted on pine — 7.0:1 */
+  --t-on-deep-muted: #b4c6bc;
+  /* Ink on lime — 11.6:1 */
+  --t-on-accent: #12291a;
+
+  --t-hairline: rgb(22 36 30 / 0.09);
+  --t-hairline-strong: rgb(22 36 30 / 0.16);
+  --t-inner-highlight: rgb(255 255 255 / 0.7);
+
+  --t-danger: #b3341f;
+
+  --t-shadow-tight: rgb(22 36 30 / 0.05);
+  --t-shadow-wide: rgb(22 36 30 / 0.19);
+
+  --t-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}

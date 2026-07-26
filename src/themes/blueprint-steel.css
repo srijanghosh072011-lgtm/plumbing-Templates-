@@ -1,0 +1,49 @@
+/* ============================================================================
+   THEME — Blueprint Steel
+   Vibe archetype: Soft Structuralism. Cool paper-white ground, deep navy
+   surfaces, safety-orange accent borrowed from trade signage.
+   Reads as technical/precise — suits commercial and new-build positioning.
+   All ratios below are MEASURED, not estimated — `npm run contrast` re-checks
+   every pair and exits non-zero on any regression. Re-run it after any colour change.
+   ========================================================================= */
+[data-theme="blueprint-steel"] {
+  --t-font-display: "Bricolage Grotesque";
+
+  /* Cool paper */
+  --t-canvas: #f4f6f8;
+  --t-canvas-sunk: #e5e9ee;
+
+  /* Deep navy surfaces */
+  --t-deep: #14263c;
+  --t-deep-soft: #1e3450;
+  --t-deep-line: rgb(255 255 255 / 0.13);
+
+  /* Safety orange */
+  --t-accent: #f26b1d;
+  --t-accent-soft: #f9c39c;
+
+  /* Ink on cool paper — 15.7:1 */
+  --t-ink: #111d2b;
+  /* Muted — 7.0:1 */
+  --t-ink-muted: #465666;
+  /* Faint — 5.0:1 */
+  --t-ink-faint: #5d6c7c;
+
+  /* Ink on navy — 13.7:1 */
+  --t-on-deep: #eef3f8;
+  /* Muted on navy — 7.9:1 */
+  --t-on-deep-muted: #a9bccf;
+  /* Ink on safety orange — 6.1:1 (white would fail here) */
+  --t-on-accent: #240d02;
+
+  --t-hairline: rgb(17 29 43 / 0.09);
+  --t-hairline-strong: rgb(17 29 43 / 0.17);
+  --t-inner-highlight: rgb(255 255 255 / 0.8);
+
+  --t-danger: #c62f1c;
+
+  --t-shadow-tight: rgb(17 29 43 / 0.06);
+  --t-shadow-wide: rgb(17 29 43 / 0.2);
+
+  --t-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}

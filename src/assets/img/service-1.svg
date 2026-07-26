@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" role="img" aria-label="Plumbing service photograph 1">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b4a3b"/>
+      <stop offset="55%" stop-color="#123a2e"/>
+      <stop offset="100%" stop-color="#2f6b55"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.41" cy="0.47" r="0.75">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="clip"><rect width="720" height="560"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="720" height="560" fill="url(#g)"/>
+    <rect width="720" height="560" fill="url(#glow)"/>
+    <g transform="rotate(-7.1 360 280)"><path d="M-72.0,462.2 L82.9,462.2 L82.9,282.2 L273.9,282.2 L273.9,156.6 L563.1,156.6 L563.1,307.2 L881.8,307.2 L881.8,115.4 L792.0,115.4" fill="none" stroke="#f6f4ec" stroke-width="2.6813026021700352" stroke-linecap="round" stroke-linejoin="round" opacity="0.09"/><path d="M-72.0,148.3 L246.3,148.3 L246.3,97.1 L588.8,97.1 L588.8,484.0 L883.8,484.0 L883.8,225.6 L792.0,225.6" fill="none" stroke="#c6ee3e" stroke-width="5.191674943082035" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/><path d="M-72.0,287.2 L146.2,287.2 L146.2,444.4 L387.7,444.4 L387.7,430.8 L694.0,430.8 L694.0,68.8 L792.0,68.8" fill="none" stroke="#f6f4ec" stroke-width="3.7829338158480823" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/></g>
+    <circle cx="293" cy="261" r="131.6" fill="none" stroke="#c6ee3e" stroke-width="2.0" opacity="0.21"/><circle cx="293" cy="261" r="195.9" fill="none" stroke="#c6ee3e" stroke-width="1.2" opacity="0.18"/><circle cx="293" cy="261" r="260.2" fill="none" stroke="#c6ee3e" stroke-width="1.5" opacity="0.18"/><circle cx="293" cy="261" r="324.6" fill="none" stroke="#c6ee3e" stroke-width="2.1" opacity="0.13"/>
+    <circle cx="507" cy="153" r="2.7" fill="#c6ee3e" opacity="0.15"/><circle cx="462" cy="418" r="2.7" fill="#c6ee3e" opacity="0.22"/><circle cx="685" cy="121" r="1.1" fill="#c6ee3e" opacity="0.10"/><circle cx="530" cy="115" r="1.6" fill="#c6ee3e" opacity="0.13"/><circle cx="716" cy="100" r="1.7" fill="#c6ee3e" opacity="0.17"/><circle cx="538" cy="495" r="0.9" fill="#c6ee3e" opacity="0.21"/><circle cx="625" cy="266" r="2.3" fill="#c6ee3e" opacity="0.14"/><circle cx="275" cy="201" r="2.5" fill="#c6ee3e" opacity="0.18"/><circle cx="98" cy="107" r="1.0" fill="#c6ee3e" opacity="0.17"/><circle cx="715" cy="68" r="2.2" fill="#c6ee3e" opacity="0.13"/><circle cx="240" cy="168" r="2.5" fill="#c6ee3e" opacity="0.15"/><circle cx="53" cy="386" r="1.4" fill="#c6ee3e" opacity="0.25"/><circle cx="679" cy="112" r="2.4" fill="#c6ee3e" opacity="0.24"/><circle cx="316" cy="15" r="1.4" fill="#c6ee3e" opacity="0.23"/><circle cx="545" cy="56" r="1.6" fill="#c6ee3e" opacity="0.10"/><circle cx="169" cy="252" r="2.2" fill="#c6ee3e" opacity="0.14"/><circle cx="438" cy="271" r="0.9" fill="#c6ee3e" opacity="0.26"/><circle cx="612" cy="478" r="1.9" fill="#c6ee3e" opacity="0.15"/><circle cx="421" cy="259" r="1.2" fill="#c6ee3e" opacity="0.19"/><circle cx="552" cy="208" r="2.2" fill="#c6ee3e" opacity="0.26"/><circle cx="494" cy="548" r="2.8" fill="#c6ee3e" opacity="0.18"/><circle cx="681" cy="188" r="1.9" fill="#c6ee3e" opacity="0.13"/><circle cx="447" cy="358" r="2.3" fill="#c6ee3e" opacity="0.15"/><circle cx="245" cy="358" r="1.6" fill="#c6ee3e" opacity="0.21"/><circle cx="369" cy="366" r="1.1" fill="#c6ee3e" opacity="0.10"/><circle cx="411" cy="418" r="2.2" fill="#c6ee3e" opacity="0.20"/>
+    <rect width="720" height="560" filter="url(#grain)" opacity="0.05"/>
+  </g>
+</svg>
