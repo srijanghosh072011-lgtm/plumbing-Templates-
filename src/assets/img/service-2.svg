@@ -1,23 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" role="img" aria-label="Plumbing service photograph 2">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" role="img" aria-label="Camera inspection inside a blocked drain line">
+
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1b4a3b"/>
-      <stop offset="55%" stop-color="#123a2e"/>
-      <stop offset="100%" stop-color="#2f6b55"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.63" cy="0.47" r="0.75">
-      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.3"/>
+    <filter id="gr-s102"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s102"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="720" height="560" fill="#123a2e"/>
+<g clip-path="url(#frame-s102)"><g transform="translate(347.26,272.47) scale(1.07,1.07) translate(-360,-280)">
+    
+    <rect width="720" height="560" fill="#123a2e"/>
+    <radialGradient id="bloom-s102" cx="0.5" cy="0.42" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
       <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
     </radialGradient>
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
-    <clipPath id="clip"><rect width="720" height="560"/></clipPath>
-  </defs>
-  <g clip-path="url(#clip)">
-    <rect width="720" height="560" fill="url(#g)"/>
-    <rect width="720" height="560" fill="url(#glow)"/>
-    <g transform="rotate(-8.7 360 280)"><path d="M-72.0,127.1 L84.3,127.1 L84.3,245.0 L234.2,245.0 L234.2,150.4 L531.5,150.4 L531.5,182.6 L687.0,182.6 L687.0,342.7 L792.0,342.7" fill="none" stroke="#f6f4ec" stroke-width="3.9565977586898953" stroke-linecap="round" stroke-linejoin="round" opacity="0.17"/><path d="M-72.0,254.8 L245.4,254.8 L245.4,252.4 L539.8,252.4 L539.8,459.0 L810.3,459.0 L810.3,96.3 L792.0,96.3" fill="none" stroke="#c6ee3e" stroke-width="2.2112829638645053" stroke-linecap="round" stroke-linejoin="round" opacity="0.13"/><path d="M-72.0,84.4 L201.5,84.4 L201.5,119.4 L380.5,119.4 L380.5,84.6 L717.6,84.6 L717.6,251.2 L891.1,251.2 L891.1,394.8 L792.0,394.8" fill="none" stroke="#f6f4ec" stroke-width="2.7930803520139307" stroke-linecap="round" stroke-linejoin="round" opacity="0.08"/></g>
-    <circle cx="455" cy="263" r="116.1" fill="none" stroke="#c6ee3e" stroke-width="1.7" opacity="0.21"/><circle cx="455" cy="263" r="172.9" fill="none" stroke="#c6ee3e" stroke-width="2.0" opacity="0.25"/><circle cx="455" cy="263" r="229.6" fill="none" stroke="#c6ee3e" stroke-width="1.5" opacity="0.11"/><circle cx="455" cy="263" r="286.4" fill="none" stroke="#c6ee3e" stroke-width="1.7" opacity="0.23"/>
-    <circle cx="242" cy="421" r="1.2" fill="#c6ee3e" opacity="0.17"/><circle cx="669" cy="81" r="1.4" fill="#c6ee3e" opacity="0.20"/><circle cx="684" cy="244" r="1.5" fill="#c6ee3e" opacity="0.23"/><circle cx="86" cy="466" r="2.1" fill="#c6ee3e" opacity="0.19"/><circle cx="324" cy="491" r="1.5" fill="#c6ee3e" opacity="0.12"/><circle cx="115" cy="189" r="2.1" fill="#c6ee3e" opacity="0.21"/><circle cx="67" cy="61" r="2.4" fill="#c6ee3e" opacity="0.10"/><circle cx="523" cy="369" r="2.0" fill="#c6ee3e" opacity="0.13"/><circle cx="439" cy="387" r="2.2" fill="#c6ee3e" opacity="0.25"/><circle cx="137" cy="496" r="2.5" fill="#c6ee3e" opacity="0.21"/><circle cx="446" cy="312" r="1.2" fill="#c6ee3e" opacity="0.15"/><circle cx="361" cy="94" r="1.9" fill="#c6ee3e" opacity="0.27"/><circle cx="586" cy="307" r="1.1" fill="#c6ee3e" opacity="0.11"/><circle cx="481" cy="555" r="1.0" fill="#c6ee3e" opacity="0.16"/><circle cx="461" cy="272" r="1.0" fill="#c6ee3e" opacity="0.25"/><circle cx="73" cy="503" r="2.0" fill="#c6ee3e" opacity="0.24"/><circle cx="313" cy="219" r="1.9" fill="#c6ee3e" opacity="0.14"/><circle cx="374" cy="47" r="1.7" fill="#c6ee3e" opacity="0.22"/><circle cx="339" cy="329" r="1.9" fill="#c6ee3e" opacity="0.18"/><circle cx="230" cy="151" r="1.7" fill="#c6ee3e" opacity="0.09"/><circle cx="154" cy="474" r="2.6" fill="#c6ee3e" opacity="0.25"/><circle cx="536" cy="133" r="1.4" fill="#c6ee3e" opacity="0.13"/><circle cx="213" cy="171" r="1.4" fill="#c6ee3e" opacity="0.28"/><circle cx="701" cy="441" r="2.1" fill="#c6ee3e" opacity="0.24"/><circle cx="481" cy="552" r="2.2" fill="#c6ee3e" opacity="0.21"/><circle cx="292" cy="324" r="2.1" fill="#c6ee3e" opacity="0.26"/>
-    <rect width="720" height="560" filter="url(#grain)" opacity="0.05"/>
-  </g>
+    <rect width="720" height="560" fill="url(#bloom-s102)"/>
+    <radialGradient id="vig-s102" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="720" height="560" fill="url(#vig-s102)"/>
+    <path d="M44,0 L44,560 M88,0 L88,560 M132,0 L132,560 M176,0 L176,560 M220,0 L220,560 M264,0 L264,560 M308,0 L308,560 M352,0 L352,560 M396,0 L396,560 M440,0 L440,560 M484,0 L484,560 M528,0 L528,560 M572,0 L572,560 M616,0 L616,560 M660,0 L660,560 M704,0 L704,560 M0,44 L720,44 M0,88 L720,88 M0,132 L720,132 M0,176 L720,176 M0,220 L720,220 M0,264 L720,264 M0,308 L720,308 M0,352 L720,352 M0,396 L720,396 M0,440 L720,440 M0,484 L720,484 M0,528 L720,528" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    <!-- looking down a pipe: concentric rings receding -->
+    
+      <circle cx="360" cy="280" r="235.2" fill="none" stroke="#899d97" stroke-width="21.17" opacity="0.35"/>
+      <circle cx="360" cy="280" r="192.86" fill="none" stroke="#0d2a21" stroke-width="21.17" opacity="0.46"/>
+      <circle cx="360" cy="280" r="155.23" fill="none" stroke="#899d97" stroke-width="21.17" opacity="0.57"/>
+      <circle cx="360" cy="280" r="122.3" fill="none" stroke="#0d2a21" stroke-width="21.17" opacity="0.68"/>
+      <circle cx="360" cy="280" r="94.08" fill="none" stroke="#899d97" stroke-width="21.17" opacity="0.79"/>
+      <circle cx="360" cy="280" r="70.56" fill="none" stroke="#0d2a21" stroke-width="21.17" opacity="0.90"/>
+    <circle cx="360" cy="280" r="51.74" fill="#123a2e"/>
+    <!-- camera light cone -->
+    <path d="M360,280 L214.18,162.4 L214.18,397.6 Z" fill="#c6ee3e" opacity="0.18"/>
+    <!-- camera head on its rod -->
+    <g transform="translate(204.77,280)">
+      <rect x="-70.56" y="-32.93" width="79.97" height="65.86" rx="21.17" fill="#0d2a21"/>
+      <circle cx="0" cy="0" r="23.52" fill="#c6ee3e"/>
+      <circle cx="0" cy="0" r="10.58" fill="#123a2e"/>
+      <path d="M-70.56,0 Q-164.64,-47.04 -270.48,14.11" fill="none" stroke="#c6ee3e" stroke-width="16.46" stroke-linecap="round" opacity="0.9"/>
+    </g>
+    <!-- root intrusion at the joint -->
+    <path d="M514.95,149.98 Q476.78,160.23 449.05,263.33" fill="none" stroke="#c6ee3e" stroke-width="8.23" stroke-linecap="round" opacity="0.55"/><path d="M556.26,231.07 Q498.45,237.81 446.14,300.05" fill="none" stroke="#c6ee3e" stroke-width="8.23" stroke-linecap="round" opacity="0.55"/><path d="M557.85,322.05 Q513.62,319.91 438.7,336.84" fill="none" stroke="#c6ee3e" stroke-width="8.23" stroke-linecap="round" opacity="0.55"/><path d="M519.39,404.53 Q496.06,409.92 411.29,368.07" fill="none" stroke="#c6ee3e" stroke-width="8.23" stroke-linecap="round" opacity="0.55"/><path d="M448.67,461.8 Q433.86,465.09 365.54,373.51" fill="none" stroke="#c6ee3e" stroke-width="8.23" stroke-linecap="round" opacity="0.55"/>
+    <rect width="720" height="560" filter="url(#gr-s102)" opacity="0.055"/></g></g>
 </svg>

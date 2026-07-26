@@ -105,7 +105,7 @@ by design**, because the demo data is still in place. That is the control workin
 | Status | Item | Enforcement |
 |---|---|---|
 | [x] AUTO | No lorem ipsum | `verify.mjs --launch` |
-| [x] AUTO | No placeholder images | Manifest-driven; all 23 generated panels flagged |
+| [x] AUTO | No stand-in imagery | Manifest-driven; all 23 illustrations flagged |
 | [x] AUTO | No fake phone numbers | Blocks the 555-01XX reserved range |
 | [x] AUTO | No placeholder email / domain | Blocks `.example` and `example@` |
 | [x] AUTO | No placeholder address | Blocks "123 Main St" |
@@ -116,7 +116,7 @@ by design**, because the demo data is still in place. That is the control workin
 | [x] AUTO | No TODO / FIXME left in output | `verify.mjs` warns |
 | [x] AUTO | No accidental `noindex` | `verify.mjs` errors |
 | [ ] CLIENT | Purge test submissions from the CRM before launch | Keeps lead attribution clean |
-| [ ] CLIENT | Replace all 23 placeholder images with **real job and team photos** | Also a GBP and AI trust signal |
+| [ ] CLIENT | Replace all 23 illustrations with **real job and team photos** | Illustrations ship as a designed stand-in; real photos still win on local trust, GBP and AI signals |
 
 ---
 
@@ -275,7 +275,7 @@ by design**, because the demo data is still in place. That is the control workin
 # 1. Replace every value, set __demo to false
 $EDITOR site.config.json
 
-# 2. Replace all 23 placeholder images with real client photos
+# 2. Replace all 23 illustrations with real client photos
 #    (see dist/assets/img/art.manifest.json for subject + recommended size)
 
 # 3. Point the contact form at a real handler

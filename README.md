@@ -30,8 +30,8 @@ Everything on the site derives from `site.config.json`. There is no second place
 1. **Replace `site.config.json`** — brand, NAP, hours, credentials, services (with
    prices and FAQs), service areas, testimonials, posts, socials, SEO. Set
    `__demo` to `false`.
-2. **Replace the images.** 23 generated placeholder panels live in
-   `src/assets/img/`; `art.manifest.json` lists each one's intended subject and
+2. **Replace the images.** 23 illustrations live in `src/assets/img/`;
+   `art.manifest.json` lists each one's intended photographic subject and
    recommended resolution.
 3. **Point the contact form at a real handler** (`src/pages/contact.js` → `action`).
 4. **Pick a theme** — `"theme"` in the config: `forest-lime`, `midnight-copper`,
@@ -98,7 +98,9 @@ scripts/
   hash.mjs               Generates all five host configs from one policy
   contrast.mjs           WCAG audit across every theme
   fonts.mjs              Vendors Google Fonts locally
-  art.mjs                Generates placeholder art
+  art.mjs                Draws all 23 illustrations for the active theme
+  lib/primitives.mjs     Illustration vocabulary — pipes, valves, figures, water
+  lib/scenes.mjs         13 scene compositions built from those primitives
   rasterize.mjs          Favicon PNG/ICO (dev-only; output committed)
   serve.mjs              Preview server with production headers
 tests/
@@ -202,6 +204,36 @@ Themes change **colour and display face only** — never structure. Run
 and safe to redistribute in client work — deliberately not Inter, Roboto, Arial,
 Open Sans or Helvetica.
 
+**Illustrations follow the theme too.** The art palette is derived from the active
+theme's own tokens at build time, so changing `theme` and rebuilding repaints all 23
+scenes. Two collisions are resolved numerically rather than by hand-tuning each
+theme: the hard hat is pushed away from the skin tone until it clears 1.75:1, and
+the hi-vis vest away from the background until it clears 1.9:1. That means a brand
+new theme a client invents stays legible without anyone checking it.
+
+---
+
+## Illustration system
+
+23 scenes, ~5 KB each, built from a shared vocabulary in `scripts/lib/primitives.mjs`
+(pipe runs with collars and highlights, elbows, gate valves, couplings, droplets,
+spray arcs, worker figures with five poses) composed into 13 scenes in
+`scripts/lib/scenes.mjs`.
+
+Why authored vector rather than photography:
+
+- **Licence-clean.** Original work, owned outright, redistributable across every
+  client repo with no attribution and nothing to track.
+- **~5 KB versus 200-400 KB**, and sharp at any pixel density.
+- **Theme-aware**, as above.
+- **Deterministic.** A seeded PRNG means rebuilds are byte-identical, and a
+  seed-derived zoom/pan/flip stops a scene reused across several slots from
+  reading as a duplicate.
+
+The style is deliberately flat geometric technical illustration rather than
+attempted realism — realism in vector reads as clipart, precise geometry reads as
+competence.
+
 ---
 
 ## Commands
@@ -224,9 +256,12 @@ image with a pinned Chromium, set `QA_CHROMIUM=/path/to/chrome`.
 
 ## Known limitations
 
-- **Images are generated placeholders, not photographs.** Deliberate — shipping fake
-  stock photos of plumbers would be worse. Replace all 23 before launch; the gate
-  enforces it.
+- **Images are authored illustrations, not photographs.** 23 vector scenes drawn
+  for this template — a water heater cutaway, a P-trap under a basin, a ruptured
+  supply line, a drain camera in a pipe. They are original work you own outright.
+  They are still a stand-in: real photos of real jobs and real crew beat any
+  illustration for local trust, GBP and AI signals. Replace all 23 before launch;
+  the gate enforces it.
 - **The contact form has no backend.** It posts natively and needs pointing at
   Formspree, Netlify Forms, or a serverless function.
 - **Legal pages are a strong first pass, not legal advice.** Have a lawyer review

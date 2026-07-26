@@ -1,23 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" role="img" aria-label="Plumbing service photograph 3">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" role="img" aria-label="Cutaway of a domestic water heater tank">
+
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1b4a3b"/>
-      <stop offset="55%" stop-color="#123a2e"/>
-      <stop offset="100%" stop-color="#2f6b55"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.52" cy="0.58" r="0.75">
-      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.3"/>
+    <filter id="gr-s103"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s103"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="720" height="560" fill="#123a2e"/>
+<g clip-path="url(#frame-s103)"><g transform="translate(342.38,274.28) scale(1.06,1.06) translate(-360,-280)">
+    
+    <rect width="720" height="560" fill="#123a2e"/>
+    <radialGradient id="bloom-s103" cx="0.5" cy="0.42" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
       <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
     </radialGradient>
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
-    <clipPath id="clip"><rect width="720" height="560"/></clipPath>
-  </defs>
-  <g clip-path="url(#clip)">
-    <rect width="720" height="560" fill="url(#g)"/>
-    <rect width="720" height="560" fill="url(#glow)"/>
-    <g transform="rotate(4.5 360 280)"><path d="M-72.0,401.4 L137.0,401.4 L137.0,320.3 L302.3,320.3 L302.3,261.9 L580.8,261.9 L580.8,441.9 L807.8,441.9 L807.8,273.3 L1137.0,273.3 L1137.0,390.6 L792.0,390.6" fill="none" stroke="#f6f4ec" stroke-width="6.06310623511672" stroke-linecap="round" stroke-linejoin="round" opacity="0.16"/><path d="M-72.0,370.8 L129.0,370.8 L129.0,91.9 L371.9,91.9 L371.9,122.4 L716.8,122.4 L716.8,115.2 L792.0,115.2" fill="none" stroke="#c6ee3e" stroke-width="3.3735774520318955" stroke-linecap="round" stroke-linejoin="round" opacity="0.16"/><path d="M-72.0,275.3 L160.7,275.3 L160.7,244.6 L318.5,244.6 L318.5,380.0 L552.6,380.0 L552.6,379.2 L792.0,379.2" fill="none" stroke="#f6f4ec" stroke-width="4.302949620643631" stroke-linecap="round" stroke-linejoin="round" opacity="0.17"/></g>
-    <circle cx="376" cy="324" r="137.7" fill="none" stroke="#c6ee3e" stroke-width="2.5" opacity="0.21"/><circle cx="376" cy="324" r="205.1" fill="none" stroke="#c6ee3e" stroke-width="2.2" opacity="0.23"/><circle cx="376" cy="324" r="272.4" fill="none" stroke="#c6ee3e" stroke-width="1.9" opacity="0.13"/><circle cx="376" cy="324" r="339.8" fill="none" stroke="#c6ee3e" stroke-width="1.9" opacity="0.25"/>
-    <circle cx="133" cy="132" r="2.5" fill="#c6ee3e" opacity="0.17"/><circle cx="694" cy="537" r="1.5" fill="#c6ee3e" opacity="0.26"/><circle cx="702" cy="154" r="2.2" fill="#c6ee3e" opacity="0.14"/><circle cx="310" cy="83" r="2.4" fill="#c6ee3e" opacity="0.18"/><circle cx="209" cy="343" r="0.9" fill="#c6ee3e" opacity="0.14"/><circle cx="646" cy="411" r="1.9" fill="#c6ee3e" opacity="0.22"/><circle cx="443" cy="53" r="2.2" fill="#c6ee3e" opacity="0.19"/><circle cx="84" cy="463" r="2.0" fill="#c6ee3e" opacity="0.14"/><circle cx="247" cy="31" r="1.3" fill="#c6ee3e" opacity="0.16"/><circle cx="487" cy="378" r="2.6" fill="#c6ee3e" opacity="0.18"/><circle cx="578" cy="494" r="0.8" fill="#c6ee3e" opacity="0.09"/><circle cx="268" cy="47" r="1.2" fill="#c6ee3e" opacity="0.15"/><circle cx="363" cy="352" r="1.2" fill="#c6ee3e" opacity="0.22"/><circle cx="363" cy="560" r="1.0" fill="#c6ee3e" opacity="0.12"/><circle cx="540" cy="432" r="2.1" fill="#c6ee3e" opacity="0.12"/><circle cx="85" cy="316" r="2.7" fill="#c6ee3e" opacity="0.25"/><circle cx="150" cy="326" r="1.5" fill="#c6ee3e" opacity="0.26"/><circle cx="523" cy="521" r="2.7" fill="#c6ee3e" opacity="0.25"/><circle cx="717" cy="29" r="1.3" fill="#c6ee3e" opacity="0.10"/><circle cx="159" cy="535" r="2.5" fill="#c6ee3e" opacity="0.20"/><circle cx="343" cy="458" r="1.3" fill="#c6ee3e" opacity="0.23"/><circle cx="628" cy="112" r="1.8" fill="#c6ee3e" opacity="0.23"/><circle cx="19" cy="226" r="0.9" fill="#c6ee3e" opacity="0.14"/><circle cx="88" cy="442" r="2.5" fill="#c6ee3e" opacity="0.13"/><circle cx="171" cy="311" r="2.1" fill="#c6ee3e" opacity="0.21"/><circle cx="665" cy="40" r="1.1" fill="#c6ee3e" opacity="0.19"/>
-    <rect width="720" height="560" filter="url(#grain)" opacity="0.05"/>
-  </g>
+    <rect width="720" height="560" fill="url(#bloom-s103)"/>
+    <radialGradient id="vig-s103" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="720" height="560" fill="url(#vig-s103)"/>
+    <path d="M46,0 L46,560 M92,0 L92,560 M138,0 L138,560 M184,0 L184,560 M230,0 L230,560 M276,0 L276,560 M322,0 L322,560 M368,0 L368,560 M414,0 L414,560 M460,0 L460,560 M506,0 L506,560 M552,0 L552,560 M598,0 L598,560 M644,0 L644,560 M690,0 L690,560 M0,46 L720,46 M0,92 L720,92 M0,138 L720,138 M0,184 L720,184 M0,230 L720,230 M0,276 L720,276 M0,322 L720,322 M0,368 L720,368 M0,414 L720,414 M0,460 L720,460 M0,506 L720,506 M0,552 L720,552" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    
+    <rect x="0" y="481.6" width="720" height="78.4" fill="#1b4a3b" opacity="0.55"/>
+    <line x1="0" y1="481.6" x2="720" y2="481.6" stroke="#c6ee3e" stroke-width="2" opacity="0.35"/>
+    <!-- inlet / outlet -->
+    
+    <g>
+      <path d="M291.46,44.8 L291.46,123.2" stroke="#899d97" stroke-width="19.6" stroke-linecap="round" fill="none"/>
+      <path d="M295.77,44.8 L295.77,123.2"
+            stroke="#b8c4c0" stroke-width="3.92" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M284.99,44.8 L284.99,123.2"
+            stroke="#0d2a21" stroke-width="3.14" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="278.52" y1="44.8" x2="304.39" y2="44.8" stroke="#0d2a21" stroke-width="5.88" stroke-linecap="round"/>
+      
+    </g>
+    
+    <g>
+      <path d="M428.54,44.8 L428.54,123.2" stroke="#899d97" stroke-width="19.6" stroke-linecap="round" fill="none"/>
+      <path d="M432.86,44.8 L432.86,123.2"
+            stroke="#b8c4c0" stroke-width="3.92" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M422.08,44.8 L422.08,123.2"
+            stroke="#0d2a21" stroke-width="3.14" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="415.61" y1="44.8" x2="441.48" y2="44.8" stroke="#0d2a21" stroke-width="5.88" stroke-linecap="round"/>
+      
+    </g>
+    <!-- tank -->
+    <rect x="237.6" y="112" width="244.8" height="336" rx="34.27" fill="#899d97"/>
+    <rect x="237.6" y="112" width="73.44" height="336" rx="34.27" fill="#b8c4c0" opacity="0.35"/>
+    <rect x="237.6" y="112" width="244.8" height="336" rx="34.27" fill="none" stroke="#0d2a21" stroke-width="3"/>
+    <!-- cutaway showing element + sediment -->
+    <path d="M374.69,156.8 L472.61,156.8 L472.61,414.4 L374.69,414.4 Z" fill="#123a2e" opacity="0.55"/>
+    <rect x="379.58" y="375.2" width="88.13" height="33.6" fill="#c6ee3e" opacity="0.3"/>
+    
+    <g>
+      <path d="M389.38,235.2 L462.82,235.2" stroke="#899d97" stroke-width="12.32" stroke-linecap="round" fill="none"/>
+      <path d="M389.38,232.49 L462.82,232.49"
+            stroke="#b8c4c0" stroke-width="2.46" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M389.38,239.27 L462.82,239.27"
+            stroke="#0d2a21" stroke-width="1.97" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      
+    </g>
+    <!-- control dial -->
+    <circle cx="320.83" cy="358.4" r="31.82" fill="#c6ee3e"/>
+    <line x1="320.83" y1="358.4" x2="320.83" y2="336" stroke="#0d2a21" stroke-width="3" stroke-linecap="round"/>
+    <!-- badge plate -->
+    <rect x="276.77" y="162.4" width="83.23" height="50.4" rx="4" fill="#0d2a21" opacity="0.7"/>
+    <!-- legs -->
+    <rect x="262.08" y="448" width="24.48" height="33.6" fill="#0d2a21"/>
+    <rect x="433.44" y="448" width="24.48" height="33.6" fill="#0d2a21"/>
+    <ellipse cx="360" cy="487.2" rx="171.36" ry="27.42" fill="#000000" opacity="0.4"/>
+    <rect width="720" height="560" filter="url(#gr-s103)" opacity="0.055"/></g></g>
 </svg>

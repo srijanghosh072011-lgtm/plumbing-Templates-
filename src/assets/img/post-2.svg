@@ -1,23 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-label="Blog article header image 2">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-label="Under-sink pipework showing the P-trap and shutoff valve">
+
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1b4a3b"/>
-      <stop offset="55%" stop-color="#123a2e"/>
-      <stop offset="100%" stop-color="#2f6b55"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.38" cy="0.60" r="0.75">
-      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.3"/>
+    <filter id="gr-s302"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s302"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="760" height="520" fill="#123a2e"/>
+<g clip-path="url(#frame-s302)"><g transform="translate(372.37,251.33) scale(-1.06,1.06) translate(-380,-260)">
+    
+    <rect width="760" height="520" fill="#123a2e"/>
+    <radialGradient id="bloom-s302" cx="0.5" cy="0.55" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
       <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
     </radialGradient>
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
-    <clipPath id="clip"><rect width="760" height="520"/></clipPath>
-  </defs>
-  <g clip-path="url(#clip)">
-    <rect width="760" height="520" fill="url(#g)"/>
-    <rect width="760" height="520" fill="url(#glow)"/>
-    <g transform="rotate(-0.1 380 260)"><path d="M-76.0,301.5 L167.5,301.5 L167.5,376.7 L353.2,376.7 L353.2,107.2 L561.7,107.2 L561.7,382.8 L836.0,382.8" fill="none" stroke="#f6f4ec" stroke-width="2.5633558216504753" stroke-linecap="round" stroke-linejoin="round" opacity="0.06"/><path d="M-76.0,242.1 L239.3,242.1 L239.3,221.9 L407.3,221.9 L407.3,154.9 L720.2,154.9 L720.2,270.6 L1018.6,270.6 L1018.6,325.2 L1270.3,325.2 L1270.3,184.2 L836.0,184.2" fill="none" stroke="#c6ee3e" stroke-width="3.0463281511329114" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/><path d="M-76.0,133.6 L155.9,133.6 L155.9,233.1 L311.2,233.1 L311.2,333.6 L539.4,333.6 L539.4,105.0 L739.2,105.0 L739.2,320.6 L952.7,320.6 L952.7,116.5 L836.0,116.5" fill="none" stroke="#f6f4ec" stroke-width="4.046102894237265" stroke-linecap="round" stroke-linejoin="round" opacity="0.17"/></g>
-    <circle cx="291" cy="310" r="128.6" fill="none" stroke="#c6ee3e" stroke-width="2.1" opacity="0.23"/><circle cx="291" cy="310" r="191.5" fill="none" stroke="#c6ee3e" stroke-width="1.2" opacity="0.24"/><circle cx="291" cy="310" r="254.4" fill="none" stroke="#c6ee3e" stroke-width="1.6" opacity="0.12"/><circle cx="291" cy="310" r="317.2" fill="none" stroke="#c6ee3e" stroke-width="1.7" opacity="0.21"/>
-    <circle cx="415" cy="220" r="2.0" fill="#c6ee3e" opacity="0.26"/><circle cx="235" cy="60" r="1.0" fill="#c6ee3e" opacity="0.13"/><circle cx="615" cy="81" r="1.8" fill="#c6ee3e" opacity="0.24"/><circle cx="264" cy="245" r="2.0" fill="#c6ee3e" opacity="0.27"/><circle cx="61" cy="191" r="1.4" fill="#c6ee3e" opacity="0.10"/><circle cx="480" cy="75" r="2.3" fill="#c6ee3e" opacity="0.22"/><circle cx="124" cy="273" r="2.0" fill="#c6ee3e" opacity="0.10"/><circle cx="104" cy="96" r="1.7" fill="#c6ee3e" opacity="0.27"/><circle cx="403" cy="308" r="1.1" fill="#c6ee3e" opacity="0.21"/><circle cx="270" cy="320" r="2.0" fill="#c6ee3e" opacity="0.14"/><circle cx="228" cy="95" r="1.6" fill="#c6ee3e" opacity="0.21"/><circle cx="98" cy="388" r="1.6" fill="#c6ee3e" opacity="0.12"/><circle cx="218" cy="430" r="1.1" fill="#c6ee3e" opacity="0.10"/><circle cx="628" cy="141" r="1.8" fill="#c6ee3e" opacity="0.27"/><circle cx="573" cy="208" r="1.1" fill="#c6ee3e" opacity="0.27"/><circle cx="226" cy="231" r="2.2" fill="#c6ee3e" opacity="0.18"/><circle cx="228" cy="472" r="2.1" fill="#c6ee3e" opacity="0.28"/><circle cx="725" cy="454" r="2.2" fill="#c6ee3e" opacity="0.11"/><circle cx="49" cy="179" r="2.2" fill="#c6ee3e" opacity="0.17"/><circle cx="145" cy="49" r="2.4" fill="#c6ee3e" opacity="0.27"/><circle cx="136" cy="282" r="1.7" fill="#c6ee3e" opacity="0.11"/><circle cx="243" cy="330" r="1.5" fill="#c6ee3e" opacity="0.24"/><circle cx="83" cy="197" r="1.0" fill="#c6ee3e" opacity="0.24"/><circle cx="158" cy="168" r="0.9" fill="#c6ee3e" opacity="0.16"/><circle cx="386" cy="0" r="2.3" fill="#c6ee3e" opacity="0.27"/><circle cx="166" cy="381" r="2.5" fill="#c6ee3e" opacity="0.11"/>
-    <rect width="760" height="520" filter="url(#grain)" opacity="0.05"/>
-  </g>
+    <rect width="760" height="520" fill="url(#bloom-s302)"/>
+    <radialGradient id="vig-s302" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="760" height="520" fill="url(#vig-s302)"/>
+    <path d="M44,0 L44,520 M88,0 L88,520 M132,0 L132,520 M176,0 L176,520 M220,0 L220,520 M264,0 L264,520 M308,0 L308,520 M352,0 L352,520 M396,0 L396,520 M440,0 L440,520 M484,0 L484,520 M528,0 L528,520 M572,0 L572,520 M616,0 L616,520 M660,0 L660,520 M704,0 L704,520 M748,0 L748,520 M0,44 L760,44 M0,88 L760,88 M0,132 L760,132 M0,176 L760,176 M0,220 L760,220 M0,264 L760,264 M0,308 L760,308 M0,352 L760,352 M0,396 L760,396 M0,440 L760,440 M0,484 L760,484" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    <!-- basin underside -->
+    <path d="M152,124.8 Q380,208 608,124.8 Z" fill="#899d97"/>
+    <rect x="121.6" y="98.8" width="516.8" height="26" rx="4" fill="#0d2a21"/>
+    <!-- tailpiece down, U-bend, trap arm to wall -->
+    
+    <g>
+      <path d="M380,187.2 L380,270.4" stroke="#899d97" stroke-width="28.6" stroke-linecap="round" fill="none"/>
+      <path d="M386.29,187.2 L386.29,270.4"
+            stroke="#b8c4c0" stroke-width="5.72" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M370.56,187.2 L370.56,270.4"
+            stroke="#0d2a21" stroke-width="4.58" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="361.12" y1="187.2" x2="398.88" y2="187.2" stroke="#0d2a21" stroke-width="8.58" stroke-linecap="round"/>
+      
+    </g>
+    
+    <g fill="none" stroke-linecap="round">
+      <path d="M380,270.4 A42.9,42.9 0 0 0 422.9,313.3" stroke="#899d97" stroke-width="28.6"/>
+      <path d="M380,270.4 A42.9,42.9 0 0 0 422.9,313.3" stroke="#b8c4c0" stroke-width="5.15" opacity="0.7" transform="translate(0,-5.72)"/>
+    </g>
+    
+    <g fill="none" stroke-linecap="round">
+      <path d="M422.9,313.3 A42.9,42.9 0 0 0 465.8,270.4" stroke="#899d97" stroke-width="28.6"/>
+      <path d="M422.9,313.3 A42.9,42.9 0 0 0 465.8,270.4" stroke="#b8c4c0" stroke-width="5.15" opacity="0.7" transform="translate(0,-5.72)"/>
+    </g>
+    
+    <g>
+      <path d="M465.8,270.4 L465.8,197.6" stroke="#899d97" stroke-width="28.6" stroke-linecap="round" fill="none"/>
+      <path d="M459.51,270.4 L459.51,197.6"
+            stroke="#b8c4c0" stroke-width="5.72" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M475.24,270.4 L475.24,197.6"
+            stroke="#0d2a21" stroke-width="4.58" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      
+    </g>
+    
+    <g fill="none" stroke-linecap="round">
+      <path d="M465.8,197.6 A42.9,42.9 0 0 1 508.7,154.7" stroke="#899d97" stroke-width="28.6"/>
+      <path d="M465.8,197.6 A42.9,42.9 0 0 1 508.7,154.7" stroke="#b8c4c0" stroke-width="5.15" opacity="0.7" transform="translate(0,-5.72)"/>
+    </g>
+    
+    <g>
+      <path d="M508.7,189.8 L798,189.8" stroke="#899d97" stroke-width="28.6" stroke-linecap="round" fill="none"/>
+      <path d="M508.7,183.51 L798,183.51"
+            stroke="#b8c4c0" stroke-width="5.72" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M508.7,199.24 L798,199.24"
+            stroke="#0d2a21" stroke-width="4.58" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="508.7" y1="208.68" x2="508.7" y2="170.92" stroke="#0d2a21" stroke-width="8.58" stroke-linecap="round"/>
+      
+    </g>
+    
+    <g>
+      <rect x="361.41" y="186.55" width="37.18" height="42.9" rx="6.69" fill="#0d2a21"/>
+      <line x1="371.82" y1="193.41" x2="371.82" y2="222.59" stroke="#b8c4c0" stroke-width="1.86" opacity="0.55" stroke-linecap="round"/><line x1="380" y1="193.41" x2="380" y2="222.59" stroke="#b8c4c0" stroke-width="1.86" opacity="0.55" stroke-linecap="round"/><line x1="388.18" y1="193.41" x2="388.18" y2="222.59" stroke="#b8c4c0" stroke-width="1.86" opacity="0.55" stroke-linecap="round"/>
+    </g>
+    <!-- shutoff valves on the supply lines -->
+    
+    <g>
+      <path d="M197.6,239.2 L197.6,447.2" stroke="#899d97" stroke-width="17.73" stroke-linecap="round" fill="none"/>
+      <path d="M201.5,239.2 L201.5,447.2"
+            stroke="#b8c4c0" stroke-width="3.55" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M191.75,239.2 L191.75,447.2"
+            stroke="#0d2a21" stroke-width="2.84" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      
+    </g>
+    
+    <g>
+      <rect x="186.79" y="301.19" width="21.62" height="21.62" rx="3.6" fill="#0d2a21"/>
+      <rect x="189.88" y="304.28" width="15.44" height="15.44" rx="2.57" fill="#899d97"/>
+      <line x1="197.6" y1="301.19" x2="197.6" y2="287.55" stroke="#0d2a21" stroke-width="3.35" stroke-linecap="round"/>
+      <circle cx="197.6" cy="286.26" r="8.75" fill="none" stroke="#c6ee3e" stroke-width="3.86"/>
+      <line x1="188.85" y1="286.26" x2="206.35" y2="286.26" stroke="#c6ee3e" stroke-width="2.57"/>
+    </g>
+    <path d="M422.9,306.15 C436.48,324.74 437.2,338.33 422.9,341.9 C408.6,338.33 409.31,324.74 422.9,306.15 Z" fill="#9fe0a8" opacity="0.8"/>
+    <rect width="760" height="520" filter="url(#gr-s302)" opacity="0.055"/></g></g>
 </svg>
