@@ -32,9 +32,31 @@ jobs:
       # scripts/build.mjs applies this as a post-process when BASE_PATH is set;
       # it is a no-op for every other build path (npm run dev, preflight, etc).
       - run: npm ci
+
+      # Derive from GITHUB_REPOSITORY (always "owner/repo") rather than
+      # github.event.repository.name, which is not populated for every trigger.
+      # If it were ever empty, BASE_PATH would become "/" -> stripped to "" ->
+      # a silently root-relative build that 404s all its own assets on Pages.
+      - name: Resolve base path
+        run: echo "BASE_PATH=/${GITHUB_REPOSITORY#*/}" >> "$GITHUB_ENV"
+
       - run: npm run build
-        env:
-          BASE_PATH: /${{ github.event.repository.name }}
+
+      # Pages can apply Jekyll processing, which ignores paths beginning with
+      # an underscore. dist/ contains _headers, and a client could add an
+      # _assets dir later. .nojekyll disables that entirely — zero cost,
+      # removes a whole class of "works locally, 404s on Pages" bugs.
+      - run: touch dist/.nojekyll
+
+      - name: Fail if the build produced no entry point
+        run: |
+          test -f dist/index.html || { echo "::error::dist/index.html missing — nothing to serve"; exit 1; }
+          echo "dist/index.html present ($(wc -c < dist/index.html) bytes)"
+          echo "asset check:"
+          test -f dist/assets/css/site.css && echo "  css ok"
+          test -f dist/assets/js/site.js && echo "  js ok"
+          echo "first internal href (should carry $BASE_PATH):"
+          grep -o 'href="[^"]*assets/css[^"]*"' dist/index.html | head -1
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
