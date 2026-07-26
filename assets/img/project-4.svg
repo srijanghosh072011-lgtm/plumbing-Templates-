@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" width="760" height="600" role="img" aria-label="Replacement of root-intruded clay sewer tile">
+
+  <defs>
+    <filter id="gr-s204"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s204"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="760" height="600" fill="#123a2e"/>
+<g clip-path="url(#frame-s204)"><g transform="translate(370.06,290.46) scale(1.08,1.08) translate(-380,-300)">
+    
+    <rect width="760" height="600" fill="#123a2e"/>
+    <radialGradient id="bloom-s204" cx="0.5" cy="0.28" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="760" height="600" fill="url(#bloom-s204)"/>
+    <radialGradient id="vig-s204" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="760" height="600" fill="url(#vig-s204)"/>
+    <path d="M50,0 L50,600 M100,0 L100,600 M150,0 L150,600 M200,0 L200,600 M250,0 L250,600 M300,0 L300,600 M350,0 L350,600 M400,0 L400,600 M450,0 L450,600 M500,0 L500,600 M550,0 L550,600 M600,0 L600,600 M650,0 L650,600 M700,0 L700,600 M750,0 L750,600 M0,50 L760,50 M0,100 L760,100 M0,150 L760,150 M0,200 L760,200 M0,250 L760,250 M0,300 L760,300 M0,350 L760,350 M0,400 L760,400 M0,450 L760,450 M0,500 L760,500 M0,550 L760,550" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    <!-- ground line + soil -->
+    <rect x="0" y="252" width="760" height="348" fill="#1b4a3b" opacity="0.5"/>
+    <line x1="0" y1="252" x2="760" y2="252" stroke="#c6ee3e" stroke-width="2.5" opacity="0.5"/>
+    <!-- trench -->
+    <path d="M182.4,252 L243.2,468 L547.2,468 L608,252 Z" fill="#123a2e" opacity="0.85"/>
+    <!-- exposed main line -->
+    
+    <g>
+      <path d="M212.8,420 L592.8,420" stroke="#899d97" stroke-width="60" stroke-linecap="round" fill="none"/>
+      <path d="M212.8,406.8 L592.8,406.8"
+            stroke="#b8c4c0" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M212.8,439.8 L592.8,439.8"
+            stroke="#0d2a21" stroke-width="9.6" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="212.8" y1="459.6" x2="212.8" y2="380.4" stroke="#0d2a21" stroke-width="18" stroke-linecap="round"/>
+      <line x1="592.8" y1="459.6" x2="592.8" y2="380.4" stroke="#0d2a21" stroke-width="18" stroke-linecap="round"/>
+    </g>
+    
+    <g>
+      <rect x="375.8" y="379.5" width="54" height="81" rx="9.72" fill="#0d2a21"/>
+      <line x1="390.92" y1="392.46" x2="390.92" y2="447.54" stroke="#b8c4c0" stroke-width="2.7" opacity="0.55" stroke-linecap="round"/><line x1="402.8" y1="392.46" x2="402.8" y2="447.54" stroke="#b8c4c0" stroke-width="2.7" opacity="0.55" stroke-linecap="round"/><line x1="414.68" y1="392.46" x2="414.68" y2="447.54" stroke="#b8c4c0" stroke-width="2.7" opacity="0.55" stroke-linecap="round"/>
+    </g>
+    <!-- soil strata marks -->
+    <line x1="0" y1="312" x2="182.4" y2="312" stroke="#b4c6bc" stroke-width="2" opacity="0.35"/><line x1="608" y1="312" x2="760" y2="312" stroke="#b4c6bc" stroke-width="2" opacity="0.35"/><line x1="0" y1="372" x2="182.4" y2="372" stroke="#b4c6bc" stroke-width="2" opacity="0.35"/><line x1="608" y1="372" x2="760" y2="372" stroke="#b4c6bc" stroke-width="2" opacity="0.35"/>
+    <!-- safety barrier -->
+    <rect x="132.8" y="156" width="8" height="96" rx="3" fill="#0d2a21"/><rect x="649.6" y="156" width="8" height="96" rx="3" fill="#0d2a21"/>
+    <path d="M136.8,174 L653.6,174" stroke="#c6ee3e" stroke-width="6" stroke-linecap="round" stroke-dasharray="26 14"/>
+    <ellipse cx="121.6" cy="254" rx="72" ry="11.52" fill="#000000" opacity="0.4"/>
+    
+  <g transform="translate(121.6,159)">
+    <g transform="">
+      <!-- legs -->
+      <path d="M-11.4,41.04 L-14.82,88.35" stroke="#103328" stroke-width="17.1" stroke-linecap="round" fill="none"/>
+      <path d="M11.4,41.04 L17.1,88.35" stroke="#103328" stroke-width="17.1" stroke-linecap="round" fill="none"/>
+      <!-- boots -->
+      <path d="M-23.37,92.34 L-6.27,92.34 L-6.27,85.5 L-23.37,85.5 Z" fill="#0d2a21" />
+      <path d="M8.55,92.34 L26.79,92.34 L25.65,85.5 L8.55,85.5 Z" fill="#0d2a21" />
+      <!-- torso / hi-vis vest -->
+      <path d="M-22.8,-9.12 Q-25.08,35.34 -17.1,45.6 L17.1,45.6 Q25.08,35.34 22.8,-9.12 Z" fill="#59756d"/>
+      <path d="M-9.12,-9.12 L-9.12,45.6 M9.12,-9.12 L9.12,45.6" stroke="#c6ee3e" stroke-width="5.13" opacity="0.95"/>
+      <path d="M-22.8,19.38 L22.8,19.38" stroke="#c6ee3e" stroke-width="5.13" opacity="0.95"/>
+      
+      <path d="M-23.94,6.84 L-34.2,34.2" stroke="#59756d" stroke-width="14.82" stroke-linecap="round" fill="none"/>
+      <path d="M22.8,4.56 L49.02,-11.4" stroke="#59756d" stroke-width="14.82" stroke-linecap="round" fill="none"/>
+      <circle cx="51.3" cy="-12.54" r="7.41" fill="#c98a5e"/>
+      <!-- head -->
+      <circle cx="0" cy="-23.94" r="15.39" fill="#c98a5e"/>
+      <!-- hard hat. P.hat is contrast-checked against skin at build time, so
+           the helmet never merges into the face on an unusual theme. -->
+      <path d="M-20.52,-29.64 Q-19.38,-52.44 0,-52.44 Q19.38,-52.44 20.52,-29.64 Z" fill="#c6ee3e"/>
+      <rect x="-26.22" y="-31.92" width="52.44" height="5.7" rx="2.85" fill="#c6ee3e"/>
+      <path d="M20.52,-31.92 L31.92,-31.92 L30.78,-26.22 L20.52,-26.22 Z" fill="#c6ee3e"/>
+      <path d="M-20.52,-31.92 L20.52,-31.92" stroke="#0d2a21" stroke-width="1.14" opacity="0.3"/>
+    </g>
+  </g>
+    <rect width="760" height="600" filter="url(#gr-s204)" opacity="0.055"/></g></g>
+</svg>

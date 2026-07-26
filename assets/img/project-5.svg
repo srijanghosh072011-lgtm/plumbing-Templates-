@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" width="760" height="600" role="img" aria-label="Slab leak located beneath a finished floor">
+
+  <defs>
+    <filter id="gr-s205"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s205"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="760" height="600" fill="#123a2e"/>
+<g clip-path="url(#frame-s205)"><g transform="translate(395.69,304.66) scale(1.04,1.04) translate(-380,-300)">
+    
+    <rect width="760" height="600" fill="#123a2e"/>
+    <radialGradient id="bloom-s205" cx="0.62" cy="0.45" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="760" height="600" fill="url(#bloom-s205)"/>
+    <radialGradient id="vig-s205" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="760" height="600" fill="url(#vig-s205)"/>
+    <path d="M44,0 L44,600 M88,0 L88,600 M132,0 L132,600 M176,0 L176,600 M220,0 L220,600 M264,0 L264,600 M308,0 L308,600 M352,0 L352,600 M396,0 L396,600 M440,0 L440,600 M484,0 L484,600 M528,0 L528,600 M572,0 L572,600 M616,0 L616,600 M660,0 L660,600 M704,0 L704,600 M748,0 L748,600 M0,44 L760,44 M0,88 L760,88 M0,132 L760,132 M0,176 L760,176 M0,220 L760,220 M0,264 L760,264 M0,308 L760,308 M0,352 L760,352 M0,396 L760,396 M0,440 L760,440 M0,484 L760,484 M0,528 L760,528 M0,572 L760,572" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    <!-- wall section with cutaway -->
+    <rect x="228" y="0" width="532" height="600" fill="#0d2a21" opacity="0.35"/>
+    <line x1="228" y1="0" x2="228" y2="600" stroke="#c6ee3e" stroke-width="2.5" opacity="0.5"/>
+    <!-- studs -->
+    <rect x="349.6" y="0" width="26.6" height="600" fill="#0d2a21" opacity="0.5"/><rect x="547.2" y="0" width="26.6" height="600" fill="#0d2a21" opacity="0.5"/>
+    <!-- concealed supply line with a pinhole -->
+    
+    <g>
+      <path d="M288.8,108 L288.8,516" stroke="#899d97" stroke-width="30" stroke-linecap="round" fill="none"/>
+      <path d="M295.4,108 L295.4,516"
+            stroke="#b8c4c0" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M278.9,108 L278.9,516"
+            stroke="#0d2a21" stroke-width="4.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      
+    </g>
+    
+    <g fill="none" stroke-linecap="round">
+      <path d="M298.4,204 A36,36 0 0 1 334.4,168" stroke="#899d97" stroke-width="30"/>
+      <path d="M298.4,204 A36,36 0 0 1 334.4,168" stroke="#b8c4c0" stroke-width="5.4" opacity="0.7" transform="translate(0,-6)"/>
+    </g>
+    
+    <g>
+      <path d="M334.4,168 L798,168" stroke="#899d97" stroke-width="30" stroke-linecap="round" fill="none"/>
+      <path d="M334.4,161.4 L798,161.4"
+            stroke="#b8c4c0" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M334.4,177.9 L798,177.9"
+            stroke="#0d2a21" stroke-width="4.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      <line x1="798" y1="187.8" x2="798" y2="148.2" stroke="#0d2a21" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <!-- thermal signature rings around the leak -->
+    <circle cx="471.2" cy="168" r="204" fill="#c6ee3e" opacity="0.050"/><circle cx="471.2" cy="168" r="150" fill="#c6ee3e" opacity="0.105"/><circle cx="471.2" cy="168" r="102" fill="#c6ee3e" opacity="0.160"/><circle cx="471.2" cy="168" r="60" fill="#c6ee3e" opacity="0.215"/>
+    <path d="M471.2,180 Q509.6,137.28 542.13,183.66" fill="none" stroke="#9fe0a8" stroke-width="4.8" stroke-linecap="round" opacity="0.59"/><path d="M471.2,180 Q509.6,147.84 548.69,206.97" fill="none" stroke="#9fe0a8" stroke-width="5.33" stroke-linecap="round" opacity="0.73"/><path d="M471.2,180 Q509.6,158.4 546.68,236.97" fill="none" stroke="#9fe0a8" stroke-width="6.16" stroke-linecap="round" opacity="0.58"/><path d="M471.2,180 Q509.6,168.96 539.63,270.09" fill="none" stroke="#9fe0a8" stroke-width="4.99" stroke-linecap="round" opacity="0.67"/>
+    <!-- acoustic probe -->
+    <g transform="translate(106.4,312)">
+      <rect x="-38" y="-60" width="76" height="120" rx="22.8" fill="#0d2a21"/>
+      <circle cx="0" cy="-18" r="21.28" fill="#c6ee3e"/>
+      <path d="M45.6,-18 A30.4,30.4 0 0 1 45.6,18" fill="none" stroke="#c6ee3e" stroke-width="2" opacity="0.38" transform="translate(15.2,0)"/><path d="M45.6,-18 A60.8,60.8 0 0 1 45.6,18" fill="none" stroke="#c6ee3e" stroke-width="2" opacity="0.26" transform="translate(30.4,0)"/><path d="M45.6,-18 A91.2,91.2 0 0 1 45.6,18" fill="none" stroke="#c6ee3e" stroke-width="2" opacity="0.14" transform="translate(45.6,0)"/>
+      <line x1="0" y1="60" x2="0" y2="180" stroke="#899d97" stroke-width="9.12"/>
+    </g>
+    <rect width="760" height="600" filter="url(#gr-s205)" opacity="0.055"/></g></g>
+</svg>

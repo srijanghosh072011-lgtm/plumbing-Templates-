@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 620" width="520" height="620" role="img" aria-label="An emergency plumber ready for dispatch">
+
+  <defs>
+    <filter id="gr-s51"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s51"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="520" height="620" fill="#123a2e"/>
+<g clip-path="url(#frame-s51)"><g transform="translate(255.3,309.9) scale(-1.05,1.05) translate(-260,-310)">
+    
+    <rect width="520" height="620" fill="#123a2e"/>
+    <radialGradient id="bloom-s51" cx="0.56" cy="0.38" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="520" height="620" fill="url(#bloom-s51)"/>
+    <radialGradient id="vig-s51" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="520" height="620" fill="url(#vig-s51)"/>
+    <path d="M52,0 L52,620 M104,0 L104,620 M156,0 L156,620 M208,0 L208,620 M260,0 L260,620 M312,0 L312,620 M364,0 L364,620 M416,0 L416,620 M468,0 L468,620 M0,52 L520,52 M0,104 L520,104 M0,156 L520,156 M0,208 L520,208 M0,260 L520,260 M0,312 L520,312 M0,364 L520,364 M0,416 L520,416 M0,468 L520,468 M0,520 L520,520 M0,572 L520,572" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    
+    <rect x="0" y="520.8" width="520" height="99.2" fill="#1b4a3b" opacity="0.55"/>
+    <line x1="0" y1="520.8" x2="520" y2="520.8" stroke="#c6ee3e" stroke-width="2" opacity="0.35"/>
+    <!-- pipe run behind the figure -->
+    
+    <g>
+      <path d="M-26,148.8 L228.8,148.8" stroke="#899d97" stroke-width="27.9" stroke-linecap="round" fill="none"/>
+      <path d="M-26,142.66 L228.8,142.66"
+            stroke="#b8c4c0" stroke-width="5.58" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M-26,158.01 L228.8,158.01"
+            stroke="#0d2a21" stroke-width="4.46" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      <line x1="228.8" y1="167.21" x2="228.8" y2="130.39" stroke="#0d2a21" stroke-width="8.37" stroke-linecap="round"/>
+    </g>
+    
+    <g fill="none" stroke-linecap="round">
+      <path d="M228.8,148.8 A37.2,37.2 0 0 1 266,186" stroke="#899d97" stroke-width="27.9"/>
+      <path d="M228.8,148.8 A37.2,37.2 0 0 1 266,186" stroke="#b8c4c0" stroke-width="5.02" opacity="0.7" transform="translate(0,-5.58)"/>
+    </g>
+    
+    <g>
+      <path d="M260,186 L260,322.4" stroke="#899d97" stroke-width="27.9" stroke-linecap="round" fill="none"/>
+      <path d="M266.14,186 L266.14,322.4"
+            stroke="#b8c4c0" stroke-width="5.58" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M250.79,186 L250.79,322.4"
+            stroke="#0d2a21" stroke-width="4.46" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      
+    </g>
+    
+    <g>
+      <rect x="245.68" y="357.68" width="28.64" height="28.64" rx="4.77" fill="#0d2a21"/>
+      <rect x="249.77" y="361.77" width="20.46" height="20.46" rx="3.41" fill="#899d97"/>
+      <line x1="260" y1="357.68" x2="260" y2="339.61" stroke="#0d2a21" stroke-width="4.43" stroke-linecap="round"/>
+      <circle cx="260" cy="337.9" r="11.59" fill="none" stroke="#c6ee3e" stroke-width="5.12"/>
+      <line x1="248.41" y1="337.9" x2="271.59" y2="337.9" stroke="#c6ee3e" stroke-width="3.41"/>
+    </g>
+    
+    <g>
+      <path d="M260,421.6 L546,421.6" stroke="#899d97" stroke-width="27.9" stroke-linecap="round" fill="none"/>
+      <path d="M260,415.46 L546,415.46"
+            stroke="#b8c4c0" stroke-width="5.58" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M260,430.81 L546,430.81"
+            stroke="#0d2a21" stroke-width="4.46" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="260" y1="440.01" x2="260" y2="403.19" stroke="#0d2a21" stroke-width="8.37" stroke-linecap="round"/>
+      
+    </g>
+    <ellipse cx="218.4" cy="522.8" rx="167.4" ry="26.78" fill="#000000" opacity="0.4"/>
+    
+  <g transform="translate(218.4,219.48)">
+    <g transform="">
+      <!-- legs -->
+      <path d="M-37.2,133.92 L-48.36,288.3" stroke="#103328" stroke-width="55.8" stroke-linecap="round" fill="none"/>
+      <path d="M37.2,133.92 L55.8,288.3" stroke="#103328" stroke-width="55.8" stroke-linecap="round" fill="none"/>
+      <!-- boots -->
+      <path d="M-76.26,301.32 L-20.46,301.32 L-20.46,279 L-76.26,279 Z" fill="#0d2a21" />
+      <path d="M27.9,301.32 L87.42,301.32 L83.7,279 L27.9,279 Z" fill="#0d2a21" />
+      <!-- torso / hi-vis vest -->
+      <path d="M-74.4,-29.76 Q-81.84,115.32 -55.8,148.8 L55.8,148.8 Q81.84,115.32 74.4,-29.76 Z" fill="#59756d"/>
+      <path d="M-29.76,-29.76 L-29.76,148.8 M29.76,-29.76 L29.76,148.8" stroke="#c6ee3e" stroke-width="16.74" opacity="0.95"/>
+      <path d="M-74.4,63.24 L74.4,63.24" stroke="#c6ee3e" stroke-width="16.74" opacity="0.95"/>
+      
+      <path d="M-78.12,22.32 L-122.76,104.16" stroke="#59756d" stroke-width="48.36" stroke-linecap="round" fill="none"/>
+      <path d="M78.12,18.6 L145.08,85.56" stroke="#59756d" stroke-width="48.36" stroke-linecap="round" fill="none"/>
+      <circle cx="148.8" cy="93" r="24.18" fill="#c98a5e"/>
+      <g transform="translate(159.96,104.16) rotate(38)">
+        <rect x="-11.16" y="-9.3" width="104.16" height="24.18" rx="9.3" fill="#c6ee3e"/>
+        <path d="M81.84,-29.76 L115.32,-29.76 L115.32,0 L96.72,0 L96.72,35.34 L81.84,35.34 Z" fill="#c6ee3e"/>
+      </g>
+      <!-- head -->
+      <circle cx="0" cy="-78.12" r="50.22" fill="#c98a5e"/>
+      <!-- hard hat. P.hat is contrast-checked against skin at build time, so
+           the helmet never merges into the face on an unusual theme. -->
+      <path d="M-66.96,-96.72 Q-63.24,-171.12 0,-171.12 Q63.24,-171.12 66.96,-96.72 Z" fill="#c6ee3e"/>
+      <rect x="-85.56" y="-104.16" width="171.12" height="18.6" rx="9.3" fill="#c6ee3e"/>
+      <path d="M66.96,-104.16 L104.16,-104.16 L100.44,-85.56 L66.96,-85.56 Z" fill="#c6ee3e"/>
+      <path d="M-66.96,-104.16 L66.96,-104.16" stroke="#0d2a21" stroke-width="3.72" opacity="0.3"/>
+    </g>
+  </g>
+    <rect width="520" height="620" filter="url(#gr-s51)" opacity="0.055"/></g></g>
+</svg>

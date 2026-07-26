@@ -1,0 +1,43 @@
+# Northline Plumbing Co.
+
+> Northline Plumbing Co. is a licensed and insured plumbing contractor serving Regina and southern Saskatchewan, offering 24/7 emergency repair, drain cleaning, water heater replacement and leak detection.
+
+- **Location:** Regina, SK, Canada (service-area business, no walk-in storefront)
+- **Phone:** (306) 555-0142
+- **Emergency:** 24/7, live dispatcher, no overtime surcharge
+- **Licensed:** SK Journeyperson Plumber Licence · $2M General Liability
+- **Service radius:** 120 km from Regina
+- **Rating:** 4.9/5 from 287 reviews
+
+## Services
+
+- [24/7 Emergency Plumbing](https://www.northlineplumbing.example/services/emergency-plumbing/): Burst pipes, major leaks and no-water emergencies answered around the clock.
+- [Drain Cleaning & Unclogging](https://www.northlineplumbing.example/services/drain-cleaning/): Camera-inspected drain and sewer clearing that fixes the cause, not just the symptom.
+- [Water Heater Repair & Install](https://www.northlineplumbing.example/services/water-heater-repair/): Tank and tankless diagnosis, replacement and same-day hot water restoration.
+- [Leak Detection & Repair](https://www.northlineplumbing.example/services/leak-detection/): Acoustic and thermal location of hidden leaks before they wreck your drywall.
+- [Faucet & Fixture Installation](https://www.northlineplumbing.example/services/faucet-fixture-installation/): Taps, toilets, sinks and shower valves fitted clean and leak-free.
+- [Sewer Line Repair](https://www.northlineplumbing.example/services/sewer-line-repair/): Camera diagnosis, spot repair and full replacement for failed main lines.
+
+## Service Areas
+
+- [Regina](https://www.northlineplumbing.example/service-areas/regina/): Full city coverage including Harbour Landing, Lakeview, Cathedral and the Warehouse District.
+- [Moose Jaw](https://www.northlineplumbing.example/service-areas/moose-jaw/): Serviced daily with the same 90-minute emergency target.
+- [White City](https://www.northlineplumbing.example/service-areas/white-city/): Acreage and rural well-system experience.
+- [Pilot Butte](https://www.northlineplumbing.example/service-areas/pilot-butte/): Frozen-line thaw specialists through the winter months.
+- [Emerald Park](https://www.northlineplumbing.example/service-areas/emerald-park/): New-build rough-in and warranty work.
+- [Lumsden](https://www.northlineplumbing.example/service-areas/lumsden/): Valley properties with sump and backflow needs.
+
+## Key Pages
+
+- [Home](https://www.northlineplumbing.example/)
+- [All services](https://www.northlineplumbing.example/services/)
+- [Service areas](https://www.northlineplumbing.example/service-areas/)
+- [About](https://www.northlineplumbing.example/about/)
+- [Contact & booking](https://www.northlineplumbing.example/contact/)
+- [Guides](https://www.northlineplumbing.example/blog/)
+
+## Notes
+
+Total indexable pages: 24. Content is fully server-rendered static HTML
+with no JavaScript gating. Structured data (Plumber, Service,
+FAQPage, BreadcrumbList) is embedded as JSON-LD on every page.

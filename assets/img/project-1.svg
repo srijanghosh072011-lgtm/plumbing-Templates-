@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" width="760" height="600" role="img" aria-label="Emergency repair of a burst riser">
+
+  <defs>
+    <filter id="gr-s201"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s201"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="760" height="600" fill="#123a2e"/>
+<g clip-path="url(#frame-s201)"><g transform="translate(365.64,296.35) scale(-1.02,1.02) translate(-380,-300)">
+    
+    <rect width="760" height="600" fill="#123a2e"/>
+    <radialGradient id="bloom-s201" cx="0.52" cy="0.42" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="760" height="600" fill="url(#bloom-s201)"/>
+    <radialGradient id="vig-s201" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="760" height="600" fill="url(#vig-s201)"/>
+    <path d="M48,0 L48,600 M96,0 L96,600 M144,0 L144,600 M192,0 L192,600 M240,0 L240,600 M288,0 L288,600 M336,0 L336,600 M384,0 L384,600 M432,0 L432,600 M480,0 L480,600 M528,0 L528,600 M576,0 L576,600 M624,0 L624,600 M672,0 L672,600 M720,0 L720,600 M0,48 L760,48 M0,96 L760,96 M0,144 L760,144 M0,192 L760,192 M0,240 L760,240 M0,288 L760,288 M0,336 L760,336 M0,384 L760,384 M0,432 L760,432 M0,480 L760,480 M0,528 L760,528 M0,576 L760,576" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    
+    <g>
+      <path d="M-60.8,264 L368.2,264" stroke="#899d97" stroke-width="54" stroke-linecap="round" fill="none"/>
+      <path d="M-60.8,252.12 L368.2,252.12"
+            stroke="#b8c4c0" stroke-width="10.8" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M-60.8,281.82 L368.2,281.82"
+            stroke="#0d2a21" stroke-width="8.64" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      <line x1="368.2" y1="299.64" x2="368.2" y2="228.36" stroke="#0d2a21" stroke-width="16.2" stroke-linecap="round"/>
+    </g>
+    
+    <g>
+      <path d="M422.2,264 L820.8,264" stroke="#899d97" stroke-width="54" stroke-linecap="round" fill="none"/>
+      <path d="M422.2,252.12 L820.8,252.12"
+            stroke="#b8c4c0" stroke-width="10.8" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M422.2,281.82 L820.8,281.82"
+            stroke="#0d2a21" stroke-width="8.64" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="422.2" y1="299.64" x2="422.2" y2="228.36" stroke="#0d2a21" stroke-width="16.2" stroke-linecap="round"/>
+      
+    </g>
+    <!-- rupture -->
+    <path d="M362.8,237 L389.8,215.4 L408.7,242.4 L427.6,220.8 L427.6,291 L362.8,291 Z" fill="#0d2a21"/>
+    <path d="M395.2,237 Q496,124.86 601.69,222.25" fill="none" stroke="#9fe0a8" stroke-width="11.67" stroke-linecap="round" opacity="0.73"/><path d="M395.2,237 Q496,138.72 552.81,250.27" fill="none" stroke="#9fe0a8" stroke-width="12.17" stroke-linecap="round" opacity="0.52"/><path d="M395.2,237 Q496,152.58 609.65,328.35" fill="none" stroke="#9fe0a8" stroke-width="15.72" stroke-linecap="round" opacity="0.72"/><path d="M395.2,237 Q496,166.44 660.85,337.11" fill="none" stroke="#9fe0a8" stroke-width="9.63" stroke-linecap="round" opacity="0.51"/><path d="M395.2,237 Q496,180.3 552.53,390.62" fill="none" stroke="#9fe0a8" stroke-width="13.7" stroke-linecap="round" opacity="0.53"/><path d="M395.2,237 Q496,194.16 640.29,417.6" fill="none" stroke="#9fe0a8" stroke-width="15.3" stroke-linecap="round" opacity="0.38"/><path d="M395.2,237 Q496,208.02 619.89,471.69" fill="none" stroke="#9fe0a8" stroke-width="10.11" stroke-linecap="round" opacity="0.69"/>
+    <path d="M395.2,237 Q318.4,151.56 246.35,246.63" fill="none" stroke="#9fe0a8" stroke-width="8.99" stroke-linecap="round" opacity="0.52"/><path d="M395.2,237 Q318.4,167.4 263.71,264.57" fill="none" stroke="#9fe0a8" stroke-width="11.18" stroke-linecap="round" opacity="0.48"/><path d="M395.2,237 Q318.4,183.24 251.56,317.23" fill="none" stroke="#9fe0a8" stroke-width="10.55" stroke-linecap="round" opacity="0.46"/><path d="M395.2,237 Q318.4,199.08 277.63,354.73" fill="none" stroke="#9fe0a8" stroke-width="10.18" stroke-linecap="round" opacity="0.66"/><path d="M395.2,237 Q318.4,214.92 193.84,426.05" fill="none" stroke="#9fe0a8" stroke-width="11.52" stroke-linecap="round" opacity="0.46"/>
+    <path d="M479.18,419.46 C492.46,437.64 493.16,450.92 479.18,454.42 C465.2,450.92 465.9,437.64 479.18,419.46 Z" fill="#9fe0a8" opacity="0.5813215145142749"/><path d="M158.73,493.97 C171.38,511.28 172.04,523.93 158.73,527.26 C145.41,523.93 146.07,511.28 158.73,493.97 Z" fill="#9fe0a8" opacity="0.5635627532145009"/><path d="M482.39,442.33 C491.63,454.97 492.11,464.21 482.39,466.64 C472.67,464.21 473.15,454.97 482.39,442.33 Z" fill="#9fe0a8" opacity="0.7003601397853345"/><path d="M216.69,413.97 C232.48,435.57 233.31,451.35 216.69,455.51 C200.08,451.35 200.91,435.57 216.69,413.97 Z" fill="#9fe0a8" opacity="0.415722524584271"/><path d="M118.94,345.66 C132.54,364.27 133.25,377.86 118.94,381.44 C104.63,377.86 105.35,364.27 118.94,345.66 Z" fill="#9fe0a8" opacity="0.39091170458123087"/><path d="M633.57,385.57 C643.49,399.14 644.01,409.05 633.57,411.66 C623.14,409.05 623.66,399.14 633.57,385.57 Z" fill="#9fe0a8" opacity="0.34045129450969397"/><path d="M452.96,346.21 C464.24,361.64 464.83,372.91 452.96,375.88 C441.09,372.91 441.68,361.64 452.96,346.21 Z" fill="#9fe0a8" opacity="0.7822849116753787"/><path d="M574.35,410.69 C588.54,430.11 589.29,444.3 574.35,448.03 C559.41,444.3 560.16,430.11 574.35,410.69 Z" fill="#9fe0a8" opacity="0.7784930684836582"/><path d="M312.38,432.77 C327.12,452.95 327.9,467.69 312.38,471.57 C296.86,467.69 297.63,452.95 312.38,432.77 Z" fill="#9fe0a8" opacity="0.4507334515918046"/>
+    <!-- pooling water -->
+    <ellipse cx="395.2" cy="558" rx="319.2" ry="30" fill="#9fe0a8" opacity="0.3"/>
+    <rect width="760" height="600" filter="url(#gr-s201)" opacity="0.055"/></g></g>
+</svg>

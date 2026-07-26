@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 460" width="620" height="460" role="img" aria-label="A liveried plumbing service van">
+
+  <defs>
+    <filter id="gr-s13"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s13"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="620" height="460" fill="#123a2e"/>
+<g clip-path="url(#frame-s13)"><g transform="translate(320.29,237.69) scale(1.02,1.02) translate(-310,-230)">
+    
+    <rect width="620" height="460" fill="#123a2e"/>
+    <radialGradient id="bloom-s13" cx="0.5" cy="0.4" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="620" height="460" fill="url(#bloom-s13)"/>
+    <radialGradient id="vig-s13" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="620" height="460" fill="url(#vig-s13)"/>
+    <path d="M48,0 L48,460 M96,0 L96,460 M144,0 L144,460 M192,0 L192,460 M240,0 L240,460 M288,0 L288,460 M336,0 L336,460 M384,0 L384,460 M432,0 L432,460 M480,0 L480,460 M528,0 L528,460 M576,0 L576,460 M0,48 L620,48 M0,96 L620,96 M0,144 L620,144 M0,192 L620,192 M0,240 L620,240 M0,288 L620,288 M0,336 L620,336 M0,384 L620,384 M0,432 L620,432" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    
+    <rect x="0" y="349.6" width="620" height="110.4" fill="#1b4a3b" opacity="0.55"/>
+    <line x1="0" y1="349.6" x2="620" y2="349.6" stroke="#c6ee3e" stroke-width="2" opacity="0.35"/>
+    <ellipse cx="310" cy="353.6" rx="229.4" ry="36.7" fill="#000000" opacity="0.4"/>
+    <!-- body -->
+    <path d="M80.6,230.74 Q80.6,193.2 199.89,193.2 L346.7,193.2 Q420.11,193.2 465.99,240.12 L539.4,265.14 Q539.4,333.96 511.87,333.96 L108.13,333.96 Q80.6,333.96 80.6,230.74 Z" fill="#b8c4c0"/>
+    <!-- windows -->
+    <path d="M355.88,208.84 Q406.35,208.84 443.05,246.38 L355.88,246.38 Z" fill="#123a2e" opacity="0.75"/>
+    <rect x="291.65" y="207.28" width="50.47" height="39.1" rx="3" fill="#123a2e" opacity="0.75"/>
+    <!-- livery band + mark -->
+    <rect x="94.36" y="265.14" width="192.7" height="31.28" rx="15.64" fill="#c6ee3e"/>
+    <circle cx="144.83" cy="236.99" r="20.33" fill="#c6ee3e"/>
+    <!-- wheels -->
+    
+      <circle cx="190.71" cy="349.6" r="29.72" fill="#0d2a21"/>
+      <circle cx="190.71" cy="349.6" r="12.51" fill="#b8c4c0"/>
+      <circle cx="438.46" cy="349.6" r="29.72" fill="#0d2a21"/>
+      <circle cx="438.46" cy="349.6" r="12.51" fill="#b8c4c0"/>
+    <!-- roof ladder -->
+    <rect x="126.48" y="182.25" width="192.7" height="9.38" rx="3" fill="#0d2a21"/>
+    <rect width="620" height="460" filter="url(#gr-s13)" opacity="0.055"/></g></g>
+</svg>

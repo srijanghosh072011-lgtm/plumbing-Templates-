@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" role="img" aria-label="A ruptured supply pipe spraying water — emergency plumbing">
+
+  <defs>
+    <filter id="gr-s101"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s101"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="720" height="560" fill="#123a2e"/>
+<g clip-path="url(#frame-s101)"><g transform="translate(347.5,285.2) scale(1.07,1.07) translate(-360,-280)">
+    
+    <rect width="720" height="560" fill="#123a2e"/>
+    <radialGradient id="bloom-s101" cx="0.52" cy="0.42" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="720" height="560" fill="url(#bloom-s101)"/>
+    <radialGradient id="vig-s101" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="720" height="560" fill="url(#vig-s101)"/>
+    <path d="M48,0 L48,560 M96,0 L96,560 M144,0 L144,560 M192,0 L192,560 M240,0 L240,560 M288,0 L288,560 M336,0 L336,560 M384,0 L384,560 M432,0 L432,560 M480,0 L480,560 M528,0 L528,560 M576,0 L576,560 M624,0 L624,560 M672,0 L672,560 M0,48 L720,48 M0,96 L720,96 M0,144 L720,144 M0,192 L720,192 M0,240 L720,240 M0,288 L720,288 M0,336 L720,336 M0,384 L720,384 M0,432 L720,432 M0,480 L720,480 M0,528 L720,528" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    
+    <g>
+      <path d="M-57.6,246.4 L349.2,246.4" stroke="#899d97" stroke-width="50.4" stroke-linecap="round" fill="none"/>
+      <path d="M-57.6,235.31 L349.2,235.31"
+            stroke="#b8c4c0" stroke-width="10.08" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M-57.6,263.03 L349.2,263.03"
+            stroke="#0d2a21" stroke-width="8.06" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      <line x1="349.2" y1="279.66" x2="349.2" y2="213.14" stroke="#0d2a21" stroke-width="15.12" stroke-linecap="round"/>
+    </g>
+    
+    <g>
+      <path d="M399.6,246.4 L777.6,246.4" stroke="#899d97" stroke-width="50.4" stroke-linecap="round" fill="none"/>
+      <path d="M399.6,235.31 L777.6,235.31"
+            stroke="#b8c4c0" stroke-width="10.08" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M399.6,263.03 L777.6,263.03"
+            stroke="#0d2a21" stroke-width="8.06" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="399.6" y1="279.66" x2="399.6" y2="213.14" stroke="#0d2a21" stroke-width="15.12" stroke-linecap="round"/>
+      
+    </g>
+    <!-- rupture -->
+    <path d="M344.16,221.2 L369.36,201.04 L387,226.24 L404.64,206.08 L404.64,271.6 L344.16,271.6 Z" fill="#0d2a21"/>
+    <path d="M374.4,221.2 Q468.48,116.54 531.47,223.07" fill="none" stroke="#9fe0a8" stroke-width="12.05" stroke-linecap="round" opacity="0.64"/><path d="M374.4,221.2 Q468.48,129.47 560.69,258.52" fill="none" stroke="#9fe0a8" stroke-width="12.38" stroke-linecap="round" opacity="0.78"/><path d="M374.4,221.2 Q468.48,142.41 542.4,268.37" fill="none" stroke="#9fe0a8" stroke-width="10.95" stroke-linecap="round" opacity="0.71"/><path d="M374.4,221.2 Q468.48,155.34 561.54,344.69" fill="none" stroke="#9fe0a8" stroke-width="11.59" stroke-linecap="round" opacity="0.40"/><path d="M374.4,221.2 Q468.48,168.28 522.69,361.98" fill="none" stroke="#9fe0a8" stroke-width="8.44" stroke-linecap="round" opacity="0.44"/><path d="M374.4,221.2 Q468.48,181.22 604.96,393.9" fill="none" stroke="#9fe0a8" stroke-width="8.63" stroke-linecap="round" opacity="0.64"/><path d="M374.4,221.2 Q468.48,194.15 520.49,447.71" fill="none" stroke="#9fe0a8" stroke-width="8.6" stroke-linecap="round" opacity="0.55"/>
+    <path d="M374.4,221.2 Q302.72,141.46 189.81,210.81" fill="none" stroke="#9fe0a8" stroke-width="10.28" stroke-linecap="round" opacity="0.76"/><path d="M374.4,221.2 Q302.72,156.24 210.67,242.02" fill="none" stroke="#9fe0a8" stroke-width="7.12" stroke-linecap="round" opacity="0.42"/><path d="M374.4,221.2 Q302.72,171.02 220.66,283.95" fill="none" stroke="#9fe0a8" stroke-width="9.73" stroke-linecap="round" opacity="0.41"/><path d="M374.4,221.2 Q302.72,185.81 251.33,329.74" fill="none" stroke="#9fe0a8" stroke-width="11.42" stroke-linecap="round" opacity="0.54"/><path d="M374.4,221.2 Q302.72,200.59 253.78,400.21" fill="none" stroke="#9fe0a8" stroke-width="8.08" stroke-linecap="round" opacity="0.69"/>
+    <path d="M210.43,395.78 C225.71,416.7 226.52,431.99 210.43,436.01 C194.33,431.99 195.14,416.7 210.43,395.78 Z" fill="#9fe0a8" opacity="0.3721151167526841"/><path d="M246.82,424.6 C262.3,445.78 263.11,461.26 246.82,465.34 C230.52,461.26 231.34,445.78 246.82,424.6 Z" fill="#9fe0a8" opacity="0.5181181930936873"/><path d="M297.87,472.46 C305.39,482.76 305.79,490.29 297.87,492.27 C289.94,490.29 290.34,482.76 297.87,472.46 Z" fill="#9fe0a8" opacity="0.716006469517015"/><path d="M447.65,425.33 C458.35,439.97 458.91,450.67 447.65,453.49 C436.39,450.67 436.95,439.97 447.65,425.33 Z" fill="#9fe0a8" opacity="0.7383281144546345"/><path d="M297.59,350.3 C305.5,361.13 305.92,369.05 297.59,371.13 C289.25,369.05 289.67,361.13 297.59,350.3 Z" fill="#9fe0a8" opacity="0.46831274528522043"/><path d="M458.5,446.26 C465.77,456.21 466.15,463.48 458.5,465.39 C450.85,463.48 451.23,456.21 458.5,446.26 Z" fill="#9fe0a8" opacity="0.35473719467408954"/><path d="M533.22,320.42 C546.56,338.68 547.26,352.02 533.22,355.53 C519.17,352.02 519.87,338.68 533.22,320.42 Z" fill="#9fe0a8" opacity="0.6291310698259622"/><path d="M428.04,350.14 C440.26,366.86 440.9,379.08 428.04,382.29 C415.18,379.08 415.82,366.86 428.04,350.14 Z" fill="#9fe0a8" opacity="0.645836210763082"/><path d="M488.24,487.26 C496.45,498.5 496.88,506.7 488.24,508.86 C479.6,506.7 480.03,498.5 488.24,487.26 Z" fill="#9fe0a8" opacity="0.7425237954128534"/>
+    <!-- pooling water -->
+    <ellipse cx="374.4" cy="520.8" rx="302.4" ry="28" fill="#9fe0a8" opacity="0.3"/>
+    <rect width="720" height="560" filter="url(#gr-s101)" opacity="0.055"/></g></g>
+</svg>

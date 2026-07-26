@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" width="760" height="600" role="img" aria-label="Hydro-jetting and camera survey of a grease-choked main">
+
+  <defs>
+    <filter id="gr-s202"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s202"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="760" height="600" fill="#123a2e"/>
+<g clip-path="url(#frame-s202)"><g transform="translate(368.33,301.19) scale(1.08,1.08) translate(-380,-300)">
+    
+    <rect width="760" height="600" fill="#123a2e"/>
+    <radialGradient id="bloom-s202" cx="0.5" cy="0.42" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="760" height="600" fill="url(#bloom-s202)"/>
+    <radialGradient id="vig-s202" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="760" height="600" fill="url(#vig-s202)"/>
+    <path d="M44,0 L44,600 M88,0 L88,600 M132,0 L132,600 M176,0 L176,600 M220,0 L220,600 M264,0 L264,600 M308,0 L308,600 M352,0 L352,600 M396,0 L396,600 M440,0 L440,600 M484,0 L484,600 M528,0 L528,600 M572,0 L572,600 M616,0 L616,600 M660,0 L660,600 M704,0 L704,600 M748,0 L748,600 M0,44 L760,44 M0,88 L760,88 M0,132 L760,132 M0,176 L760,176 M0,220 L760,220 M0,264 L760,264 M0,308 L760,308 M0,352 L760,352 M0,396 L760,396 M0,440 L760,440 M0,484 L760,484 M0,528 L760,528 M0,572 L760,572" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    <!-- looking down a pipe: concentric rings receding -->
+    
+      <circle cx="380" cy="300" r="252" fill="none" stroke="#899d97" stroke-width="22.68" opacity="0.35"/>
+      <circle cx="380" cy="300" r="206.64" fill="none" stroke="#0d2a21" stroke-width="22.68" opacity="0.46"/>
+      <circle cx="380" cy="300" r="166.32" fill="none" stroke="#899d97" stroke-width="22.68" opacity="0.57"/>
+      <circle cx="380" cy="300" r="131.04" fill="none" stroke="#0d2a21" stroke-width="22.68" opacity="0.68"/>
+      <circle cx="380" cy="300" r="100.8" fill="none" stroke="#899d97" stroke-width="22.68" opacity="0.79"/>
+      <circle cx="380" cy="300" r="75.6" fill="none" stroke="#0d2a21" stroke-width="22.68" opacity="0.90"/>
+    <circle cx="380" cy="300" r="55.44" fill="#123a2e"/>
+    <!-- camera light cone -->
+    <path d="M380,300 L223.76,174 L223.76,426 Z" fill="#c6ee3e" opacity="0.18"/>
+    <!-- camera head on its rod -->
+    <g transform="translate(213.68,300)">
+      <rect x="-75.6" y="-35.28" width="85.68" height="70.56" rx="22.68" fill="#0d2a21"/>
+      <circle cx="0" cy="0" r="25.2" fill="#c6ee3e"/>
+      <circle cx="0" cy="0" r="11.34" fill="#123a2e"/>
+      <path d="M-75.6,0 Q-176.4,-50.4 -289.8,15.12" fill="none" stroke="#c6ee3e" stroke-width="17.64" stroke-linecap="round" opacity="0.9"/>
+    </g>
+    <!-- root intrusion at the joint -->
+    <path d="M546.02,160.7 Q474.03,203.57 451.7,286.58" fill="none" stroke="#c6ee3e" stroke-width="8.82" stroke-linecap="round" opacity="0.55"/><path d="M590.28,247.57 Q557.87,245.8 490.67,325.75" fill="none" stroke="#c6ee3e" stroke-width="8.82" stroke-linecap="round" opacity="0.55"/><path d="M591.98,345.06 Q506.46,332.85 444.78,346.79" fill="none" stroke="#c6ee3e" stroke-width="8.82" stroke-linecap="round" opacity="0.55"/><path d="M550.78,433.43 Q497.66,412.36 424.35,376.16" fill="none" stroke="#c6ee3e" stroke-width="8.82" stroke-linecap="round" opacity="0.55"/><path d="M475,494.79 Q441.29,453.59 384.59,377.59" fill="none" stroke="#c6ee3e" stroke-width="8.82" stroke-linecap="round" opacity="0.55"/>
+    <rect width="760" height="600" filter="url(#gr-s202)" opacity="0.055"/></g></g>
+</svg>

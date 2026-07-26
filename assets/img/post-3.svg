@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-label="Comparison illustration of a tank water heater">
+
+  <defs>
+    <filter id="gr-s303"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s303"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="760" height="520" fill="#123a2e"/>
+<g clip-path="url(#frame-s303)"><g transform="translate(382.99,258.87) scale(-1.05,1.05) translate(-380,-260)">
+    
+    <rect width="760" height="520" fill="#123a2e"/>
+    <radialGradient id="bloom-s303" cx="0.5" cy="0.42" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="760" height="520" fill="url(#bloom-s303)"/>
+    <radialGradient id="vig-s303" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="760" height="520" fill="url(#vig-s303)"/>
+    <path d="M46,0 L46,520 M92,0 L92,520 M138,0 L138,520 M184,0 L184,520 M230,0 L230,520 M276,0 L276,520 M322,0 L322,520 M368,0 L368,520 M414,0 L414,520 M460,0 L460,520 M506,0 L506,520 M552,0 L552,520 M598,0 L598,520 M644,0 L644,520 M690,0 L690,520 M736,0 L736,520 M0,46 L760,46 M0,92 L760,92 M0,138 L760,138 M0,184 L760,184 M0,230 L760,230 M0,276 L760,276 M0,322 L760,322 M0,368 L760,368 M0,414 L760,414 M0,460 L760,460 M0,506 L760,506" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    
+    <rect x="0" y="447.2" width="760" height="72.8" fill="#1b4a3b" opacity="0.55"/>
+    <line x1="0" y1="447.2" x2="760" y2="447.2" stroke="#c6ee3e" stroke-width="2" opacity="0.35"/>
+    <!-- inlet / outlet -->
+    
+    <g>
+      <path d="M307.65,41.6 L307.65,114.4" stroke="#899d97" stroke-width="18.2" stroke-linecap="round" fill="none"/>
+      <path d="M311.65,41.6 L311.65,114.4"
+            stroke="#b8c4c0" stroke-width="3.64" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M301.64,41.6 L301.64,114.4"
+            stroke="#0d2a21" stroke-width="2.91" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="295.64" y1="41.6" x2="319.66" y2="41.6" stroke="#0d2a21" stroke-width="5.46" stroke-linecap="round"/>
+      
+    </g>
+    
+    <g>
+      <path d="M452.35,41.6 L452.35,114.4" stroke="#899d97" stroke-width="18.2" stroke-linecap="round" fill="none"/>
+      <path d="M456.36,41.6 L456.36,114.4"
+            stroke="#b8c4c0" stroke-width="3.64" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M446.35,41.6 L446.35,114.4"
+            stroke="#0d2a21" stroke-width="2.91" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <line x1="440.34" y1="41.6" x2="464.36" y2="41.6" stroke="#0d2a21" stroke-width="5.46" stroke-linecap="round"/>
+      
+    </g>
+    <!-- tank -->
+    <rect x="250.8" y="104" width="258.4" height="312" rx="36.18" fill="#899d97"/>
+    <rect x="250.8" y="104" width="77.52" height="312" rx="36.18" fill="#b8c4c0" opacity="0.35"/>
+    <rect x="250.8" y="104" width="258.4" height="312" rx="36.18" fill="none" stroke="#0d2a21" stroke-width="3"/>
+    <!-- cutaway showing element + sediment -->
+    <path d="M395.5,145.6 L498.86,145.6 L498.86,384.8 L395.5,384.8 Z" fill="#123a2e" opacity="0.55"/>
+    <rect x="400.67" y="348.4" width="93.02" height="31.2" fill="#c6ee3e" opacity="0.3"/>
+    
+    <g>
+      <path d="M411.01,218.4 L488.53,218.4" stroke="#899d97" stroke-width="11.44" stroke-linecap="round" fill="none"/>
+      <path d="M411.01,215.88 L488.53,215.88"
+            stroke="#b8c4c0" stroke-width="2.29" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M411.01,222.18 L488.53,222.18"
+            stroke="#0d2a21" stroke-width="1.83" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      
+    </g>
+    <!-- control dial -->
+    <circle cx="338.66" cy="332.8" r="33.59" fill="#c6ee3e"/>
+    <line x1="338.66" y1="332.8" x2="338.66" y2="312" stroke="#0d2a21" stroke-width="3" stroke-linecap="round"/>
+    <!-- badge plate -->
+    <rect x="292.14" y="150.8" width="87.86" height="46.8" rx="4" fill="#0d2a21" opacity="0.7"/>
+    <!-- legs -->
+    <rect x="276.64" y="416" width="25.84" height="31.2" fill="#0d2a21"/>
+    <rect x="457.52" y="416" width="25.84" height="31.2" fill="#0d2a21"/>
+    <ellipse cx="380" cy="452.4" rx="180.88" ry="28.94" fill="#000000" opacity="0.4"/>
+    <rect width="760" height="520" filter="url(#gr-s303)" opacity="0.055"/></g></g>
+</svg>

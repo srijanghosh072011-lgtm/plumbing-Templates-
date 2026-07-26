@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="560" height="560" role="img" aria-label="Close-up of a pipe wrench tightening a threaded coupling">
+
+  <defs>
+    <filter id="gr-s12"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="frame-s12"><rect width="100%" height="100%"/></clipPath>
+  </defs>
+<rect width="560" height="560" fill="#123a2e"/>
+<g clip-path="url(#frame-s12)"><g transform="translate(291.43,281.65) scale(1.08,1.08) translate(-280,-280)">
+    
+    <rect width="560" height="560" fill="#123a2e"/>
+    <radialGradient id="bloom-s12" cx="0.5" cy="0.5" r="0.72">
+      <stop offset="0%" stop-color="#c6ee3e" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#c6ee3e" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#c6ee3e" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="560" height="560" fill="url(#bloom-s12)"/>
+    <radialGradient id="vig-s12" cx="0.5" cy="0.48" r="0.78">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.34"/>
+    </radialGradient>
+    <rect width="560" height="560" fill="url(#vig-s12)"/>
+    <path d="M40,0 L40,560 M80,0 L80,560 M120,0 L120,560 M160,0 L160,560 M200,0 L200,560 M240,0 L240,560 M280,0 L280,560 M320,0 L320,560 M360,0 L360,560 M400,0 L400,560 M440,0 L440,560 M480,0 L480,560 M520,0 L520,560 M0,40 L560,40 M0,80 L560,80 M0,120 L560,120 M0,160 L560,160 M0,200 L560,200 M0,240 L560,240 M0,280 L560,280 M0,320 L560,320 M0,360 L560,360 M0,400 L560,400 M0,440 L560,440 M0,480 L560,480 M0,520 L560,520" stroke="#b4c6bc" stroke-width="1" opacity="0.28" fill="none"/>
+    
+    <g>
+      <path d="M-56,302.4 L616,302.4" stroke="#899d97" stroke-width="84" stroke-linecap="round" fill="none"/>
+      <path d="M-56,283.92 L616,283.92"
+            stroke="#b8c4c0" stroke-width="16.8" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M-56,330.12 L616,330.12"
+            stroke="#0d2a21" stroke-width="13.44" stroke-linecap="round" fill="none" opacity="0.5"/>
+      
+      
+    </g>
+    
+    <g>
+      <rect x="233.8" y="242.76" width="92.4" height="119.28" rx="16.63" fill="#0d2a21"/>
+      <line x1="259.67" y1="261.84" x2="259.67" y2="342.96" stroke="#b8c4c0" stroke-width="4.62" opacity="0.55" stroke-linecap="round"/><line x1="280" y1="261.84" x2="280" y2="342.96" stroke="#b8c4c0" stroke-width="4.62" opacity="0.55" stroke-linecap="round"/><line x1="300.33" y1="261.84" x2="300.33" y2="342.96" stroke="#b8c4c0" stroke-width="4.62" opacity="0.55" stroke-linecap="round"/>
+    </g>
+    <!-- pipe wrench biting the coupling -->
+    <g transform="translate(280,302.4) rotate(-24)">
+      <rect x="-20.16" y="42" width="40.32" height="280" rx="16.8" fill="#c6ee3e"/>
+      <path d="M-77.28,-16.8 L77.28,-16.8 L60.48,47.04 L-60.48,47.04 Z" fill="#c6ee3e"/>
+      <path d="M-65.52,-20.16 L-65.52,-79.8 L-25.2,-79.8 L-25.2,-20.16 Z" fill="#c6ee3e"/>
+      <rect x="-52.08" y="-5.04" width="104.16" height="15.12" fill="#0d2a21" opacity="0.35"/>
+    </g>
+    <path d="M380.8,418.6 C399.42,444.08 400.4,462.7 380.8,467.6 C361.2,462.7 362.18,444.08 380.8,418.6 Z" fill="#9fe0a8" opacity="0.75"/>
+    <path d="M425.6,474.32 C437.3,490.34 437.92,502.04 425.6,505.12 C413.28,502.04 413.9,490.34 425.6,474.32 Z" fill="#9fe0a8" opacity="0.5"/>
+    <rect width="560" height="560" filter="url(#gr-s12)" opacity="0.055"/></g></g>
+</svg>
