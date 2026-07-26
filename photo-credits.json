@@ -1,0 +1,83 @@
+{
+  "__note": "Provenance record for the photography in src/assets/img. All sourced from Pexels under the Pexels License: free for commercial use, no attribution required, modification permitted. Attribution is recorded anyway so provenance is provable later — if a client or platform ever asks where an image came from, this is the answer. Do not delete this file.",
+  "license": {
+    "name": "Pexels License",
+    "url": "https://www.pexels.com/license/",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "modificationAllowed": true
+  },
+  "processing": "Centre-cropped to slot aspect ratio and downscaled to a 1400px longest edge at JPEG q78 by scripts/fit-photos.mjs. Originals were 3000-6806px and 1-3 MB each.",
+  "photos": [
+    {
+      "slots": ["hero-primary", "cta-figure"],
+      "source": "https://www.pexels.com/photo/16552856/",
+      "photographer": "Alexa Popovich",
+      "originalFile": "pexels-alexapopovich-16552856.jpg",
+      "subject": "Worker in orange hard hat and safety goggles, arms crossed, dark background"
+    },
+    {
+      "slots": ["hero-inset", "process-portrait", "service-4", "post-2"],
+      "source": "https://www.pexels.com/photo/plumber-installs-pipe-fittings-6419128/",
+      "photographer": "Anıl Karakaya",
+      "originalFile": "pexels-anilkarakaya-6419128.jpg",
+      "subject": "Hands working a wrench on a pipe fitting, water spraying"
+    },
+    {
+      "slots": ["service-6", "project-4"],
+      "source": "https://www.pexels.com/photo/37975210/",
+      "photographer": "Arndt-Peter Bergfeld",
+      "originalFile": "pexels-arndt-peter-bergfeld-151632051-37975210.jpg",
+      "subject": "Street excavation exposing utility pipes, excavator on site"
+    },
+    {
+      "slots": ["testimonial"],
+      "source": "https://www.pexels.com/photo/modern-minimalist-bathroom-sink-with-faucet-33528567/",
+      "photographer": "Emilio Sánchez Hernández",
+      "originalFile": "pexels-emilio-sanchez-hernandez-285921208-33528567.jpg",
+      "subject": "Modern vessel basin with matte black mixer tap"
+    },
+    {
+      "slots": ["about-team"],
+      "source": "https://www.pexels.com/photo/portrait-of-construction-worker-15200454/",
+      "photographer": "Joe Creative Studio",
+      "originalFile": "pexels-joecreativestudio-15200454.jpg",
+      "subject": "Technician in white hard hat and orange hi-vis coverall, portrait"
+    },
+    {
+      "slots": ["about-detail", "project-6"],
+      "source": "https://www.pexels.com/photo/close-up-photo-of-plumbers-wrench-on-wooden-surface-8488060/",
+      "photographer": "Kindel Media",
+      "originalFile": "pexels-kindelmedia-8488060.jpg",
+      "subject": "Pipe wrench resting on a timber surface"
+    },
+    {
+      "slots": ["service-5"],
+      "source": "https://www.pexels.com/photo/faucets-on-white-wall-3616761/",
+      "photographer": "Lamiko",
+      "originalFile": "pexels-lamiko-3616761.jpg",
+      "subject": "Two red-handled isolation valves on a white wall"
+    },
+    {
+      "slots": ["service-2", "project-2"],
+      "source": "https://www.pexels.com/photo/29608837/",
+      "photographer": "Muharrem Alper",
+      "originalFile": "pexels-muharrem-alper-428087426-29608837.jpg",
+      "subject": "Street drain grate with standing water and leaf debris"
+    },
+    {
+      "slots": ["service-1", "project-1", "post-1"],
+      "source": "https://www.pexels.com/photo/15206136/",
+      "photographer": "Swastik Arora",
+      "originalFile": "pexels-swastikarora-15206136.jpg",
+      "subject": "Leaking pipe joint bound with cloth, water dripping"
+    }
+  ],
+  "stillIllustrated": [
+    { "slot": "hero-secondary", "needs": "Service van in company livery" },
+    { "slot": "service-3", "needs": "Water heater / boiler installation" },
+    { "slot": "project-3", "needs": "Water heater or mechanical room job" },
+    { "slot": "project-5", "needs": "Floor or slab leak repair" },
+    { "slot": "post-3", "needs": "Water heater tank, for the tankless-vs-tank article" }
+  ]
+}
