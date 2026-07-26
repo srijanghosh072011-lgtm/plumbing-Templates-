@@ -126,12 +126,24 @@ npm install && npm run dev     # http://localhost:4321, production headers appli
 
 **GitHub Pages (free, stays on GitHub)**
 
-`.github/workflows/deploy-pages.yml` builds and deploys on every push to
-`main` or the feature branch. One-time setup:
+`.github/workflows/deploy-pages.yml` builds on every push to `main` or the
+feature branch and force-pushes the built site to a **`gh-pages`** branch, so
+that branch always holds real, ready-to-serve HTML.
 
-1. Repo **Settings → Pages → Source: GitHub Actions**
-2. Push. The Action builds and publishes.
-3. Site is live at `https://<user>.github.io/<repo>/`
+One-time setup:
+
+1. Push once — or Actions tab → *Build and publish to gh-pages* → **Run
+   workflow** — so the `gh-pages` branch exists.
+2. **Settings → Pages → Source: Deploy from a branch → `gh-pages` → `/ (root)`**
+3. Live at `https://<user>.github.io/<repo>/`
+
+> **Why a separate branch.** `dist/` is gitignored, so your source branch
+> contains no HTML at all. Point Pages at the source branch and Jekyll finds no
+> `index.html` and renders `README.md` instead — which looks exactly like a
+> broken deploy but is really a misconfiguration. Publishing the build to
+> `gh-pages` keeps source and output cleanly separated while still giving Pages
+> a branch full of plain HTML. Each run is one fresh commit, force-pushed, so
+> history never accumulates build noise.
 
 > **Why `BASE_PATH` exists.** A GitHub *project* page serves from
 > `/<repo-name>/`, not the domain root. Every internal link here is
@@ -142,6 +154,9 @@ npm install && npm run dev     # http://localhost:4321, production headers appli
 > `href`/`src`/`action` attributes in a single post-process pass. Absolute
 > URLs (canonical, OG, JSON-LD) are deliberately left alone. Unset for every
 > normal build, so `dist/` is byte-identical to before.
+>
+> Pointing a **custom domain** at Pages? Delete the "Resolve base path" step
+> from the workflow — a root domain wants root-relative paths.
 
 **Caveat for Pages:** GitHub Pages cannot set custom response headers, so the
 CSP/HSTS/Permissions-Policy in `deploy/` are **not applied there**. Pages is

@@ -1,21 +1,20 @@
-name: Deploy to GitHub Pages
+name: Build and publish to gh-pages
 
 on:
   push:
     branches: [claude/site-replica-seo-aeo-jq5wjt, main]
   workflow_dispatch:
 
+# contents: write is needed to force-push the built site to the gh-pages branch.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: pages-publish
   cancel-in-progress: true
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,50 +24,61 @@ jobs:
           node-version: 20
           cache: npm
 
-      # This repo is a project page (github.io/<repo>/), not a root user/org
-      # page, so every root-relative href/src in the templates (correct for
-      # the real target: a custom domain at the root) needs the /<repo>/
-      # prefix or the deployed preview shows unstyled, brokenly-linked HTML.
-      # scripts/build.mjs applies this as a post-process when BASE_PATH is set;
-      # it is a no-op for every other build path (npm run dev, preflight, etc).
       - run: npm ci
 
-      # Derive from GITHUB_REPOSITORY (always "owner/repo") rather than
-      # github.event.repository.name, which is not populated for every trigger.
-      # If it were ever empty, BASE_PATH would become "/" -> stripped to "" ->
-      # a silently root-relative build that 404s all its own assets on Pages.
+      # A GitHub *project* page serves from /<repo>/, not the domain root, so
+      # every root-relative href/src needs that prefix or the deployed site
+      # loads unstyled with broken navigation. Derived from GITHUB_REPOSITORY
+      # (always "owner/repo") rather than a github.event field that is not
+      # populated for every trigger — an empty value would silently produce a
+      # root-relative build that 404s all its own assets.
+      #
+      # Using a CUSTOM DOMAIN at the root? Delete this step. BASE_PATH unset
+      # means root-relative paths, which is what a custom domain wants.
       - name: Resolve base path
         run: echo "BASE_PATH=/${GITHUB_REPOSITORY#*/}" >> "$GITHUB_ENV"
 
       - run: npm run build
 
-      # Pages can apply Jekyll processing, which ignores paths beginning with
-      # an underscore. dist/ contains _headers, and a client could add an
-      # _assets dir later. .nojekyll disables that entirely — zero cost,
-      # removes a whole class of "works locally, 404s on Pages" bugs.
+      # In branch mode GitHub Pages DOES run Jekyll over the branch, and Jekyll
+      # ignores any path beginning with an underscore. dist/ already contains
+      # _headers. Without this the site can deploy with pieces silently missing.
       - run: touch dist/.nojekyll
 
-      - name: Fail if the build produced no entry point
+      - name: Verify the build produced a real site
         run: |
-          test -f dist/index.html || { echo "::error::dist/index.html missing — nothing to serve"; exit 1; }
-          echo "dist/index.html present ($(wc -c < dist/index.html) bytes)"
-          echo "asset check:"
-          test -f dist/assets/css/site.css && echo "  css ok"
-          test -f dist/assets/js/site.js && echo "  js ok"
-          echo "first internal href (should carry $BASE_PATH):"
-          grep -o 'href="[^"]*assets/css[^"]*"' dist/index.html | head -1
+          test -f dist/index.html || { echo "::error::dist/index.html missing — refusing to publish an empty site"; exit 1; }
+          test -f dist/assets/css/site.css || { echo "::error::stylesheet missing"; exit 1; }
+          test -f dist/assets/js/site.js || { echo "::error::script missing"; exit 1; }
+          echo "pages:  $(find dist -name '*.html' | wc -l)"
+          echo "assets: $(find dist/assets -type f | wc -l)"
+          echo "css href in index.html: $(grep -o 'href="[^"]*assets/css[^"]*"' dist/index.html | head -1)"
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+      # Publish dist/ to an orphan gh-pages branch.
+      #
+      # Plain git rather than a third-party publish action: this is ~8 lines,
+      # and a marketplace action here would be an unpinned third party with
+      # write access to the repo — the exact supply-chain surface the security
+      # checklist argues against. Each run is a single fresh commit (no history
+      # accumulation) force-pushed to gh-pages.
+      - name: Publish to gh-pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dist
+          git init -q
+          git checkout -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Build from ${GITHUB_SHA::7} on ${GITHUB_REF_NAME}"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+          echo "Published $(find . -name '*.html' | wc -l) pages to gh-pages"
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Where to find it
+        run: |
+          echo "### Published to \`gh-pages\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Set **Settings → Pages → Source: Deploy from a branch → \`gh-pages\` → \`/ (root)\`**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Site: https://${GITHUB_REPOSITORY%%/*}.github.io/${GITHUB_REPOSITORY#*/}/" >> $GITHUB_STEP_SUMMARY
