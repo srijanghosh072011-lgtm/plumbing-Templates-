@@ -29,6 +29,27 @@ const DIST = join(ROOT, 'dist');
 
 const cfg = JSON.parse(await readFile(join(ROOT, 'site.config.json'), 'utf8'));
 
+/**
+ * BASE_PATH — preview-only escape hatch for hosts that serve the site from a
+ * subpath instead of a domain root (GitHub Pages project sites: /repo-name/).
+ *
+ * Every internal link in this codebase is deliberately root-relative
+ * ("/services/", "/assets/css/site.css") because the real production target
+ * is a custom domain at the root, per CHECKLIST.md. Rewriting every call site
+ * to be subpath-aware would be the wrong default to carry forward. Instead,
+ * when BASE_PATH is set, a single post-process pass prefixes root-relative
+ * href/src/action attributes in the emitted HTML. Unset in normal builds —
+ * dist/ is byte-identical to before.
+ */
+const BASE_PATH = (process.env.BASE_PATH ?? '').replace(/\/$/, '');
+
+function applyBasePath(html) {
+  if (!BASE_PATH) return html;
+  // (?!\/) excludes protocol-relative "//..." URLs; absolute "https://..." URLs
+  // never match because they don't start with "/" right after the quote.
+  return html.replace(/((?:href|src|action)=")\/(?!\/)/g, `$1${BASE_PATH}/`);
+}
+
 /* ------------------------------------------------------------------ registry */
 
 function routes() {
@@ -177,7 +198,7 @@ function routes() {
 /* --------------------------------------------------------------------- write */
 
 async function writePage(route) {
-  const html = page(cfg, route);
+  const html = applyBasePath(page(cfg, route));
   const outDir = route.path === '/' ? DIST : join(DIST, route.path);
   await mkdir(outDir, { recursive: true });
   await writeFile(join(outDir, 'index.html'), html);
@@ -329,13 +350,15 @@ async function main() {
   // 404 is written flat — hosts serve it directly, it is not a routable URL
   await writeFile(
     join(DIST, '404.html'),
-    page(cfg, {
-      path: '/404.html',
-      title: 'Page Not Found',
-      description: `That page could not be found. Browse our plumbing services, service areas, or call ${cfg.contact.phoneDisplay} for 24/7 emergency help.`,
-      body: notFound(cfg),
-      schemas: [],
-    }).replace('<meta name="robots" content="index, follow', '<meta name="robots" content="noindex, follow')
+    applyBasePath(
+      page(cfg, {
+        path: '/404.html',
+        title: 'Page Not Found',
+        description: `That page could not be found. Browse our plumbing services, service areas, or call ${cfg.contact.phoneDisplay} for 24/7 emergency help.`,
+        body: notFound(cfg),
+        schemas: [],
+      }).replace('<meta name="robots" content="index, follow', '<meta name="robots" content="noindex, follow')
+    )
   );
 
   await copyDir(join(SRC, 'assets', 'js'), join(DIST, 'assets', 'js'));
@@ -350,7 +373,10 @@ async function main() {
   await writeFile(join(DIST, 'llms.txt'), llmsTxt(list));
   await writeFile(join(DIST, 'site.webmanifest'), webmanifest());
 
-  console.log(`Built ${list.length} pages + 404 -> dist/`);
+  console.log(
+    `Built ${list.length} pages + 404 -> dist/` +
+    (BASE_PATH ? ` (BASE_PATH="${BASE_PATH}" applied for subpath hosting)` : '')
+  );
 }
 
 main().catch((e) => {
