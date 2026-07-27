@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512" role="img" aria-label="Ghosh Designs aperture mark">
+  <title>Ghosh Designs — The Aperture</title>
+  <!-- Concept B: Dark Precision. A perfect monoline circle stays a circle until
+       one deliberate cut is made into it. That cut is the crossbar, and it is the
+       only element carrying colour. A circle is raw material; the decision makes it a G. -->
+  <g fill="none" stroke-width="9" stroke-linecap="butt">
+    <!-- 335 degrees of arc: opens at the lower right, terminal rising to close the counter -->
+    <path d="M 80.82 64.37 A 34 34 0 1 1 84 50" stroke="currentColor"/>
+    <!-- the cut -->
+    <path d="M 88.5 50 H 58" stroke="var(--accent, currentColor)"/>
+  </g>
+</svg>

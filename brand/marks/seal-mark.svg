@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512" role="img" aria-label="Ghosh Designs seal mark">
+  <title>Ghosh Designs — The Seal</title>
+  <!-- Concept A: Editorial Luxury. A high-contrast didone G struck inside a
+       double-hairline seal. The seal is the mark a studio puts on finished work. -->
+  <defs>
+    <mask id="seal-g-counter">
+      <rect x="0" y="0" width="100" height="100" fill="#000"/>
+      <!-- letter body -->
+      <circle cx="50" cy="50" r="27" fill="#fff"/>
+      <!-- didone counter: narrow ellipse gives thick stems / hairline shoulders -->
+      <ellipse cx="50" cy="50" rx="15" ry="20.5" fill="#000"/>
+      <!-- aperture -->
+      <rect x="50" y="56" width="42" height="12" fill="#000"/>
+      <!-- crossbar, set just below the optical centre -->
+      <rect x="55" y="48" width="26" height="8" fill="#fff"/>
+      <!-- descending spur off the bar -->
+      <rect x="55" y="48" width="3.6" height="13" fill="#fff"/>
+    </mask>
+  </defs>
+
+  <g fill="none" stroke="currentColor" stroke-width="0.9">
+    <circle cx="50" cy="50" r="47"/>
+    <circle cx="50" cy="50" r="44.2"/>
+  </g>
+
+  <!-- registration ticks between the rings -->
+  <g fill="currentColor">
+    <rect x="49.6" y="3" width="0.8" height="2.8"/>
+    <rect x="49.6" y="94.2" width="0.8" height="2.8"/>
+    <rect x="3" y="49.6" width="2.8" height="0.8"/>
+    <rect x="94.2" y="49.6" width="2.8" height="0.8"/>
+  </g>
+
+  <circle cx="50" cy="50" r="27" fill="currentColor" mask="url(#seal-g-counter)"/>
+</svg>

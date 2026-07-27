@@ -1,0 +1,344 @@
+<title>Ghosh Designs — Identity Concepts</title>
+<style>
+  :root{
+    --ground:#E9EAEC; --panel:#FDFDFC; --ink:#14161A; --ink-2:#5A6069;
+    --rule:#C8CBD1; --accent:#1F3FE0; --mark:#B9BDC4;
+    --f-sans:ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+    --f-serif:ui-serif,Georgia,"Times New Roman",serif;
+    --f-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --s1:.75rem; --s2:1rem; --s3:1.5rem; --s4:2.5rem; --s5:4rem; --s6:6.5rem;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--ground:#0C0E11;--panel:#14171B;--ink:#E7E9EC;--ink-2:#8A9199;
+          --rule:#262B31;--accent:#5C79FF;--mark:#3A4048;}
+  }
+  :root[data-theme="dark"]{--ground:#0C0E11;--panel:#14171B;--ink:#E7E9EC;--ink-2:#8A9199;
+          --rule:#262B31;--accent:#5C79FF;--mark:#3A4048;}
+  :root[data-theme="light"]{--ground:#E9EAEC;--panel:#FDFDFC;--ink:#14161A;--ink-2:#5A6069;
+          --rule:#C8CBD1;--accent:#1F3FE0;--mark:#B9BDC4;}
+
+  body{background:var(--ground);color:var(--ink);font-family:var(--f-sans);
+       line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .sheet{max-width:76rem;margin:0 auto;padding:var(--s4) var(--s3) var(--s6);}
+  @media (max-width:768px){.sheet{padding:var(--s3) var(--s2) var(--s5);}}
+
+  .lbl{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.14em;
+       text-transform:uppercase;color:var(--ink-2);}
+  h1,h2,h3{text-wrap:balance;margin:0;font-weight:600;}
+  h1{font-size:clamp(2rem,5vw,3.25rem);letter-spacing:-.03em;line-height:1.05;}
+  h2{font-size:clamp(1.5rem,3vw,2.125rem);letter-spacing:-.02em;}
+  h3{font-size:1.0625rem;letter-spacing:-.01em;}
+  p{margin:0;max-width:62ch;}
+  .dim{color:var(--ink-2);}
+
+  /* ---- sheet header ---- */
+  .masthead{display:flex;flex-direction:column;gap:var(--s3);
+            border-bottom:1px solid var(--rule);padding-bottom:var(--s3);}
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);}
+
+  /* ---- concept block ---- */
+  .concept{display:flex;flex-direction:column;gap:var(--s3);padding:var(--s5) 0;
+           border-bottom:1px solid var(--rule);}
+  .chead{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s2) var(--s3);}
+  .idx{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.14em;color:var(--accent);}
+
+  .grid{display:grid;gap:var(--s2);grid-template-columns:repeat(12,1fr);}
+  @media (max-width:768px){.grid{grid-template-columns:1fr;}[class*="col-"]{grid-column:auto !important;}}
+  .col-7{grid-column:span 7;} .col-5{grid-column:span 5;}
+  .col-4{grid-column:span 4;} .col-8{grid-column:span 8;} .col-12{grid-column:span 12;}
+
+  /* registration-marked panel */
+  .pane{position:relative;background:var(--panel);border:1px solid var(--rule);
+        padding:var(--s3);display:flex;flex-direction:column;gap:var(--s2);min-width:0;}
+  .pane::before,.pane::after{content:"";position:absolute;width:9px;height:9px;
+        border:0 solid var(--mark);pointer-events:none;}
+  .pane::before{top:6px;left:6px;border-top-width:1px;border-left-width:1px;}
+  .pane::after{bottom:6px;right:6px;border-bottom-width:1px;border-right-width:1px;}
+
+  /* specimen keeps its own brand ground in both themes */
+  .spec{display:grid;place-items:center;padding:var(--s5) var(--s3);border:1px solid var(--rule);}
+  .mk{display:block;width:100%;height:100%;}
+  .hero-mk{width:min(15rem,52vw);height:min(15rem,52vw);}
+
+  .ladder{display:flex;align-items:flex-end;gap:var(--s3);flex-wrap:wrap;}
+  .rung{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+  .rung span{font-family:var(--f-mono);font-size:.625rem;color:var(--ink-2);}
+
+  .swatches{display:flex;flex-wrap:wrap;gap:var(--s1);}
+  .sw{flex:1 1 6rem;min-width:6rem;border:1px solid var(--rule);}
+  .sw i{display:block;height:3rem;}
+  .sw b{display:block;font-family:var(--f-mono);font-size:.625rem;font-weight:400;
+        padding:.4rem .5rem;letter-spacing:.04em;}
+
+  .lockup{padding:var(--s3);border:1px solid var(--rule);overflow-x:auto;}
+  .lockup svg{display:block;width:100%;min-width:20rem;height:auto;}
+
+  dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.5rem var(--s2);}
+  dt{font-family:var(--f-mono);font-size:.6875rem;letter-spacing:.1em;
+     text-transform:uppercase;color:var(--ink-2);white-space:nowrap;}
+  dd{margin:0;font-size:.9375rem;min-width:0;}
+
+  .verdict{padding-top:var(--s5);display:flex;flex-direction:column;gap:var(--s3);}
+  ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.5rem;max-width:62ch;}
+
+  /* reveal is progressive enhancement: without JS the content is simply visible */
+  :root.js .rise{opacity:0;transform:translateY(1rem);
+        transition:opacity .8s cubic-bezier(.22,.68,0,1),transform .8s cubic-bezier(.22,.68,0,1);}
+  :root.js .rise.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none;}}
+  a{color:var(--accent);} :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="m-seal" viewBox="0 0 100 100">
+    <mask id="k-seal">
+      <rect width="100" height="100" fill="#000"/>
+      <circle cx="50" cy="50" r="27" fill="#fff"/>
+      <ellipse cx="50" cy="50" rx="15" ry="20.5" fill="#000"/>
+      <rect x="50" y="56" width="42" height="12" fill="#000"/>
+      <rect x="55" y="48" width="26" height="8" fill="#fff"/>
+      <rect x="55" y="48" width="3.6" height="13" fill="#fff"/>
+    </mask>
+    <g fill="none" stroke="currentColor" stroke-width="0.9">
+      <circle cx="50" cy="50" r="47"/><circle cx="50" cy="50" r="44.2"/>
+    </g>
+    <g fill="currentColor">
+      <rect x="49.6" y="3" width="0.8" height="2.8"/><rect x="49.6" y="94.2" width="0.8" height="2.8"/>
+      <rect x="3" y="49.6" width="2.8" height="0.8"/><rect x="94.2" y="49.6" width="2.8" height="0.8"/>
+    </g>
+    <circle cx="50" cy="50" r="27" fill="currentColor" mask="url(#k-seal)"/>
+  </symbol>
+
+  <symbol id="m-aperture" viewBox="0 0 100 100">
+    <g fill="none" stroke-width="9">
+      <path d="M 80.82 64.37 A 34 34 0 1 1 84 50" stroke="currentColor"/>
+      <path d="M 88.5 50 H 58" stroke="var(--sp-accent,currentColor)"/>
+    </g>
+  </symbol>
+
+  <symbol id="m-counter" viewBox="0 0 100 100">
+    <mask id="k-counter">
+      <rect width="100" height="100" fill="#000"/>
+      <circle cx="50" cy="50" r="42" fill="#fff"/>
+      <rect x="32" y="32" width="36" height="36" fill="#000"/>
+      <rect x="60" y="56" width="45" height="12" fill="#000"/>
+      <rect x="56" y="44" width="36" height="12" fill="#fff"/>
+    </mask>
+    <circle cx="50" cy="50" r="42" fill="currentColor" mask="url(#k-counter)"/>
+  </symbol>
+
+  <symbol id="m-construct" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="0.5" opacity=".45">
+      <circle cx="50" cy="50" r="38.5"/><circle cx="50" cy="50" r="29.5"/>
+      <path d="M50 4V96M4 50H96"/>
+      <path d="M23 23 77 77M77 23 23 77" stroke-dasharray="2 3"/>
+    </g>
+    <g fill="none" stroke-width="9">
+      <path d="M 80.82 64.37 A 34 34 0 1 1 84 50" stroke="currentColor" opacity=".22"/>
+      <path d="M 88.5 50 H 58" stroke="var(--sp-accent,currentColor)"/>
+    </g>
+  </symbol>
+</defs></svg>
+
+<div class="sheet">
+
+  <header class="masthead rise">
+    <div class="meta">
+      <span class="lbl">Ghosh Designs</span>
+      <span class="lbl">Identity concepts</span>
+      <span class="lbl">Proof sheet 01</span>
+    </div>
+    <h1>Three ways to draw a G.</h1>
+    <p class="dim">Every route below starts from the same letter and the same locked name. What
+      changes is the argument each one makes about how the studio works. Marks are true vector
+      geometry — no raster, no AI image, single-ink capable, legible down to 16&nbsp;px.</p>
+  </header>
+
+  <!-- ============ A ============ -->
+  <section class="concept rise">
+    <div class="chead">
+      <span class="idx">A</span><h2>The Seal</h2>
+      <span class="lbl">Editorial luxury</span>
+    </div>
+    <p class="dim">A high-contrast didone G struck inside a double-hairline ring. A seal is what a
+      studio puts on work once it is finished — it reads as authorship and approval, not decoration.
+      The thick–thin modulation comes from a narrowed inner counter, the same way a real
+      Didone gets its contrast.</p>
+
+    <div class="grid">
+      <div class="col-7 spec" style="background:#EDE9E0;color:#221C16;">
+        <svg class="mk hero-mk" aria-label="Seal mark"><use href="#m-seal"/></svg>
+      </div>
+      <div class="col-5" style="display:flex;flex-direction:column;gap:var(--s2);">
+        <div class="pane">
+          <span class="lbl">Scale ladder</span>
+          <div class="ladder" style="color:var(--ink);">
+            <div class="rung"><svg class="mk" style="width:72px;height:72px" aria-hidden="true"><use href="#m-seal"/></svg><span>72</span></div>
+            <div class="rung"><svg class="mk" style="width:40px;height:40px" aria-hidden="true"><use href="#m-seal"/></svg><span>40</span></div>
+            <div class="rung"><svg class="mk" style="width:24px;height:24px" aria-hidden="true"><use href="#m-seal"/></svg><span>24</span></div>
+            <div class="rung"><svg class="mk" style="width:16px;height:16px" aria-hidden="true"><use href="#m-seal"/></svg><span>16</span></div>
+          </div>
+          <p class="dim" style="font-size:.8125rem">Below 24&nbsp;px, drop the outer rings and set the
+            letter solid — that variant is the favicon.</p>
+        </div>
+        <div class="pane">
+          <span class="lbl">Palette</span>
+          <div class="swatches">
+            <div class="sw"><i style="background:#EDE9E0"></i><b>#EDE9E0 Bone</b></div>
+            <div class="sw"><i style="background:#221C16"></i><b>#221C16 Espresso</b></div>
+            <div class="sw"><i style="background:#7A2028"></i><b>#7A2028 Oxblood</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 lockup" style="background:#EDE9E0;color:#221C16;">
+        <svg viewBox="0 0 500 120" aria-label="Ghosh Designs seal lockup">
+          <use href="#m-seal" x="12" y="10" width="100" height="100"/>
+          <text x="140" y="60" dominant-baseline="central" font-family="ui-serif,Georgia,'Times New Roman',serif"
+                font-size="42" letter-spacing="0.5" fill="currentColor">Ghosh Designs</text>
+        </svg>
+      </div>
+      <div class="col-4 pane">
+        <span class="lbl">Specification</span>
+        <dl>
+          <dt>Display</dt><dd>PP Editorial New — fallback Canela, Georgia</dd>
+          <dt>Method</dt><dd>Monogram + seal metaphor</dd>
+          <dt>Best for</dt><dd>Print, stationery, emboss, foil</dd>
+          <dt>Risk</dt><dd>Rings clog at small sizes; needs the solid variant</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ B ============ -->
+  <section class="concept rise">
+    <div class="chead">
+      <span class="idx">B</span><h2>The Aperture</h2>
+      <span class="lbl">Dark precision</span>
+    </div>
+    <p class="dim">A perfect monoline circle stays a circle until one deliberate cut is made into it.
+      That cut is the crossbar, and it is the only element carrying colour. The argument: raw material
+      is neutral, and the decision is the design. It is also the cheapest mark here to
+      animate — the bar can draw itself in on load.</p>
+
+    <div class="grid">
+      <div class="col-7 spec" style="background:#0A0A0B;color:#EFEFEC;--sp-accent:#3D5BFF;">
+        <svg class="mk hero-mk" aria-label="Aperture mark"><use href="#m-aperture"/></svg>
+      </div>
+      <div class="col-5" style="display:flex;flex-direction:column;gap:var(--s2);">
+        <div class="pane spec" style="background:#0A0A0B;color:#EFEFEC;--sp-accent:#3D5BFF;padding:var(--s3);">
+          <span class="lbl" style="color:#7B8089;align-self:flex-start">Construction</span>
+          <svg class="mk" style="width:min(11rem,40vw);height:min(11rem,40vw)" aria-label="Aperture construction grid"><use href="#m-construct"/></svg>
+        </div>
+        <div class="pane">
+          <span class="lbl">Palette</span>
+          <div class="swatches">
+            <div class="sw"><i style="background:#0A0A0B"></i><b>#0A0A0B Ink</b></div>
+            <div class="sw"><i style="background:#EFEFEC"></i><b>#EFEFEC Paper</b></div>
+            <div class="sw"><i style="background:#3D5BFF"></i><b>#3D5BFF Drafting</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 lockup" style="background:#0A0A0B;color:#EFEFEC;--sp-accent:#3D5BFF;">
+        <svg viewBox="0 0 500 120" aria-label="Ghosh Designs aperture lockup">
+          <use href="#m-aperture" x="12" y="10" width="100" height="100"/>
+          <text x="140" y="60" dominant-baseline="central" font-family="ui-sans-serif,system-ui,'Segoe UI',sans-serif" font-weight="500"
+                font-size="40" letter-spacing="-0.8" fill="currentColor">Ghosh Designs</text>
+        </svg>
+      </div>
+      <div class="col-4 pane">
+        <span class="lbl">Specification</span>
+        <dl>
+          <dt>Display</dt><dd>Geist — fallback Plus Jakarta Sans</dd>
+          <dt>Method</dt><dd>Product action → symbol</dd>
+          <dt>Best for</dt><dd>Screen, motion, app icon, favicon</dd>
+          <dt>Risk</dt><dd>Monoline reads generic if the accent is ever dropped</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ C ============ -->
+  <section class="concept rise">
+    <div class="chead">
+      <span class="idx">C</span><h2>The Counter</h2>
+      <span class="lbl">Bold grotesk</span>
+    </div>
+    <p class="dim">A heavy circular G whose counter — the empty space inside the letter — has been
+      squared off. Design as the act of putting structure inside something organic, with the idea
+      living in the part you didn't draw. The one mark here that survives being stamped, engraved
+      or embroidered in a single ink with nothing lost.</p>
+
+    <div class="grid">
+      <div class="col-7 spec" style="background:#DAD7CE;color:#14140F;">
+        <svg class="mk hero-mk" aria-label="Counter mark"><use href="#m-counter"/></svg>
+      </div>
+      <div class="col-5" style="display:flex;flex-direction:column;gap:var(--s2);">
+        <div class="pane">
+          <span class="lbl">Scale ladder</span>
+          <div class="ladder" style="color:var(--ink);">
+            <div class="rung"><svg class="mk" style="width:72px;height:72px" aria-hidden="true"><use href="#m-counter"/></svg><span>72</span></div>
+            <div class="rung"><svg class="mk" style="width:40px;height:40px" aria-hidden="true"><use href="#m-counter"/></svg><span>40</span></div>
+            <div class="rung"><svg class="mk" style="width:24px;height:24px" aria-hidden="true"><use href="#m-counter"/></svg><span>24</span></div>
+            <div class="rung"><svg class="mk" style="width:16px;height:16px" aria-hidden="true"><use href="#m-counter"/></svg><span>16</span></div>
+          </div>
+          <p class="dim" style="font-size:.8125rem">Holds its counter at 16&nbsp;px with no
+            separate small-size variant needed.</p>
+        </div>
+        <div class="pane">
+          <span class="lbl">Palette</span>
+          <div class="swatches">
+            <div class="sw"><i style="background:#DAD7CE"></i><b>#DAD7CE Stone</b></div>
+            <div class="sw"><i style="background:#14140F"></i><b>#14140F Ink</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-8 lockup" style="background:#DAD7CE;color:#14140F;">
+        <svg viewBox="0 0 500 120" aria-label="Ghosh Designs counter lockup">
+          <use href="#m-counter" x="12" y="10" width="100" height="100"/>
+          <text x="140" y="60" dominant-baseline="central" font-family="ui-sans-serif,system-ui,'Segoe UI',sans-serif" font-weight="700"
+                font-size="41" letter-spacing="-1.4" fill="currentColor">Ghosh Designs</text>
+        </svg>
+      </div>
+      <div class="col-4 pane">
+        <span class="lbl">Specification</span>
+        <dl>
+          <dt>Display</dt><dd>Clash Display — fallback Plus Jakarta Sans</dd>
+          <dt>Method</dt><dd>Negative space</dd>
+          <dt>Best for</dt><dd>Single ink, signage, merch, engraving</dd>
+          <dt>Risk</dt><dd>Loudest of the three; less room to sit beside client work</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="verdict rise">
+    <span class="lbl">Reading the sheet</span>
+    <h2>If you want my call</h2>
+    <p class="dim"><strong>B, The Aperture.</strong> A design studio's mark has to sit next to client
+      work all day without competing with it, and B is the only one of the three that stays quiet
+      while still carrying an idea you can say out loud in one sentence. It is also the most
+      flexible: it animates, it works as a favicon, and dropping the accent gives you a mono version
+      for free.</p>
+    <ul>
+      <li><strong>Take A</strong> if most of what people touch is physical — cards, folders, printed
+        proposals — and you want the brand to feel established rather than current.</li>
+      <li><strong>Take C</strong> if you want to be recognised from across a room and are willing to
+        be the loudest thing on the page to get it.</li>
+    </ul>
+    <p class="dim">Next step once you pick: I draw the wordmark as custom outlines rather than set
+      type, build the clear-space and misuse rules, and export the full favicon and app-icon set.</p>
+  </section>
+</div>
+
+<script>
+  document.documentElement.classList.add("js");
+  const obs = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }
+    }
+  }, { rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll(".rise").forEach((el, i) => {
+    el.style.transitionDelay = Math.min(i, 3) * 70 + "ms";
+    obs.observe(el);
+  });
+</script>

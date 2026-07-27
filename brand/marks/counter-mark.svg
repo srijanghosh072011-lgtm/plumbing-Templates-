@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512" role="img" aria-label="Ghosh Designs counter mark">
+  <title>Ghosh Designs — The Counter</title>
+  <!-- Concept C: Bold Grotesk. A heavy circular G whose counter — the negative
+       space inside the letter — has been squared off. Design is the act of putting
+       structure inside something organic. The idea lives in the empty part. -->
+  <defs>
+    <mask id="counter-g">
+      <rect x="0" y="0" width="100" height="100" fill="#000"/>
+      <circle cx="50" cy="50" r="42" fill="#fff"/>
+      <!-- the squared counter -->
+      <rect x="32" y="32" width="36" height="36" fill="#000"/>
+      <!-- aperture -->
+      <rect x="60" y="56" width="45" height="12" fill="#000"/>
+      <!-- crossbar, driven back into the square -->
+      <rect x="56" y="44" width="36" height="12" fill="#fff"/>
+    </mask>
+  </defs>
+  <circle cx="50" cy="50" r="42" fill="currentColor" mask="url(#counter-g)"/>
+</svg>
