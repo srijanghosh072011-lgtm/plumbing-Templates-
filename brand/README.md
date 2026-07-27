@@ -15,6 +15,19 @@ and construction geometry.
 | `marks/counter-mark.svg` | **C — The Counter.** Heavy grotesk G with a squared counter. |
 | `lockups/*.svg` | Horizontal mark + wordmark lockups. |
 | `board.html` | Presentation board covering all three. |
+| `avatars/*.png` | 1024×1024 dark profile pictures, one per concept. |
+| `avatars/build.html` | Source sheet the avatar PNGs are exported from. |
+
+## Profile pictures
+
+`avatars/` holds square 1024×1024 PNGs on each concept's dark ground, sized for
+services that crop an avatar to a circle (Google, Slack, GitHub). The mark sits
+well inside the inscribed circle, so nothing is shaved by the crop, and each was
+checked down to 28 px.
+
+Google will not accept an SVG for a profile photo — upload the PNG. The Seal
+avatar uses the **solid variant without the outer rings**; the rings clog at
+avatar sizes.
 
 ## How the marks are built
 
