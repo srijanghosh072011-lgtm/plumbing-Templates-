@@ -34,18 +34,31 @@ export default function AboutPage() {
       <section className="bg-bone-50 py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
-            <div className="space-y-5 text-lg leading-relaxed text-ink-700">
-              <p>
-                TODO_OWNER_STORY — replace this with the real story. Who started the
-                business, why, what they did before, and what they want it to be. This is the
-                single highest-value paragraph on the site for both trust and E-E-A-T, and it
-                is the one paragraph that cannot be written by anyone but the owner.
-              </p>
-              <p>
-                Two or three paragraphs is plenty. Be specific: the year, the first truck, the
-                thing that made you go out on your own. Specifics are what people remember and
-                what search engines treat as genuine first-hand experience.
-              </p>
+            <div className="grid gap-8 sm:grid-cols-[0.8fr_1.2fr] sm:items-start">
+              <div className="overflow-hidden rounded-[1.5rem] bg-white p-1.5 shadow-[0_20px_50px_-28px_rgb(13_20_40/0.45)] ring-1 ring-ink-900/[0.07]">
+                <img
+                  src="/images/about-portrait.webp"
+                  alt="TODO_OWNER_NAME, licensed journeyman plumber and owner"
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full rounded-[1.125rem] object-cover"
+                />
+              </div>
+              <div className="space-y-5 text-lg leading-relaxed text-ink-700">
+                <p>
+                  TODO_OWNER_STORY — replace this with the real story. Who started the
+                  business, why, what they did before, and what they want it to be. This is
+                  the single highest-value paragraph on the site for both trust and E-E-A-T,
+                  and it is the one paragraph that cannot be written by anyone but the owner.
+                </p>
+                <p>
+                  Two or three paragraphs is plenty. Be specific: the year, the first truck,
+                  the thing that made you go out on your own. Specifics are what people
+                  remember and what search engines treat as genuine first-hand experience.
+                </p>
+              </div>
             </div>
           </Reveal>
 

@@ -127,6 +127,21 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-4 border-t border-white/[0.08] pt-8 text-xs text-bone-200/45 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {client.legalName}. All rights reserved.
+            {client.builtByCredit && (
+              <>
+                {' · '}
+                <span className="whitespace-nowrap">
+                  Site by{' '}
+                  <a
+                    href={client.builtByUrl}
+                    rel="noopener"
+                    className="underline-offset-4 transition-colors hover:text-white hover:underline"
+                  >
+                    {client.builtByCredit}
+                  </a>
+                </span>
+              </>
+            )}
           </p>
           <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-2">
             <FooterLink href="/privacy/" small>Privacy Policy</FooterLink>

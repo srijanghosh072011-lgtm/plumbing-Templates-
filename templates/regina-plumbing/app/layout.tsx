@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     siteName: client.name,
     title: `${client.name} | Licensed Plumber in ${client.address.locality}, SK`,
     description: client.answerSentence.slice(0, 158),
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: `${client.name} — licensed plumbing and heating` }],
+    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: `${client.name} — licensed plumbing and heating` }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${client.name} | Licensed Plumber in ${client.address.locality}, SK`,
     description: client.answerSentence.slice(0, 158),
-    images: ['/og.png'],
+    images: ['/og.jpg'],
   },
   icons: {
     icon: [

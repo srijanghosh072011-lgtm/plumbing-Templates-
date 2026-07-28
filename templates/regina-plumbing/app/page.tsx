@@ -52,7 +52,7 @@ function Hero() {
         alt=""
         aria-hidden="true"
         width={2400}
-        height={1600}
+        height={1350}
         fetchPriority="high"
         decoding="async"
         className="absolute inset-0 -z-20 h-full w-full object-cover"
@@ -166,18 +166,18 @@ function Intro() {
           />
           <div className="relative grid grid-cols-2 gap-4">
             <IntroPlate
-              src="/images/hero-technician.webp"
-              alt="Licensed plumber fitting a copper supply line under a kitchen sink"
+              src="/images/plate-technician.webp"
+              alt="Plumber's hands tightening a compression fitting on a chrome waste pipe beneath a sink"
               className="md:-rotate-2"
             />
             <IntroPlate
-              src="/images/hero-waterheater.webp"
-              alt="Newly installed gas water heater with labelled shut-off valves"
+              src="/images/plate-valves.webp"
+              alt="Red-handled isolation valve fitted to a white wall"
               className="md:mt-10 md:rotate-1"
             />
             <IntroPlate
-              src="/images/hero-drain.webp"
-              alt="Drain camera footage showing a cleared sewer line"
+              src="/images/plate-pipe.webp"
+              alt="Water dripping from a failed joint on an exterior white pipe"
               className="col-span-2 md:-mt-4 md:-rotate-1"
               wide
             />
@@ -239,8 +239,8 @@ function IntroPlate({
       <img
         src={src}
         alt={alt}
-        width={wide ? 640 : 320}
-        height={wide ? 360 : 400}
+        width={wide ? 1280 : 720}
+        height={wide ? 720 : 900}
         loading="lazy"
         decoding="async"
         className="h-full w-full rounded-[1.125rem] object-cover"

@@ -75,6 +75,14 @@ export const client = {
 
   // Leave empty until GA4 is live; the tag is not rendered without it.
   gaMeasurementId: '',
+
+  /**
+   * Agency credit in the footer copyright line. Set to '' to remove it —
+   * some clients would rather their site not advertise who built it, and
+   * that is their call, so it is a config value rather than hard-coded.
+   */
+  builtByCredit: 'Ghosh Designs',
+  builtByUrl: 'https://ghoshdesigns.ca',
 } as const;
 
 export type Client = typeof client;

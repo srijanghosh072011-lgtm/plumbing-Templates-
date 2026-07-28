@@ -27,15 +27,14 @@ Then:
    written for Regina; rewrite it for the real business. **Never clone an
    area page and swap the town name** — duplicate location content is a
    ranking problem, and each area page here is genuinely distinct.
-2. `public/images/` — replace the placeholder plates, which currently say
-   "REPLACE" across the middle. Resize and encode to WebP **before**
-   committing; a static export has no image optimizer.
-   - `hero-bg.webp` — the full-bleed hero photograph, 2400×1600 or wider.
-     Wants a wide, real, people-at-work shot. The overlay stack is layered
-     so even a pure-white image keeps the headline at 12.2:1 contrast, so
-     you do not need to pre-darken it or re-test contrast after swapping.
-   - `hero-technician.webp`, `hero-waterheater.webp`, `hero-drain.webp` —
-     the three collage plates in the intro section below the hero.
+2. `public/images/` — see **Image credits** below for what is real and what
+   is still a placeholder. Resize and encode to WebP **before** committing;
+   a static export has no image optimizer.
+   - `hero-bg.webp` — **still a generated gradient.** Wants a wide, dark,
+     real people-at-work photograph, 2400px or wider, with a calm middle
+     where the headline sits. The overlay stack is layered so even a
+     pure-white image keeps the headline at 12.2:1 contrast, so you do not
+     need to pre-darken it or re-test contrast after swapping.
 3. `public/og.png`, `favicon.ico`, `icon-*.png`, `apple-touch-icon.png`.
 4. `public/llms.txt` and `public/site.webmanifest` — both carry `TODO_`s.
 5. `app/about/page.tsx` — `TODO_OWNER_STORY`. The highest-value paragraph on
@@ -82,6 +81,27 @@ workflow and commit a `CNAME` file.
 > **Read [`LAUNCH-CHECKLIST.md`](./LAUNCH-CHECKLIST.md) before going live.** It
 > maps all 12 playbook categories to what the template handles, what you must
 > do, and the four things GitHub Pages genuinely cannot do.
+
+## Image credits
+
+| File | Source | Status |
+|---|---|---|
+| `images/plate-technician.webp` | Free stock (Pexels/Unsplash) | Real photo |
+| `images/plate-valves.webp` | Free stock (Pexels/Unsplash) | Real photo |
+| `images/plate-pipe.webp` | Free stock (Pexels/Unsplash) | Real photo |
+| `images/about-portrait.webp` | Free stock (Pexels/Unsplash) | Real photo — **not the actual owner** |
+| `og.jpg` | Crop of `plate-pipe` source | Real photo |
+| `images/hero-bg.webp` | Generated gradient | **Placeholder — replace** |
+| `favicon.ico`, `icon-*.png`, `apple-touch-icon.png` | Generated | **Placeholder — replace** |
+
+Pexels and Unsplash (free tier) both permit commercial use with no
+attribution required. Unsplash**+** is a paid tier — do not use those.
+
+Two things to be honest with clients about: `about-portrait.webp` is a stock
+person, not the owner, so replace it before anyone claims otherwise; and
+stock photography is a stand-in. Real job and team photos convert better and
+feed Google Business Profile, which is the single biggest local ranking
+lever. Treat the stock set as scaffolding.
 
 ## Stack
 
