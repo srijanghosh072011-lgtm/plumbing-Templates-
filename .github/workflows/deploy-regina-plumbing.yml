@@ -1,0 +1,68 @@
+name: Deploy regina-plumbing to GitHub Pages
+
+# Publishes the static export to the `gh-pages` branch. Point
+# Settings → Pages at "Deploy from a branch" → gh-pages → / (root).
+#
+# Manual dispatch is enabled so a deploy can be triggered without a push.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'templates/regina-plumbing/**'
+      - '.github/workflows/deploy-regina-plumbing.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: pages-regina-plumbing
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: templates/regina-plumbing
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: templates/regina-plumbing/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Blocks a deploy carrying lorem ipsum, 555 numbers or TODO_ markers.
+      # Remove this step only if you genuinely intend to publish placeholders.
+      - name: Pre-launch content check
+        run: npm run check
+
+      - name: Build static export
+        # BASE_PATH must match the repo name for a project site served from
+        # https://<user>.github.io/<repo>/. Set it to an empty string when
+        # using a custom domain or a <user>.github.io repo.
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
+        run: npm run build
+
+      # Pages runs the output through Jekyll otherwise, which strips
+      # directories beginning with an underscore — including _next.
+      - name: Disable Jekyll processing
+        run: touch out/.nojekyll
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: templates/regina-plumbing/out
+          publish_branch: gh-pages
+          # Keeps a CNAME file if one is committed to the branch.
+          keep_files: false
+          commit_message: 'Deploy regina-plumbing: ${{ github.sha }}'
