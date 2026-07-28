@@ -17,6 +17,10 @@ on:
     paths:
       - 'templates/regina-plumbing/**'
       - '.github/workflows/deploy-regina-plumbing.yml'
+    # Without this the job's own commit to docs/ retriggers the workflow,
+    # which commits again, forever.
+    paths-ignore:
+      - 'docs/**'
   workflow_dispatch:
 
 concurrency:
@@ -63,12 +67,27 @@ jobs:
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: templates/regina-plumbing/out
-          publish_branch: gh-pages
-          # Keeps a CNAME file if one is committed to the branch.
-          keep_files: false
-          commit_message: 'Deploy regina-plumbing: ${{ github.sha }}'
+      # Published into docs/ on this same branch rather than to gh-pages.
+      # GitHub Pages can only serve a branch's root or its /docs directory —
+      # it cannot be pointed at templates/regina-plumbing/out — so docs/ is
+      # what makes "host straight from this branch" possible at all.
+      - name: Copy build into docs/
+        working-directory: ${{ github.workspace }}
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -r templates/regina-plumbing/out/. docs/
+          touch docs/.nojekyll
+
+      - name: Commit docs/
+        working-directory: ${{ github.workspace }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs
+          if git diff --staged --quiet; then
+            echo "No change in built output; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Publish regina-plumbing build to docs/ (${GITHUB_SHA::7})"
+          git push origin HEAD:${GITHUB_REF_NAME}
