@@ -9,8 +9,9 @@ import { Shell, Cta, Eyebrow, CheckIcon, ArrowIcon } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: `Licensed Plumber in ${client.address.locality}, SK | 24/7 Emergency`,
+  // Keep under 160 characters or Google truncates it in the SERP.
   description:
-    'Licensed, insured plumbing and heating in Regina. 24/7 emergency call-out, flat-rate pricing quoted before we start. Drain cleaning, water heaters, furnaces, sump pumps.',
+    'Licensed, insured plumbing and heating in Regina. 24/7 emergency call-out, flat-rate pricing quoted before we start. Drains, water heaters, furnaces.',
   alternates: { canonical: '/' },
 };
 

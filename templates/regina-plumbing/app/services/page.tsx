@@ -10,8 +10,9 @@ import { PageHero } from '@/components/blocks';
 
 export const metadata: Metadata = {
   title: `Plumbing & Heating Services in ${client.address.locality}, SK`,
+  // Keep under 160 characters or Google truncates it in the SERP.
   description:
-    'Emergency plumbing, drain cleaning, water heaters, furnaces, renovation plumbing and flood protection across Regina and area. Flat-rate pricing quoted before work starts.',
+    'Emergency plumbing, drain cleaning, water heaters, furnaces and flood protection across Regina and area. Flat-rate pricing quoted before work starts.',
   alternates: { canonical: '/services/' },
 };
 

@@ -45,6 +45,23 @@ It fails on lorem ipsum, 555 numbers, `example@` addresses, `href="#"`,
 staging URLs and any surviving `TODO_`. The deploy workflow runs it too, so a
 site full of placeholders cannot reach production.
 
+### Rendered-page QA
+
+`npm run check` scans source. To assert the same invariants against the
+*built* HTML — one H1 per page, title/description within SERP limits,
+canonical present, alt text and dimensions on every image, labelled form
+fields, no skipped heading levels:
+
+```bash
+npm i -D playwright      # not a template dependency; installed on demand
+npm run build
+npm run serve            # separate terminal
+npm run qa
+```
+
+Playwright is deliberately kept out of `package.json` so CI installs stay
+fast — the deploy workflow does not need a browser.
+
 ## Deploying to GitHub Pages
 
 1. Push to `main`. `.github/workflows/deploy-regina-plumbing.yml` builds and

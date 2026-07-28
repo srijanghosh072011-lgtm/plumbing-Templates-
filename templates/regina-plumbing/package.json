@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "check": "node scripts/prelaunch-check.mjs"
+    "check": "node scripts/prelaunch-check.mjs",
+    "serve": "python3 -m http.server 8899 -d out",
+    "qa": "node scripts/qa-pages.mjs"
   },
   "dependencies": {
     "next": "15.1.6",
