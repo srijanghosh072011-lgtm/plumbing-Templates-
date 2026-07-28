@@ -80,6 +80,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        {/* The hero photograph is the LCP element on every viewport. Without
+            this it is not discovered until the HTML parser reaches it. */}
+        <link rel="preload" href="/images/hero-bg.webp" as="image" fetchPriority="high" />
         {/*
           GitHub Pages cannot send response headers, so the policy that can
           live in a meta tag does. This is weaker than the real thing: a meta

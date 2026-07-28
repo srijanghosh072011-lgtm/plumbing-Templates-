@@ -22,6 +22,7 @@ export default function HomePage() {
       <JsonLd data={graph(faqSchema(generalFaqs.slice(0, 4)))} />
 
       <Hero />
+      <Intro />
       <TrustBar />
       <ServicesGrid />
       <Process />
@@ -33,156 +34,216 @@ export default function HomePage() {
 }
 
 /* ── Hero ─────────────────────────────────────────────────────────────────
-   Editorial split: type on the left, an asymmetric photo cascade on the
-   right. The answer sentence sits in the first paragraph so AI engines
-   extracting the opening 150-200 tokens get the full entity description.
+   Full-bleed photograph, darkened, with a centred content stack in front of
+   it — the structure of the reference site. Everything is centred and
+   stacked, which is also why it survives the drop to a phone: there is no
+   two-column layout to collapse, the type just gets smaller.
+
+   Deliberately ONE call to action. The reference had one, and a hero that
+   offers four things gets none of them clicked.
    ───────────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-ink-950 pb-24 pt-36 sm:pt-44 lg:pb-32">
-      <div className="blueprint-field absolute inset-0" aria-hidden="true" />
-      <div
+    <section className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden">
+      {/* Background photograph. Not a CSS background-image: an <img> can be
+          preloaded and given fetchpriority, and this is the LCP element. */}
+      <img
+        src="/images/hero-bg.webp"
+        alt=""
         aria-hidden="true"
-        className="absolute -right-32 -top-32 h-[34rem] w-[34rem] rounded-full bg-tide-500/18 blur-3xl"
+        width={2400}
+        height={1600}
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
+
+      {/* Tint stack: a flat wash for colour, then a vertical gradient that
+          darkens the top (behind the nav) and the bottom (handing off to the
+          white section below) while letting the middle of the photograph
+          stay legible. A hero photo nobody can see is just an expensive
+          background colour.
+
+          The three layers compose so that even a PURE WHITE photograph
+          leaves the headline area at rgb(50,53,64) — white text at 12.2:1.
+          That means swapping in any client photo is safe without re-testing
+          contrast, which is the whole point of doing it in layers. */}
+      <div className="absolute inset-0 -z-10 bg-ink-950/45" aria-hidden="true" />
       <div
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-ink-950/75 via-ink-950/30 to-ink-950/80"
         aria-hidden="true"
-        className="absolute -bottom-40 left-1/4 h-96 w-96 rounded-full bg-copper-500/10 blur-3xl"
+      />
+      {/* Radial vignette concentrates contrast behind the headline itself. */}
+      <div
+        className="absolute inset-0 -z-10 [background:radial-gradient(ellipse_60%_50%_at_50%_45%,rgb(7_11_24/0.55),transparent_70%)]"
+        aria-hidden="true"
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:px-8">
-        <div>
-          <Reveal>
-            <Eyebrow tone="dark">
-              <span className="h-1.5 w-1.5 rounded-full bg-copper-400" />
-              {client.address.locality}, Saskatchewan · Est. {client.foundedYear}
-            </Eyebrow>
-          </Reveal>
+      <div className="relative mx-auto w-full max-w-4xl px-6 py-32 text-center sm:py-36">
+        <Reveal>
+          <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-tide-300 ring-1 ring-white/15 backdrop-blur-sm sm:text-[11px]">
+            <span className="h-1.5 w-1.5 rounded-full bg-copper-400" />
+            Welcome to {client.name}
+          </p>
+        </Reveal>
 
-          <Reveal delay={80}>
-            <h1 className="mt-6 font-display text-[clamp(2.75rem,7vw,4.75rem)] font-extrabold leading-[0.94] tracking-[-0.04em] text-white">
-              Water where it
-              <br />
-              shouldn&apos;t be?
-              <br />
-              <span className="text-tide-400">We&apos;re on it.</span>
-            </h1>
-          </Reveal>
+        <Reveal delay={90}>
+          {/* All-caps, tight, centred — the reference's defining move.
+              clamp() means no breakpoint jumps between 360px and 1440px. */}
+          <h1 className="mt-7 font-display text-[clamp(2.5rem,8.5vw,5.5rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.03em] text-white">
+            Top rated plumbing
+            <br className="hidden sm:block" />{' '}
+            <span className="text-tide-300">&amp; heating</span> in {client.address.locality}
+          </h1>
+        </Reveal>
 
-          <Reveal delay={150}>
-            {/* The answer paragraph — first 150-200 words, plain prose. */}
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-bone-200/75">
-              {client.answerSentence}
-            </p>
-          </Reveal>
+        <Reveal delay={160}>
+          <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-bone-100/85 sm:text-lg">
+            {/* Social proof, mirroring the reference's review line. The count
+                is a placeholder because an invented review count is a lie
+                that Google can check. */}
+            TODO_REVIEW_COUNT+ reviews across Google and Facebook. Licensed, insured, and
+            answering the phone 24/7.
+          </p>
+        </Reveal>
 
-          <Reveal delay={210}>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Cta
-                href={`tel:${client.phoneRaw}`}
-                external
-                icon="phone"
-                variant="onDark"
-                data-analytics="phone_call_click"
-                aria-label={`Call ${client.name} now on ${client.phone}`}
-              >
-                Call {client.phone}
-              </Cta>
-              <Cta href="/quote/" variant="ghost">
-                Get a fast quote
-              </Cta>
-            </div>
-          </Reveal>
-
-          <Reveal delay={280}>
-            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-bone-200/60">
-              {[
-                'Licensed & insured',
-                'Flat-rate, quoted upfront',
-                '24/7 emergency call-out',
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <CheckIcon className="h-4 w-4 text-copper-400" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-
-        {/* Z-axis photo cascade. Rotations and overlaps are md+ only — on a
-            phone they collapse to a clean stack, because overlapping cards
-            create touch-target conflicts. */}
-        <Reveal delay={120} className="relative">
-          <div className="relative mx-auto grid max-w-md grid-cols-2 gap-4 md:max-w-none">
-            <HeroPlate
-              src="/images/hero-technician.webp"
-              alt="Licensed plumber fitting a copper supply line under a kitchen sink"
-              className="md:translate-y-8 md:-rotate-2"
-              priority
-            />
-            <HeroPlate
-              src="/images/hero-waterheater.webp"
-              alt="Newly installed gas water heater with labelled shut-off valves"
-              className="md:rotate-1"
-            />
-            <HeroPlate
-              src="/images/hero-drain.webp"
-              alt="Drain camera inspection footage showing a cleared sewer line"
-              className="col-span-2 md:-rotate-1"
-              wide
-            />
+        <Reveal delay={230}>
+          <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Cta href="/quote/" variant="onDark" className="w-full justify-center sm:w-auto">
+              Get a fast quote
+            </Cta>
+            <Cta
+              href={`tel:${client.phoneRaw}`}
+              external
+              icon="phone"
+              variant="ghost"
+              className="w-full justify-center sm:w-auto"
+              data-analytics="phone_call_click"
+              aria-label={`Call ${client.name} on ${client.phone}`}
+            >
+              {client.phone}
+            </Cta>
           </div>
+        </Reveal>
 
-          {/* Floating proof chip, overlapping the cascade. */}
-          <div className="mt-6 md:absolute md:-bottom-8 md:-left-6 md:mt-0">
-            <div className="rounded-[2rem] bg-white/[0.06] p-1.5 ring-1 ring-white/12 backdrop-blur-xl">
-              <div className="rounded-[1.625rem] bg-ink-900/90 px-5 py-4">
-                <p className="font-display text-2xl font-extrabold tracking-tight text-white">
-                  60–90 min
-                </p>
-                <p className="mt-0.5 text-xs text-bone-200/60">
-                  typical emergency arrival in Regina
-                </p>
-              </div>
-            </div>
-          </div>
+        <Reveal delay={300}>
+          <ul className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2.5 text-sm text-bone-100/65">
+            {['Licensed & insured', 'Flat-rate pricing', '24/7 emergency'].map((item) => (
+              <li key={item} className="flex items-center gap-2">
+                <CheckIcon className="h-4 w-4 text-copper-400" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </section>
   );
 }
 
-function HeroPlate({
+/* ── Intro ────────────────────────────────────────────────────────────────
+   The reference's "Serving Professional Washing Services" band: photo
+   collage left, headline and feature rows right. This is where the answer
+   paragraph lives now — still inside the first screenful of prose, so the
+   AEO opening is intact even though the hero above it is image-led.
+   ───────────────────────────────────────────────────────────────────────── */
+function Intro() {
+  const points = [
+    { t: 'Licensed journeyman plumbers', d: 'Every technician is ticketed, insured and WCB-covered. Ask us for the numbers — they are on the About page.' },
+    { t: `${new Date().getFullYear() - client.foundedYear}+ years in Regina`, d: 'We know which neighbourhoods have clay laterals, which have high water tables, and what freezes first at −35.' },
+  ];
+
+  return (
+    <section className="bg-bone-50 py-24 lg:py-32">
+      <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16 lg:px-8">
+        {/* Collage. Rotations and overlaps are md+ only — on a phone they
+            become a plain 2-up grid, because overlapping cards create
+            touch-target conflicts and unpredictable tap zones. */}
+        <Reveal className="relative">
+          <div
+            aria-hidden="true"
+            className="absolute -left-4 -top-4 hidden h-40 w-40 rounded-3xl bg-tide-100/70 md:block"
+          />
+          <div className="relative grid grid-cols-2 gap-4">
+            <IntroPlate
+              src="/images/hero-technician.webp"
+              alt="Licensed plumber fitting a copper supply line under a kitchen sink"
+              className="md:-rotate-2"
+            />
+            <IntroPlate
+              src="/images/hero-waterheater.webp"
+              alt="Newly installed gas water heater with labelled shut-off valves"
+              className="md:mt-10 md:rotate-1"
+            />
+            <IntroPlate
+              src="/images/hero-drain.webp"
+              alt="Drain camera footage showing a cleared sewer line"
+              className="col-span-2 md:-mt-4 md:-rotate-1"
+              wide
+            />
+          </div>
+        </Reveal>
+
+        <Reveal delay={110}>
+          <Eyebrow>{client.name}</Eyebrow>
+          <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-ink-900">
+            Serving Regina homes,
+            <br className="hidden sm:block" /> properly.
+          </h2>
+
+          {/* The answer paragraph — the entity description AI engines lift. */}
+          <p className="mt-6 text-lg leading-relaxed text-ink-700">{client.answerSentence}</p>
+
+          <ul className="mt-8 space-y-5">
+            {points.map((p) => (
+              <li key={p.t} className="flex gap-4">
+                <span className="mt-0.5 grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-tide-50 text-tide-600 ring-1 ring-tide-100">
+                  <CheckIcon className="h-5 w-5" />
+                </span>
+                <span>
+                  <span className="block font-display text-lg font-extrabold tracking-tight text-ink-900">
+                    {p.t}
+                  </span>
+                  <span className="mt-1 block text-sm leading-relaxed text-ink-700">{p.d}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <Cta href="/services/" className="mt-9">
+            See what we do
+          </Cta>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function IntroPlate({
   src,
   alt,
   className = '',
   wide,
-  priority,
 }: {
   src: string;
   alt: string;
   className?: string;
   wide?: boolean;
-  priority?: boolean;
 }) {
   return (
     <div
-      className={`overflow-hidden rounded-[1.75rem] bg-white/[0.05] p-1.5 ring-1 ring-white/12 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[1.02] ${className}`}
+      className={`overflow-hidden rounded-[1.5rem] bg-white p-1.5 shadow-[0_20px_50px_-28px_rgb(13_20_40/0.45)] ring-1 ring-ink-900/[0.07] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[1.02] ${className}`}
     >
-      {/* Plain <img>: static export cannot run the optimizer, and these are
-          pre-encoded WebP. Explicit dimensions hold the box so nothing
-          shifts when they decode (CLS). */}
+      {/* Plain <img>: static export has no image optimizer, and these are
+          pre-encoded WebP. Explicit dimensions hold the box during decode. */}
       <img
         src={src}
         alt={alt}
         width={wide ? 640 : 320}
         height={wide ? 360 : 400}
-        loading={priority ? 'eager' : 'lazy'}
-        // The hero image is the LCP candidate on mobile — tell the browser.
-        fetchPriority={priority ? 'high' : 'auto'}
+        loading="lazy"
         decoding="async"
-        className="h-full w-full rounded-[1.375rem] object-cover"
+        className="h-full w-full rounded-[1.125rem] object-cover"
       />
     </div>
   );

@@ -39,11 +39,14 @@ export function Header() {
 
   return (
     <header className="no-print pointer-events-none fixed inset-x-0 top-0 z-40 px-4 pt-4 sm:pt-6">
-      {/* Floating glass pill, detached from the top edge. */}
-      <div className="pointer-events-auto mx-auto flex w-full max-w-6xl items-center gap-3 rounded-full border border-white/60 bg-white/75 p-1.5 pl-5 shadow-[0_20px_50px_-28px_rgb(13_20_40/0.45)] backdrop-blur-2xl">
+      {/* Floating glass pill, detached from the top edge.
+          Dark-tinted rather than white: every page on this site opens with a
+          dark hero, so a light slab would sit on top of the photograph like
+          a sticker. This reads as part of the image instead. */}
+      <div className="pointer-events-auto mx-auto flex w-full max-w-6xl items-center gap-3 rounded-full border border-white/12 bg-ink-950/55 p-1.5 pl-5 shadow-[0_20px_50px_-28px_rgb(7_11_24/0.7)] backdrop-blur-2xl">
         <Link
           href="/"
-          className="mr-auto flex items-center gap-2.5 font-display text-[15px] font-extrabold tracking-tight text-ink-900"
+          className="mr-auto flex items-center gap-2.5 font-display text-[15px] font-extrabold tracking-tight text-white"
         >
           <Logo />
           <span className="hidden sm:inline">{client.shortName}</span>
@@ -59,8 +62,8 @@ export function Header() {
                 aria-current={active ? 'page' : undefined}
                 className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
                   active
-                    ? 'bg-ink-900/[0.06] text-ink-900'
-                    : 'text-ink-700 hover:bg-ink-900/[0.04] hover:text-ink-900'
+                    ? 'bg-white/12 text-white'
+                    : 'text-bone-100/75 hover:bg-white/[0.07] hover:text-white'
                 }`}
               >
                 {item.label}
@@ -73,7 +76,10 @@ export function Header() {
           href={`tel:${client.phoneRaw}`}
           external
           icon="phone"
-          variant="primary"
+          // White, not copper: the hero's primary CTA owns the one accent
+          // colour on screen. Two competing oranges means neither reads as
+          // the primary action.
+          variant="ghost"
           className="hidden text-sm sm:inline-flex"
           data-analytics="phone_call_click"
           aria-label={`Call ${client.name} on ${client.phone}`}
@@ -88,7 +94,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ink-900/[0.05] text-ink-900 transition-colors hover:bg-ink-900/10 lg:hidden"
+          className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
         >
           {/* Two bars that rotate into an X rather than swapping glyphs. */}
           <span className="relative block h-3 w-5" aria-hidden="true">

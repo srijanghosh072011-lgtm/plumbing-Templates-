@@ -27,9 +27,15 @@ Then:
    written for Regina; rewrite it for the real business. **Never clone an
    area page and swap the town name** — duplicate location content is a
    ranking problem, and each area page here is genuinely distinct.
-2. `public/images/` — replace the three hero plates. They currently say
-   "REPLACE" in the middle. Resize and encode to WebP **before** committing;
-   a static export has no image optimizer.
+2. `public/images/` — replace the placeholder plates, which currently say
+   "REPLACE" across the middle. Resize and encode to WebP **before**
+   committing; a static export has no image optimizer.
+   - `hero-bg.webp` — the full-bleed hero photograph, 2400×1600 or wider.
+     Wants a wide, real, people-at-work shot. The overlay stack is layered
+     so even a pure-white image keeps the headline at 12.2:1 contrast, so
+     you do not need to pre-darken it or re-test contrast after swapping.
+   - `hero-technician.webp`, `hero-waterheater.webp`, `hero-drain.webp` —
+     the three collage plates in the intro section below the hero.
 3. `public/og.png`, `favicon.ico`, `icon-*.png`, `apple-touch-icon.png`.
 4. `public/llms.txt` and `public/site.webmanifest` — both carry `TODO_`s.
 5. `app/about/page.tsx` — `TODO_OWNER_STORY`. The highest-value paragraph on
