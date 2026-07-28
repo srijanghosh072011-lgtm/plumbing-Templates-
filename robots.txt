@@ -1,38 +1,41 @@
-# Northline Plumbing Co. — robots.txt
-# Posture: allow all. Search + AI retrieval crawlers drive discovery and citations.
-
-User-agent: *
-Allow: /
-Disallow: /thank-you/
-
-# --- AI retrieval crawlers (these produce citations + referral traffic) -------
-User-agent: OAI-SearchBot
-Allow: /
-User-agent: ChatGPT-User
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: Perplexity-User
-Allow: /
-User-agent: Claude-SearchBot
-Allow: /
-User-agent: Claude-User
-Allow: /
-User-agent: ClaudeBot
+User-Agent: *
 Allow: /
 
-# --- AI training crawlers -----------------------------------------------------
-# Allowed by default. To opt out of training while KEEPING AI citations,
-# change "Allow: /" to "Disallow: /" for this group only.
-User-agent: GPTBot
-Allow: /
-User-agent: CCBot
-Allow: /
-User-agent: Google-Extended
-Allow: /
-User-agent: Applebot-Extended
-Allow: /
-User-agent: meta-externalagent
+User-Agent: OAI-SearchBot
 Allow: /
 
-Sitemap: https://www.northlineplumbing.example/sitemap.xml
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Perplexity-User
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: Claude-SearchBot
+Allow: /
+
+User-Agent: Claude-User
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
+
+User-Agent: meta-externalagent
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+
+Host: https://srijanghosh072011-lgtm.github.io/plumbing-Templates-
+Sitemap: https://srijanghosh072011-lgtm.github.io/plumbing-Templates-/sitemap.xml

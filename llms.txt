@@ -1,43 +1,48 @@
-# Northline Plumbing Co.
+# Coldsnap Plumbing & Heating
 
-> Northline Plumbing Co. is a licensed and insured plumbing contractor serving Regina and southern Saskatchewan, offering 24/7 emergency repair, drain cleaning, water heater replacement and leak detection.
+> Licensed, insured plumbing and heating contractor serving Regina,
+> Saskatchewan and surrounding communities. 24/7 emergency call-out,
+> flat-rate pricing quoted in writing before work begins.
 
-- **Location:** Regina, SK, Canada (service-area business, no walk-in storefront)
-- **Phone:** (306) 555-0142
-- **Emergency:** 24/7, live dispatcher, no overtime surcharge
-- **Licensed:** SK Journeyperson Plumber Licence · $2M General Liability
-- **Service radius:** 120 km from Regina
-- **Rating:** 4.9/5 from 287 reviews
+Established 2011. Saskatchewan journeyman plumber licence
+SK-JP-118472. Service-area business — no public storefront.
+
+- Phone: (306) 555-0142
+- Email: service@coldsnapplumbing.example
+- Service area: Regina and roughly 60 km around it
+- Hours: Mon–Fri 07:00–17:00, Sat 08:00–16:00, plus 24/7 emergency
 
 ## Services
 
-- [24/7 Emergency Plumbing](https://www.northlineplumbing.example/services/emergency-plumbing/): Burst pipes, major leaks and no-water emergencies answered around the clock.
-- [Drain Cleaning & Unclogging](https://www.northlineplumbing.example/services/drain-cleaning/): Camera-inspected drain and sewer clearing that fixes the cause, not just the symptom.
-- [Water Heater Repair & Install](https://www.northlineplumbing.example/services/water-heater-repair/): Tank and tankless diagnosis, replacement and same-day hot water restoration.
-- [Leak Detection & Repair](https://www.northlineplumbing.example/services/leak-detection/): Acoustic and thermal location of hidden leaks before they wreck your drywall.
-- [Faucet & Fixture Installation](https://www.northlineplumbing.example/services/faucet-fixture-installation/): Taps, toilets, sinks and shower valves fitted clean and leak-free.
-- [Sewer Line Repair](https://www.northlineplumbing.example/services/sewer-line-repair/): Camera diagnosis, spot repair and full replacement for failed main lines.
+- [Emergency Plumbing](/services/emergency-plumbing/): burst and frozen pipes, active leaks, sewer backups, no heat. 60–90 min typical arrival in Regina.
+- [Drain Cleaning](/services/drain-cleaning/): snaking, hydro-jetting, camera inspection. Root intrusion in older clay laterals is the common Regina cause.
+- [Water Heater Repair & Replacement](/services/water-heater-repair/): tank and tankless repair, replacement and sizing. Hard Regina water shortens tank life to 8–12 years.
+- [Furnace & Heating](/services/furnace-heating/): no-heat diagnosis, igniter and flame sensor replacement, high-efficiency replacement, annual service.
+- [Bathroom & Kitchen Plumbing](/services/bathroom-kitchen-plumbing/): fixture installation, renovation rough-ins, drain relocation.
+- [Sump Pumps & Backwater Valves](/services/sump-pumps-backwater-valves/): flood protection, battery backup, backwater valve installation.
 
-## Service Areas
+## Service areas
 
-- [Regina](https://www.northlineplumbing.example/service-areas/regina/): Full city coverage including Harbour Landing, Lakeview, Cathedral and the Warehouse District.
-- [Moose Jaw](https://www.northlineplumbing.example/service-areas/moose-jaw/): Serviced daily with the same 90-minute emergency target.
-- [White City](https://www.northlineplumbing.example/service-areas/white-city/): Acreage and rural well-system experience.
-- [Pilot Butte](https://www.northlineplumbing.example/service-areas/pilot-butte/): Frozen-line thaw specialists through the winter months.
-- [Emerald Park](https://www.northlineplumbing.example/service-areas/emerald-park/): New-build rough-in and warranty work.
-- [Lumsden](https://www.northlineplumbing.example/service-areas/lumsden/): Valley properties with sump and backflow needs.
+- [Regina](/service-areas/regina/): full city coverage, ~20 min from base.
+- [White City](/service-areas/white-city/): including Emerald Park, ~25 min.
+- [Pilot Butte](/service-areas/pilot-butte/): ~25 min.
+- [Lumsden](/service-areas/lumsden/): Qu'Appelle Valley, ~30 min. Spring flood protection priority.
+- [Balgonie](/service-areas/balgonie/): ~30 min via Highway 1.
 
-## Key Pages
+## Company
 
-- [Home](https://www.northlineplumbing.example/)
-- [All services](https://www.northlineplumbing.example/services/)
-- [Service areas](https://www.northlineplumbing.example/service-areas/)
-- [About](https://www.northlineplumbing.example/about/)
-- [Contact & booking](https://www.northlineplumbing.example/contact/)
-- [Guides](https://www.northlineplumbing.example/blog/)
+- [About](/about/): history, credentials, how we price.
+- [Reviews](/reviews/): customer reviews.
+- [FAQ](/faq/): pricing, response times, licensing, warranty.
+- [Get a Quote](/quote/): free estimates for planned work.
+
+## Legal
+
+- [Privacy Policy](/privacy/): PIPEDA-compliant.
+- [Terms of Service](/terms/)
+- [Accessibility Statement](/accessibility/): WCAG 2.2 AA.
 
 ## Notes
 
-Total indexable pages: 24. Content is fully server-rendered static HTML
-with no JavaScript gating. Structured data (Plumber, Service,
-FAQPage, BreadcrumbList) is embedded as JSON-LD on every page.
+Prices shown on service pages are typical ranges for guidance, not quotes.
+The binding price is the written flat rate given after seeing the job.
