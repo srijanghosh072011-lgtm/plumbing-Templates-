@@ -35,7 +35,7 @@ export default function PrivacyPage() {
         <h2>Accountability</h2>
         <p>
           PIPEDA requires us to designate a person accountable for our compliance. That person
-          is <strong>TODO_PRIVACY_OFFICER_NAME</strong>, reachable at{' '}
+          is <strong>Ravi Chandra</strong>, reachable at{' '}
           <a href={`mailto:${client.email}`}>{client.email}</a> or {client.phone}. Direct any
           privacy question, access request or complaint to them.
         </p>
@@ -100,10 +100,10 @@ export default function PrivacyPage() {
             <strong>Google Analytics 4</strong> — website analytics, only with your consent.
           </li>
           <li>
-            <strong>TODO_EMAIL_PROVIDER</strong> — our business email.
+            <strong>Google Workspace</strong> — our business email.
           </li>
           <li>
-            <strong>TODO_ANY_CRM_OR_BOOKING_TOOL</strong> — job scheduling and records.
+            <strong>Jobber</strong> — job scheduling and records.
           </li>
         </ul>
         <p>
@@ -114,8 +114,8 @@ export default function PrivacyPage() {
 
         <h2>How long we keep it</h2>
         <p>
-          Quote requests that do not become jobs: TODO_RETENTION_ENQUIRIES. Completed job and
-          invoice records: TODO_RETENTION_JOBS, which reflects warranty periods and Canadian
+          Quote requests that do not become jobs: 12 months. Completed job and
+          invoice records: 7 years, which reflects warranty periods and Canadian
           tax record-keeping requirements. We delete or anonymise information once it no longer
           serves the purpose it was collected for.
         </p>

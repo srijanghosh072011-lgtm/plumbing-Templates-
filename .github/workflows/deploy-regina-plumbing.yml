@@ -7,7 +7,13 @@ name: Deploy regina-plumbing to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    # The feature branch is listed because the template is not on main yet.
+    # A push-triggered workflow runs from the ref that was pushed, so this
+    # works without the file existing on the default branch. Drop the second
+    # entry once the template is merged.
+    branches:
+      - main
+      - claude/site-replica-seo-aeo-phglx9
     paths:
       - 'templates/regina-plumbing/**'
       - '.github/workflows/deploy-regina-plumbing.yml'

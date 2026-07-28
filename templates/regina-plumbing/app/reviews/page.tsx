@@ -76,7 +76,9 @@ export default function ReviewsPage() {
                   edit or remove anything.
                 </p>
                 <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-                  {!client.social.google.startsWith('TODO_') && (
+                  {/* Rendered only when a real profile URL exists — an empty
+                      or placeholder href is a dead link on a trust page. */}
+                  {client.social.google && !client.social.google.startsWith('TODO_') && (
                     <Cta href={client.social.google} external>
                       See Google reviews
                     </Cta>

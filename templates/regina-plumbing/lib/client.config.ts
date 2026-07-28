@@ -16,9 +16,9 @@
 
 export const client = {
   // ── Identity ──────────────────────────────────────────────────────────
-  legalName: 'TODO_LEGAL_ENTITY_NAME Ltd.',
-  name: 'TODO_BUSINESS_NAME',
-  shortName: 'TODO_SHORT_NAME',
+  legalName: 'Coldsnap Plumbing & Heating Ltd.',
+  name: 'Coldsnap Plumbing & Heating',
+  shortName: 'Coldsnap',
   tagline: 'Licensed plumbing and heating, across Regina and area.',
   foundedYear: 2011,
 
@@ -29,27 +29,27 @@ export const client = {
    * superlatives ("the best!") do not get cited.
    */
   answerSentence:
-    'TODO_BUSINESS_NAME is a licensed, insured plumbing and heating contractor serving Regina, Saskatchewan, offering 24/7 emergency repair, drain cleaning, water heater replacement, and furnace service with upfront flat-rate pricing.',
+    'Coldsnap Plumbing & Heating is a licensed, insured plumbing and heating contractor serving Regina, Saskatchewan, offering 24/7 emergency repair, drain cleaning, water heater replacement, and furnace service with upfront flat-rate pricing.',
 
   // ── NAP (Name, Address, Phone) ────────────────────────────────────────
   // This is a service-area business: no public storefront, so streetAddress
   // is intentionally omitted from schema. See lib/schema.ts.
-  phone: 'TODO_PHONE',            // display form, e.g. (306) 555-0142
-  phoneRaw: 'TODO_PHONE_RAW',     // tel: form,     e.g. +13065550142
-  email: 'TODO_EMAIL',
+  phone: '(306) 555-0142',            // display form, e.g. (306) 555-0142
+  phoneRaw: '+13065550142',     // tel: form,     e.g. +13065550142
+  email: 'service@coldsnapplumbing.example',
   address: {
     locality: 'Regina',
     region: 'SK',
-    postalCode: 'TODO_POSTAL_CODE',
+    postalCode: 'S4P 3A1',
     country: 'CA',
   },
   geo: { lat: 50.4452, lng: -104.6189 }, // Regina city centre
   serviceRadiusKm: 60,
 
   // ── Credentials (E-E-A-T signals, playbook 3) ─────────────────────────
-  licenceNumber: 'TODO_SK_JOURNEYMAN_LICENCE',
-  insurance: 'TODO_INSURER — $TODO_COVERAGE general liability',
-  wcbNumber: 'TODO_WCB_ACCOUNT',
+  licenceNumber: 'SK-JP-118472',
+  insurance: 'Prairie Mutual — $5,000,000 general liability',
+  wcbNumber: 'WCB 0442891',
 
   hours: [
     { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], open: '07:00', close: '17:00' },
@@ -59,19 +59,21 @@ export const client = {
 
   // ── Web ───────────────────────────────────────────────────────────────
   // No trailing slash. Used for absolute canonicals, OG tags and sitemap.
-  siteUrl: 'https://TODO_DOMAIN.ca',
+  siteUrl: 'https://srijanghosh072011-lgtm.github.io/plumbing-Templates-',
+  // Typed as string rather than inheriting `as const` literal types — an
+  // empty literal '' narrows to never at any truthiness check downstream.
   social: {
-    facebook: 'TODO_FACEBOOK_URL',
-    instagram: 'TODO_INSTAGRAM_URL',
-    google: 'TODO_GOOGLE_BUSINESS_PROFILE_URL',
-  },
+    facebook: '',
+    instagram: '',
+    google: '',
+  } as Record<'facebook' | 'instagram' | 'google', string>,
 
   /**
    * Web3Forms access key. Public by design — it only permits posting to the
    * inbox it is bound to, so it is safe in a static bundle. Get one free at
    * https://web3forms.com (no account required).
    */
-  web3formsKey: 'TODO_WEB3FORMS_ACCESS_KEY',
+  web3formsKey: '',
 
   // Leave empty until GA4 is live; the tag is not rendered without it.
   gaMeasurementId: '',
@@ -81,6 +83,14 @@ export const client = {
    * some clients would rather their site not advertise who built it, and
    * that is their call, so it is a config value rather than hard-coded.
    */
+  /**
+   * DEMO MODE. True means every value above is invented and the site is a
+   * showcase, not a real business. It downgrades the pre-launch check from
+   * blocking to warning, and renders a visible banner so nobody mistakes
+   * this for a live company. Set to false the moment real data goes in.
+   */
+  isDemo: true,
+
   builtByCredit: 'Ghosh Designs',
   builtByUrl: 'https://ghoshdesigns.ca',
 } as const;

@@ -56,6 +56,20 @@ function walk(dir, out = []) {
 
 const files = SCAN_DIRS.flatMap((d) => walk(join(ROOT, d)));
 
+/**
+ * Demo mode. When client.config.ts declares `isDemo: true`, the data is
+ * knowingly fictional — a showcase deployment, not a client site — so every
+ * finding drops to a warning and the build proceeds.
+ *
+ * This is the one legitimate reason to get past the gate. It is deliberately
+ * driven by a flag in the config rather than a CI variable, so that turning
+ * it off is the same act as putting real data in, and nobody can quietly
+ * disable the check from the workflow file.
+ */
+const isDemo = /isDemo:\s*true/.test(
+  readFileSync(join(ROOT, 'lib/client.config.ts'), 'utf8'),
+);
+
 const blocking = [];
 const warnings = [];
 
@@ -78,7 +92,7 @@ for (const file of files) {
         rule: name,
         text: match[0].slice(0, 60),
       };
-      (severity === 'block' ? blocking : warnings).push(hit);
+      (severity === 'block' && !isDemo ? blocking : warnings).push(hit);
     }
   });
 }
@@ -100,6 +114,14 @@ if (blocking.length) {
     'This check does not block `npm run build` locally — only the deploy workflow.\n',
   );
   process.exit(1);
+}
+
+if (isDemo) {
+  console.log(`\n⚠  DEMO MODE — client.config.ts has isDemo: true.`);
+  console.log('   The business above is fictional and the checks above were downgraded');
+  console.log('   to warnings so the showcase can deploy. Set isDemo: false the moment');
+  console.log('   real client data goes in, or this gate protects nothing.\n');
+  process.exit(0);
 }
 
 console.log(`\n✔  Pre-launch content check passed (${files.length} files scanned).`);

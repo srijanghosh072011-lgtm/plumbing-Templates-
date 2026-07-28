@@ -8,10 +8,15 @@
  */
 const basePath = process.env.BASE_PATH ?? '';
 
+// Mirrored into the client bundle so lib/asset.ts can prefix raw <img>,
+// <link> and inline font URLs, which Next does not rewrite on its own.
+process.env.NEXT_PUBLIC_BASE_PATH = basePath;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   basePath,
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   // Static export cannot run the image optimizer. Source images are already
   // sized and encoded as WebP/AVIF at build time, with explicit width/height
   // on every <img> to hold layout and protect CLS.

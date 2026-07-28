@@ -38,7 +38,7 @@ export default function TermsPage() {
 
         <h2>Quotes and work</h2>
         <ul>
-          <li>Quotes are valid for TODO_QUOTE_VALIDITY_DAYS days from issue.</li>
+          <li>Quotes are valid for 30 days from issue.</li>
           <li>
             Work begins only once you approve the written price. If we discover conditions
             that materially change the job, we stop and re-quote before continuing.
@@ -48,16 +48,16 @@ export default function TermsPage() {
             against the repair if you proceed.
           </li>
           <li>
-            Payment terms are TODO_PAYMENT_TERMS. TODO_LATE_PAYMENT_TERMS.
+            Payment terms are net 15 from invoice date. Overdue balances accrue 1.5% monthly.
           </li>
           <li>
-            Cancellation: TODO_CANCELLATION_POLICY.
+            Cancellation: cancel or reschedule at no charge with 24 hours’ notice.
           </li>
         </ul>
 
         <h2>Warranty</h2>
         <p>
-          Our labour is warrantied for TODO_WARRANTY_PERIOD from completion. Parts and
+          Our labour is warrantied for two years from completion. Parts and
           equipment carry the manufacturer&apos;s warranty, which we register on your behalf
           where applicable. The warranty does not cover damage from misuse, freezing in an
           unheated property, alterations by others, or pre-existing conditions we identified

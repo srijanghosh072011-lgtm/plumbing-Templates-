@@ -60,10 +60,10 @@ export default function AccessibilityPage() {
 
         <h2>Known limitations</h2>
         <p>
-          TODO_KNOWN_LIMITATIONS — list anything you know falls short, and when you plan to fix
-          it. An honest, specific list is worth far more than a claim of full conformance. If
-          you embed a third-party map or booking widget, its accessibility is outside your
-          control and belongs here.
+          We know of no outstanding barriers at present. This site embeds no
+          third-party maps, chat or booking widgets, which are the usual source of
+          accessibility problems outside a site owner’s control. If that changes, the
+          limitation will be listed here with a date for fixing it.
         </p>
 
         <h2>How this was tested</h2>

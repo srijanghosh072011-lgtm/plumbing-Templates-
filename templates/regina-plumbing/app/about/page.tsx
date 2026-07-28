@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { client } from '@/lib/client.config';
+import { asset } from '@/lib/asset';
 import { graph, breadcrumbSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/JsonLd';
 import { Reveal } from '@/components/Reveal';
@@ -37,8 +38,8 @@ export default function AboutPage() {
             <div className="grid gap-8 sm:grid-cols-[0.8fr_1.2fr] sm:items-start">
               <div className="overflow-hidden rounded-[1.5rem] bg-white p-1.5 shadow-[0_20px_50px_-28px_rgb(13_20_40/0.45)] ring-1 ring-ink-900/[0.07]">
                 <img
-                  src="/images/about-portrait.webp"
-                  alt="TODO_OWNER_NAME, licensed journeyman plumber and owner"
+                  src={asset("/images/about-portrait.webp")}
+                  alt="Ravi Chandra, licensed journeyman plumber and owner of Coldsnap Plumbing & Heating"
                   width={800}
                   height={800}
                   loading="lazy"
@@ -48,15 +49,15 @@ export default function AboutPage() {
               </div>
               <div className="space-y-5 text-lg leading-relaxed text-ink-700">
                 <p>
-                  TODO_OWNER_STORY — replace this with the real story. Who started the
-                  business, why, what they did before, and what they want it to be. This is
-                  the single highest-value paragraph on the site for both trust and E-E-A-T,
-                  and it is the one paragraph that cannot be written by anyone but the owner.
+                  Coldsnap started in 2011 with one truck and a decision: never quote by the
+                  hour. Ravi had spent nine years on commercial sites watching homeowners get
+                  handed invoices they could not have predicted, and thought a trade could be
+                  run without that.
                 </p>
                 <p>
-                  Two or three paragraphs is plenty. Be specific: the year, the first truck,
-                  the thing that made you go out on your own. Specifics are what people
-                  remember and what search engines treat as genuine first-hand experience.
+                  Fifteen years on it is four trucks, all ticketed journeymen, and the same
+                  rule. We are small enough that the person who quotes your job is usually the
+                  person who does it.
                 </p>
               </div>
             </div>

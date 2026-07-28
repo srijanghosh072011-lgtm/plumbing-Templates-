@@ -4,23 +4,13 @@
    FONTS — self-hosted (playbook 5: no third-party font CDN, no visitor
    IPs leaving for Google). Latin subset only, variable axes, swap.
    Both faces are SIL Open Font License 1.1; see public/fonts/OFL.txt.
-   ─────────────────────────────────────────────────────────────────────── */
-@font-face {
-  font-family: 'Bricolage Grotesque';
-  src: url('/fonts/BricolageGrotesque-Variable.woff2') format('woff2');
-  font-weight: 400 800;
-  font-stretch: 75% 100%;
-  font-display: swap;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('/fonts/PlusJakartaSans-Variable.woff2') format('woff2');
-  font-weight: 400 800;
-  font-display: swap;
-  font-style: normal;
-}
+   The @font-face blocks are NOT here. A url() in this file is resolved
+   against the CSS file's own location under /_next/static/css/, and it does
+   not receive the deployment basePath — so on a GitHub Pages project site
+   the fonts 404 and the page silently falls back to system sans.
+   They live in app/layout.tsx instead, where basePath can be interpolated.
+   ─────────────────────────────────────────────────────────────────────── */
 
 @theme {
   --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;

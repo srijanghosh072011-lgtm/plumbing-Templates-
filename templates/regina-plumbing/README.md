@@ -36,7 +36,7 @@ Then:
      pure-white image keeps the headline at 12.2:1 contrast, so you do not
      need to pre-darken it or re-test contrast after swapping.
 3. `public/og.png`, `favicon.ico`, `icon-*.png`, `apple-touch-icon.png`.
-4. `public/llms.txt` and `public/site.webmanifest` — both carry `TODO_`s.
+4. `public/llms.txt` and `app/manifest.ts` — both carry `TODO_`s.
 5. `app/about/page.tsx` — `TODO_OWNER_STORY`. The highest-value paragraph on
    the site, and the only one that cannot be written by anyone but the owner.
 

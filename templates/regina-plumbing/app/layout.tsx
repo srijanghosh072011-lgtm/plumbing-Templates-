@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { client } from '@/lib/client.config';
+import { asset } from '@/lib/asset';
 import { graph, organizationSchema, websiteSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/JsonLd';
 import { Header } from '@/components/Header';
@@ -41,15 +42,18 @@ export const metadata: Metadata = {
     description: client.answerSentence.slice(0, 158),
     images: ['/og.jpg'],
   },
+  // asset() on every entry: Next does not apply basePath to metadata icons
+  // or the manifest link, so on a project site they resolve to the domain
+  // root and 404.
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon-32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: asset('/favicon.ico'), sizes: 'any' },
+      { url: asset('/icon-32.png'), type: 'image/png', sizes: '32x32' },
+      { url: asset('/icon-192.png'), type: 'image/png', sizes: '192x192' },
     ],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    apple: [{ url: asset('/apple-touch-icon.png'), sizes: '180x180' }],
   },
-  manifest: '/site.webmanifest',
+  manifest: asset('/manifest.webmanifest'),
   formatDetection: { telephone: true },
 };
 
@@ -68,21 +72,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             discovered only after the CSS parses, which delays LCP text. */}
         <link
           rel="preload"
-          href="/fonts/BricolageGrotesque-Variable.woff2"
+          href={asset('/fonts/BricolageGrotesque-Variable.woff2')}
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/fonts/PlusJakartaSans-Variable.woff2"
+          href={asset('/fonts/PlusJakartaSans-Variable.woff2')}
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         {/* The hero photograph is the LCP element on every viewport. Without
             this it is not discovered until the HTML parser reaches it. */}
-        <link rel="preload" href="/images/hero-bg.webp" as="image" fetchPriority="high" />
+        <link
+          rel="preload"
+          href={asset('/images/hero-bg.webp')}
+          as="image"
+          fetchPriority="high"
+        />
+
+        {/* @font-face lives here, not in globals.css, because a url() in a
+            stylesheet cannot see the deployment basePath. See globals.css. */}
+        <style
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+@font-face{font-family:'Bricolage Grotesque';src:url('${asset('/fonts/BricolageGrotesque-Variable.woff2')}') format('woff2');font-weight:400 800;font-stretch:75% 100%;font-display:swap;font-style:normal}
+@font-face{font-family:'Plus Jakarta Sans';src:url('${asset('/fonts/PlusJakartaSans-Variable.woff2')}') format('woff2');font-weight:400 800;font-display:swap;font-style:normal}
+            `.trim(),
+          }}
+        />
         {/*
           GitHub Pages cannot send response headers, so the policy that can
           live in a meta tag does. This is weaker than the real thing: a meta
@@ -109,6 +130,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">
           Skip to main content
         </a>
+
 
         {/* Organization and WebSite are site-wide; page templates add their
             own nodes referencing these by @id. */}

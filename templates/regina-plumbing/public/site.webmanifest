@@ -1,6 +1,6 @@
 {
-  "name": "TODO_BUSINESS_NAME",
-  "short_name": "TODO_SHORT_NAME",
+  "name": "Coldsnap Plumbing & Heating",
+  "short_name": "Coldsnap",
   "description": "Licensed plumbing and heating in Regina, Saskatchewan.",
   "start_url": "/",
   "display": "standalone",

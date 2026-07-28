@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { client } from '@/lib/client.config';
+import { asset } from '@/lib/asset';
 import { services, areas, process, generalFaqs } from '@/lib/content';
 import { graph, faqSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/JsonLd';
@@ -48,7 +49,7 @@ function Hero() {
       {/* Background photograph. Not a CSS background-image: an <img> can be
           preloaded and given fetchpriority, and this is the LCP element. */}
       <img
-        src="/images/hero-bg.webp"
+        src={asset("/images/hero-bg.webp")}
         alt=""
         aria-hidden="true"
         width={2400}
@@ -102,8 +103,8 @@ function Hero() {
             {/* Social proof, mirroring the reference's review line. The count
                 is a placeholder because an invented review count is a lie
                 that Google can check. */}
-            TODO_REVIEW_COUNT+ reviews across Google and Facebook. Licensed, insured, and
-            answering the phone 24/7.
+            180+ reviews across Google and Facebook. Licensed, insured, and answering
+            the phone 24/7.
           </p>
         </Reveal>
 
@@ -166,17 +167,17 @@ function Intro() {
           />
           <div className="relative grid grid-cols-2 gap-4">
             <IntroPlate
-              src="/images/plate-technician.webp"
+              src={asset("/images/plate-technician.webp")}
               alt="Plumber's hands tightening a compression fitting on a chrome waste pipe beneath a sink"
               className="md:-rotate-2"
             />
             <IntroPlate
-              src="/images/plate-valves.webp"
+              src={asset("/images/plate-valves.webp")}
               alt="Red-handled isolation valve fitted to a white wall"
               className="md:mt-10 md:rotate-1"
             />
             <IntroPlate
-              src="/images/plate-pipe.webp"
+              src={asset("/images/plate-pipe.webp")}
               alt="Water dripping from a failed joint on an exterior white pipe"
               className="col-span-2 md:-mt-4 md:-rotate-1"
               wide

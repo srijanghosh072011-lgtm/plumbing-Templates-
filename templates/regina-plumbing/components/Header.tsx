@@ -39,6 +39,25 @@ export function Header() {
 
   return (
     <header className="no-print pointer-events-none fixed inset-x-0 top-0 z-40 px-4 pt-4 sm:pt-6">
+      {/*
+        Demo banner. This build carries a fictional business name, a phone
+        number from the reserved 555-01xx fiction block, and invented licence
+        numbers. Saying so plainly and permanently is the only honest way to
+        publish it — someone arriving from a search result must not come away
+        believing this is a real plumber they can call in an emergency.
+
+        It lives inside the fixed header rather than above it in <body>, so
+        the floating pill cannot cover it.
+      */}
+      {client.isDemo && (
+        <div
+          role="note"
+          className="pointer-events-auto -mx-4 -mt-4 mb-3 bg-copper-600 px-4 py-2 text-center text-[12px] font-semibold leading-snug text-white sm:-mt-6 sm:text-[13px]"
+        >
+          Demo site — &ldquo;{client.name}&rdquo; is fictional. Contact details, licence
+          numbers and reviews are all invented.
+        </div>
+      )}
       {/* Floating glass pill, detached from the top edge.
           Dark-tinted rather than white: every page on this site opens with a
           dark hero, so a light slab would sit on top of the photograph like

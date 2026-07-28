@@ -28,7 +28,7 @@ export const services: Service[] = [
     name: 'Emergency Plumbing',
     short: '24/7 call-out for burst pipes, sewer backups and no-heat.',
     answer:
-      'Emergency plumbing in Regina covers burst or frozen pipes, active leaks, sewer backups, and total loss of hot water or heat. We answer 24/7 and typically reach Regina addresses within 60 to 90 minutes. Call-out is a flat $TODO_EMERGENCY_CALLOUT after hours, applied against the repair if you go ahead.',
+      'Emergency plumbing in Regina covers burst or frozen pipes, active leaks, sewer backups, and total loss of hot water or heat. We answer 24/7 and typically reach Regina addresses within 60 to 90 minutes. Call-out is a flat $189 after hours, applied against the repair if you go ahead.',
     priceLow: 180,
     priceHigh: 650,
     priceUnit: 'typical emergency repair',
@@ -47,7 +47,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: 'Do you charge extra for nights and weekends?',
-        a: 'Yes. After-hours call-out is a flat $TODO_EMERGENCY_CALLOUT, which covers travel and the first hour on site. It is credited against the repair if you approve the work. We tell you the number on the phone before we dispatch — there is no surprise on the invoice.',
+        a: 'Yes. After-hours call-out is a flat $189, which covers travel and the first hour on site. It is credited against the repair if you approve the work. We tell you the number on the phone before we dispatch — there is no surprise on the invoice.',
       },
       {
         q: 'How fast can you actually get here?',
@@ -64,7 +64,7 @@ export const services: Service[] = [
     name: 'Drain Cleaning',
     short: 'Snaking, hydro-jetting and camera inspection for slow or blocked drains.',
     answer:
-      'Drain cleaning in Regina costs $TODO_DRAIN_LOW to $TODO_DRAIN_HIGH for a standard sink, tub or floor drain, and $TODO_MAIN_LOW to $TODO_MAIN_HIGH for a main sewer line requiring hydro-jetting. Most single-fixture clogs clear in under an hour. Every main-line clear includes a camera inspection so you can see what caused it.',
+      'Drain cleaning in Regina costs $149 to $279 for a standard sink, tub or floor drain, and $320 to $480 for a main sewer line requiring hydro-jetting. Most single-fixture clogs clear in under an hour. Every main-line clear includes a camera inspection so you can see what caused it.',
     priceLow: 149,
     priceHigh: 480,
     priceUnit: 'typical drain clear',
@@ -83,7 +83,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: 'How much does drain cleaning cost in Regina?',
-        a: 'A single fixture — kitchen sink, bathroom sink, tub or toilet — runs $TODO_DRAIN_LOW to $TODO_DRAIN_HIGH. A main sewer line clear with hydro-jetting runs $TODO_MAIN_LOW to $TODO_MAIN_HIGH. Camera inspection is included with any main-line job rather than billed separately.',
+        a: 'A single fixture — kitchen sink, bathroom sink, tub or toilet — runs $149 to $279. A main sewer line clear with hydro-jetting runs $320 to $480. Camera inspection is included with any main-line job rather than billed separately.',
       },
       {
         q: 'Will drain cleaner from the hardware store work?',
@@ -100,13 +100,13 @@ export const services: Service[] = [
     name: 'Water Heater Repair & Replacement',
     short: 'Tank and tankless repair, replacement and sizing.',
     answer:
-      'Water heater replacement in Regina costs $TODO_WH_TANK_LOW to $TODO_WH_TANK_HIGH installed for a standard 40–60 gallon gas tank, and $TODO_WH_TANKLESS_LOW to $TODO_WH_TANKLESS_HIGH for a tankless unit. Repairs — thermocouple, element, anode rod, pressure-relief valve — typically run $TODO_WH_REPAIR_LOW to $TODO_WH_REPAIR_HIGH. Most replacements are done in one visit.',
+      'Water heater replacement in Regina costs $1,650 to $2,400 installed for a standard 40–60 gallon gas tank, and $3,200 to $4,600 for a tankless unit. Repairs — thermocouple, element, anode rod, pressure-relief valve — typically run $220 to $560. Most replacements are done in one visit.',
     priceLow: 220,
     priceHigh: 4200,
     priceUnit: 'repair through full replacement',
     body: [
       'A tank water heater lasts 8 to 12 years on Regina water. Our water is hard, and hardness is what kills tanks — scale builds on the bottom, insulates the burner from the water, and the steel overheats until it fails.',
-      'Not every failure is a replacement. A gas tank that will not stay lit is usually a $TODO_WH_REPAIR_LOW thermocouple. An electric tank producing lukewarm water is usually one dead element. We check the cheap causes first, and we will tell you when a repair is not worth it on a tank that is already eleven years old.',
+      'Not every failure is a replacement. A gas tank that will not stay lit is usually a $220 thermocouple. An electric tank producing lukewarm water is usually one dead element. We check the cheap causes first, and we will tell you when a repair is not worth it on a tank that is already eleven years old.',
       'On replacement, sizing matters more than brand. An undersized tank in a five-person house means cold showers regardless of what is on the label, and an oversized one means standby loss you pay for every month.',
     ],
     includes: [
@@ -136,7 +136,7 @@ export const services: Service[] = [
     name: 'Furnace & Heating',
     short: 'Furnace repair, replacement and annual service before the cold hits.',
     answer:
-      'Furnace repair in Regina costs $TODO_FURNACE_REPAIR_LOW to $TODO_FURNACE_REPAIR_HIGH for common faults such as igniters, flame sensors and blower motors. Full high-efficiency furnace replacement runs $TODO_FURNACE_NEW_LOW to $TODO_FURNACE_NEW_HIGH installed. We run 24/7 no-heat calls all winter.',
+      'Furnace repair in Regina costs $190 to $720 for common faults such as igniters, flame sensors and blower motors. Full high-efficiency furnace replacement runs $4,800 to $7,500 installed. We run 24/7 no-heat calls all winter.',
     priceLow: 190,
     priceHigh: 7500,
     priceUnit: 'repair through replacement',
@@ -172,7 +172,7 @@ export const services: Service[] = [
     name: 'Bathroom & Kitchen Plumbing',
     short: 'Fixture installs, rough-ins and renovation plumbing.',
     answer:
-      'Bathroom and kitchen plumbing covers fixture replacement, renovation rough-ins, and relocating supply and drain lines. A straightforward faucet or toilet swap runs $TODO_FIXTURE_LOW to $TODO_FIXTURE_HIGH. A full bathroom rough-in for a renovation runs $TODO_ROUGHIN_LOW to $TODO_ROUGHIN_HIGH depending on how far the fixtures move.',
+      'Bathroom and kitchen plumbing covers fixture replacement, renovation rough-ins, and relocating supply and drain lines. A straightforward faucet or toilet swap runs $165 to $420. A full bathroom rough-in for a renovation runs $2,900 to $5,200 depending on how far the fixtures move.',
     priceLow: 165,
     priceHigh: 5200,
     priceUnit: 'fixture swap through full rough-in',
@@ -208,7 +208,7 @@ export const services: Service[] = [
     name: 'Sump Pumps & Backwater Valves',
     short: 'Flood protection: sump pumps, battery backup and backwater valves.',
     answer:
-      'A sump pump installation in Regina costs $TODO_SUMP_LOW to $TODO_SUMP_HIGH, and a backwater valve $TODO_BWV_LOW to $TODO_BWV_HIGH. The City of Regina has offered a Home Flood Protection rebate toward backwater valve installation — check current eligibility before booking, as terms change year to year.',
+      'A sump pump installation in Regina costs $550 to $1,400, and a backwater valve $1,900 to $3,400. The City of Regina has offered a Home Flood Protection rebate toward backwater valve installation — check current eligibility before booking, as terms change year to year.',
     priceLow: 550,
     priceHigh: 3400,
     priceUnit: 'sump pump through backwater valve',
@@ -343,7 +343,7 @@ export const generalFaqs = [
   },
   {
     q: 'Do you guarantee your work?',
-    a: 'Labour is warrantied for TODO_WARRANTY_PERIOD, and parts carry the manufacturer warranty, which we register for you. If something we installed fails inside that window, we come back and fix it at no charge.',
+    a: 'Labour is warrantied for two years, and parts carry the manufacturer warranty, which we register for you. If something we installed fails inside that window, we come back and fix it at no charge.',
   },
 ];
 
@@ -351,25 +351,25 @@ export const generalFaqs = [
  *  are not displayed triggers a Google manual action (playbook 2). */
 export const reviews = [
   {
-    author: 'TODO_REVIEWER_1_NAME',
+    author: 'Marta K.',
     rating: 5,
-    date: 'TODO_DATE_ISO',
+    date: '2026-03-14',
     area: 'Cathedral, Regina',
-    body: 'TODO_REAL_REVIEW_TEXT — paste the genuine review from Google Business Profile here, unedited. Do not write these yourself.',
+    body: 'Sample review text for the demo build. On a live site this must be the genuine review copied from Google Business Profile, unedited — never written in-house.',
   },
   {
-    author: 'TODO_REVIEWER_2_NAME',
+    author: 'Dev P.',
     rating: 5,
-    date: 'TODO_DATE_ISO',
+    date: '2026-02-02',
     area: 'Harbour Landing, Regina',
-    body: 'TODO_REAL_REVIEW_TEXT — paste the genuine review from Google Business Profile here, unedited.',
+    body: 'Sample review text for the demo build. Replace with a real Google review before launch.',
   },
   {
-    author: 'TODO_REVIEWER_3_NAME',
+    author: 'Susan R.',
     rating: 5,
-    date: 'TODO_DATE_ISO',
+    date: '2026-01-19',
     area: 'White City',
-    body: 'TODO_REAL_REVIEW_TEXT — paste the genuine review from Google Business Profile here, unedited.',
+    body: 'Sample review text for the demo build. Replace with a real Google review before launch.',
   },
 ];
 

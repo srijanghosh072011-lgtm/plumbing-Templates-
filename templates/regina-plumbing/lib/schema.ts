@@ -31,8 +31,10 @@ const openingHours = client.hours.map((h) => ({
 }));
 
 export function organizationSchema() {
-  const sameAs = Object.values(client.social).filter(
-    (url) => url && !url.startsWith('TODO_'),
+  // Cast because `as const` on an all-empty social block narrows the values
+  // to never once falsy entries are filtered out.
+  const sameAs = (Object.values(client.social) as string[]).filter(
+    (url) => url.length > 0 && !url.startsWith('TODO_'),
   );
 
   return {
