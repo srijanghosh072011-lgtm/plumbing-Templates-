@@ -14,13 +14,14 @@ on:
     branches:
       - main
       - claude/site-replica-seo-aeo-phglx9
+    # This list is also what stops the job's own commit to docs/ from
+    # retriggering the workflow in a loop: a docs-only commit matches
+    # neither entry. Do NOT add a paths-ignore alongside this — GitHub
+    # rejects a workflow that sets both paths and paths-ignore on one
+    # event, and the run fails before any job starts.
     paths:
       - 'templates/regina-plumbing/**'
       - '.github/workflows/deploy-regina-plumbing.yml'
-    # Without this the job's own commit to docs/ retriggers the workflow,
-    # which commits again, forever.
-    paths-ignore:
-      - 'docs/**'
   workflow_dispatch:
 
 concurrency:
