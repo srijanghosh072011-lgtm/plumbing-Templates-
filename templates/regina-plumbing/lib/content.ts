@@ -9,6 +9,9 @@ import { client } from './client.config';
 export type Service = {
   slug: string;
   name: string;
+  /** Card image, in public/images. 4:3, 1000x750. */
+  image: string;
+  imageAlt: string;
   /** Used in nav and cards. Keep under ~60 chars. */
   short: string;
   /** The direct answer, first thing on the page. Playbook 3. */
@@ -25,6 +28,8 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: 'emergency-plumbing',
+    image: '/images/svc-emergency.webp',
+    imageAlt: 'Water dripping from a worn brass tap against a black background',
     name: 'Emergency Plumbing',
     short: '24/7 call-out for burst pipes, sewer backups and no-heat.',
     answer:
@@ -61,6 +66,8 @@ export const services: Service[] = [
   },
   {
     slug: 'drain-cleaning',
+    image: '/images/svc-drain.webp',
+    imageAlt: 'Grey PVC waste pipework running across a basement wall',
     name: 'Drain Cleaning',
     short: 'Snaking, hydro-jetting and camera inspection for slow or blocked drains.',
     answer:
@@ -97,6 +104,8 @@ export const services: Service[] = [
   },
   {
     slug: 'water-heater-repair',
+    image: '/images/svc-waterheater.webp',
+    imageAlt: 'Wall-mounted tankless water heater with its valve manifold below',
     name: 'Water Heater Repair & Replacement',
     short: 'Tank and tankless repair, replacement and sizing.',
     answer:
@@ -133,6 +142,8 @@ export const services: Service[] = [
   },
   {
     slug: 'furnace-heating',
+    image: '/images/svc-furnace.webp',
+    imageAlt: 'Technician testing the controls on an outdoor heat pump unit',
     name: 'Furnace & Heating',
     short: 'Furnace repair, replacement and annual service before the cold hits.',
     answer:
@@ -169,6 +180,8 @@ export const services: Service[] = [
   },
   {
     slug: 'bathroom-kitchen-plumbing',
+    image: '/images/svc-bathroom.webp',
+    imageAlt: 'Homeowner running water at a kitchen sink with a black mixer tap',
     name: 'Bathroom & Kitchen Plumbing',
     short: 'Fixture installs, rough-ins and renovation plumbing.',
     answer:
@@ -205,6 +218,8 @@ export const services: Service[] = [
   },
   {
     slug: 'sump-pumps-backwater-valves',
+    image: '/images/svc-sump.webp',
+    imageAlt: 'Finished dry basement with carpeted floor and painted walls',
     name: 'Sump Pumps & Backwater Valves',
     short: 'Flood protection: sump pumps, battery backup and backwater valves.',
     answer:

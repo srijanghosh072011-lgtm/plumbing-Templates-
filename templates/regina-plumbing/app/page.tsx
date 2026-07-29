@@ -7,6 +7,7 @@ import { graph, faqSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/JsonLd';
 import { Reveal } from '@/components/Reveal';
 import { Shell, Cta, Eyebrow, CheckIcon, ArrowIcon } from '@/components/ui';
+import { Results } from '@/components/Results';
 
 export const metadata: Metadata = {
   title: `Licensed Plumber in ${client.address.locality}, SK | 24/7 Emergency`,
@@ -26,6 +27,7 @@ export default function HomePage() {
       <Intro />
       <TrustBar />
       <ServicesGrid />
+      <Results />
       <Process />
       <Coverage />
       <Faq />
@@ -297,25 +299,41 @@ function ServicesGrid() {
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 90} as="li">
               <Shell as="div" className="h-full transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1">
-                <Link
-                  href={`/services/${s.slug}/`}
-                  className="group flex h-full flex-col p-7"
-                >
-                  <span className="grid h-11 w-11 place-items-center rounded-2xl bg-tide-50 text-tide-600 ring-1 ring-tide-100">
-                    <ServiceIcon slug={s.slug} />
-                  </span>
-
-                  <h3 className="mt-6 font-display text-xl font-extrabold tracking-tight text-ink-900">
-                    {s.name}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-700">{s.short}</p>
-
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ink-900">
-                    Learn more
-                    <span className="grid h-7 w-7 place-items-center rounded-full bg-ink-900/[0.06] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1 group-hover:-translate-y-px">
-                      <ArrowIcon className="h-3 w-3" />
+                <Link href={`/services/${s.slug}/`} className="group flex h-full flex-col">
+                  {/* Photo with the icon badge straddling its bottom edge —
+                      the reference site's signature card treatment. The badge
+                      is what stops it reading as a generic image-over-text
+                      card, so the negative margin is load-bearing. */}
+                  <div className="relative">
+                    <div className="overflow-hidden rounded-t-[1.625rem]">
+                      <img
+                        src={asset(s.image)}
+                        alt={s.imageAlt}
+                        width={1000}
+                        height={750}
+                        loading="lazy"
+                        decoding="async"
+                        className="aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]"
+                      />
+                    </div>
+                    <span className="absolute -bottom-6 left-7 grid h-12 w-12 place-items-center rounded-2xl bg-white text-tide-600 shadow-[0_10px_28px_-12px_rgb(13_20_40/0.5)] ring-1 ring-ink-900/[0.07]">
+                      <ServiceIcon slug={s.slug} />
                     </span>
-                  </span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col p-7 pt-10">
+                    <h3 className="font-display text-xl font-extrabold tracking-tight text-ink-900">
+                      {s.name}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-700">{s.short}</p>
+
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ink-900">
+                      Learn more
+                      <span className="grid h-7 w-7 place-items-center rounded-full bg-ink-900/[0.06] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1 group-hover:-translate-y-px">
+                        <ArrowIcon className="h-3 w-3" />
+                      </span>
+                    </span>
+                  </div>
                 </Link>
               </Shell>
             </Reveal>

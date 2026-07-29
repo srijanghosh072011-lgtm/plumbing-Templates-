@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { client } from '@/lib/client.config';
+import { asset } from '@/lib/asset';
 import { services, areas } from '@/lib/content';
 import { PhoneIcon } from './ui';
 
@@ -147,7 +148,14 @@ export function Footer() {
             <FooterLink href="/privacy/" small>Privacy Policy</FooterLink>
             <FooterLink href="/terms/" small>Terms of Service</FooterLink>
             <FooterLink href="/accessibility/" small>Accessibility</FooterLink>
-            <FooterLink href="/sitemap.xml" small>Sitemap</FooterLink>
+            {/* Plain anchor, not next/link: sitemap.xml is a static file, and
+                Link would try to prefetch it as an RSC payload and 404. */}
+            <a
+              href={asset('/sitemap.xml')}
+              className="text-xs text-bone-200/70 underline-offset-4 transition-colors hover:text-white hover:underline"
+            >
+              Sitemap
+            </a>
           </nav>
         </div>
       </div>

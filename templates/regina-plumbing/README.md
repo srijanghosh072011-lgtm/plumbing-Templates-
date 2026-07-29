@@ -30,11 +30,10 @@ Then:
 2. `public/images/` — see **Image credits** below for what is real and what
    is still a placeholder. Resize and encode to WebP **before** committing;
    a static export has no image optimizer.
-   - `hero-bg.webp` — **still a generated gradient.** Wants a wide, dark,
-     real people-at-work photograph, 2400px or wider, with a calm middle
-     where the headline sits. The overlay stack is layered so even a
-     pure-white image keeps the headline at 12.2:1 contrast, so you do not
-     need to pre-darken it or re-test contrast after swapping.
+   Full-resolution originals live in `source-photos/` at the repo root, so
+   any of these can be re-cropped without re-downloading. The hero overlay is
+   layered so even a pure-white photograph keeps the headline at 12.2:1
+   contrast — you never need to pre-darken a replacement or re-test it.
 3. `public/og.png`, `favicon.ico`, `icon-*.png`, `apple-touch-icon.png`.
 4. `public/llms.txt` and `app/manifest.ts` — both carry `TODO_`s.
 5. `app/about/page.tsx` — `TODO_OWNER_STORY`. The highest-value paragraph on
@@ -91,7 +90,9 @@ workflow and commit a `CNAME` file.
 | `images/plate-pipe.webp` | Free stock (Pexels/Unsplash) | Real photo |
 | `images/about-portrait.webp` | Free stock (Pexels/Unsplash) | Real photo — **not the actual owner** |
 | `og.jpg` | Crop of `plate-pipe` source | Real photo |
-| `images/hero-bg.webp` | Generated gradient | **Placeholder — replace** |
+| `images/hero-bg.webp` | Free stock (Pexels) | Real photo |
+| `images/svc-*.webp` (6) | Free stock (Pexels) | Real photos — service cards |
+| `images/result-*.webp` (4) | Free stock (Pexels) | Real photos — results tabs |
 | `favicon.ico`, `icon-*.png`, `apple-touch-icon.png` | Generated | **Placeholder — replace** |
 
 Pexels and Unsplash (free tier) both permit commercial use with no

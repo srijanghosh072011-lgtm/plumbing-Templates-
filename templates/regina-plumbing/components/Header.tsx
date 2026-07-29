@@ -16,10 +16,30 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   // Close on route change — otherwise the overlay survives navigation.
   useEffect(() => setOpen(false), [pathname]);
+
+  /**
+   * Every page opens on a dark hero and then runs into light content. A
+   * single fixed treatment cannot serve both: dark glass looks right on the
+   * hero and turns into a muddy grey slab over white.
+   *
+   * So the pill swaps once the hero has scrolled past, watched via an
+   * IntersectionObserver on a sentinel rather than a scroll listener.
+   */
+  useEffect(() => {
+    const sentinel = document.getElementById('top-sentinel');
+    if (!sentinel) return;
+    const io = new IntersectionObserver(
+      ([e]) => setScrolled(!e.isIntersecting),
+      { threshold: 0 },
+    );
+    io.observe(sentinel);
+    return () => io.disconnect();
+  }, [pathname]);
 
   // Lock scroll behind the overlay and restore the exact prior value, so we
   // do not clobber an `overflow` the page itself set.
@@ -62,12 +82,20 @@ export function Header() {
           Dark-tinted rather than white: every page on this site opens with a
           dark hero, so a light slab would sit on top of the photograph like
           a sticker. This reads as part of the image instead. */}
-      <div className="pointer-events-auto mx-auto flex w-full max-w-6xl items-center gap-3 rounded-full border border-white/12 bg-ink-950/55 p-1.5 pl-5 shadow-[0_20px_50px_-28px_rgb(7_11_24/0.7)] backdrop-blur-2xl">
+      <div
+        className={`pointer-events-auto mx-auto flex w-full max-w-6xl items-center gap-3 rounded-full p-1.5 pl-5 backdrop-blur-2xl transition-[background-color,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+          scrolled
+            ? 'border border-ink-900/[0.06] bg-white/85 shadow-[0_18px_44px_-26px_rgb(13_20_40/0.45)]'
+            : 'border border-white/12 bg-ink-950/55 shadow-[0_20px_50px_-28px_rgb(7_11_24/0.7)]'
+        }`}
+      >
         <Link
           href="/"
-          className="mr-auto flex items-center gap-2.5 font-display text-[15px] font-extrabold tracking-tight text-white"
+          className={`mr-auto flex items-center gap-2.5 font-display text-[15px] font-extrabold tracking-tight transition-colors duration-500 ${
+            scrolled ? 'text-ink-900' : 'text-white'
+          }`}
         >
-          <Logo />
+          <Logo scrolled={scrolled} />
           <span className="hidden sm:inline">{client.shortName}</span>
         </Link>
 
@@ -80,9 +108,13 @@ export function Header() {
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
                 className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-                  active
-                    ? 'bg-white/12 text-white'
-                    : 'text-bone-100/75 hover:bg-white/[0.07] hover:text-white'
+                  scrolled
+                    ? active
+                      ? 'bg-ink-900/[0.07] text-ink-900'
+                      : 'text-ink-700 hover:bg-ink-900/[0.05] hover:text-ink-900'
+                    : active
+                      ? 'bg-white/12 text-white'
+                      : 'text-bone-100/75 hover:bg-white/[0.07] hover:text-white'
                 }`}
               >
                 {item.label}
@@ -98,7 +130,7 @@ export function Header() {
           // White, not copper: the hero's primary CTA owns the one accent
           // colour on screen. Two competing oranges means neither reads as
           // the primary action.
-          variant="ghost"
+          variant={scrolled ? 'primary' : 'ghost'}
           className="hidden text-sm sm:inline-flex"
           data-analytics="phone_call_click"
           aria-label={`Call ${client.name} on ${client.phone}`}
@@ -113,7 +145,11 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
+          className={`grid h-12 w-12 shrink-0 place-items-center rounded-full transition-colors duration-500 lg:hidden ${
+            scrolled
+              ? 'bg-ink-900/[0.06] text-ink-900 hover:bg-ink-900/12'
+              : 'bg-white/10 text-white hover:bg-white/20'
+          }`}
         >
           {/* Two bars that rotate into an X rather than swapping glyphs. */}
           <span className="relative block h-3 w-5" aria-hidden="true">
@@ -182,9 +218,13 @@ export function Header() {
   );
 }
 
-function Logo() {
+function Logo({ scrolled }: { scrolled?: boolean }) {
   return (
-    <span className="grid h-8 w-8 place-items-center rounded-xl bg-ink-900 text-white">
+    <span
+      className={`grid h-8 w-8 place-items-center rounded-xl transition-colors duration-500 ${
+        scrolled ? 'bg-ink-900 text-white' : 'bg-white/12 text-white ring-1 ring-white/15'
+      }`}
+    >
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
         {/* A droplet over a pipe elbow — reads at 16px, which a detailed
             mark would not. */}

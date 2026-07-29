@@ -131,6 +131,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
 
+        {/* Sentinel the header watches to know whether it is still over the
+            dark hero. An IntersectionObserver on this beats a scroll
+            listener, which fires on every frame and forces reflow. */}
+        <div
+          id="top-sentinel"
+          aria-hidden="true"
+          className="pointer-events-none absolute left-0 top-0 h-24 w-px"
+        />
+
 
         {/* Organization and WebSite are site-wide; page templates add their
             own nodes referencing these by @id. */}
