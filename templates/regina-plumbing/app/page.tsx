@@ -92,7 +92,7 @@ function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto w-full max-w-4xl px-6 py-32 text-center sm:py-36">
+      <div className="relative mx-auto w-full max-w-4xl px-6 py-28 text-center sm:py-32">
         <Reveal>
           <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-tide-300 ring-1 ring-white/15 backdrop-blur-sm sm:text-[11px]">
             <span className="h-1.5 w-1.5 rounded-full bg-copper-400" />
@@ -145,6 +145,36 @@ function Hero() {
               <li key={item} className="flex items-center gap-2">
                 <CheckIcon className="h-4 w-4 text-copper-400" />
                 {item}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        {/* Photo strip.
+            The background photograph has to sit under a scrim so the headline
+            stays legible, which necessarily mutes it. These cards carry no
+            overlay at all, so the work is shown at full brightness in the
+            hero rather than only hinted at behind the type. */}
+        <Reveal delay={360}>
+          <ul className="mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-3 sm:gap-4">
+            {[
+              { src: '/images/plate-technician.webp', alt: 'Plumber tightening a compression fitting on a waste pipe' },
+              { src: '/images/svc-waterheater.webp', alt: 'Wall-mounted tankless water heater with its valve manifold' },
+              { src: '/images/result-bathroom.webp', alt: 'Finished bathroom with walk-in shower and wall-hung basin' },
+            ].map((img) => (
+              <li
+                key={img.src}
+                className="overflow-hidden rounded-2xl bg-white/10 p-1 ring-1 ring-white/20 backdrop-blur-sm"
+              >
+                <img
+                  src={asset(img.src)}
+                  alt={img.alt}
+                  width={400}
+                  height={300}
+                  loading="eager"
+                  decoding="async"
+                  className="aspect-[4/3] w-full rounded-xl object-cover"
+                />
               </li>
             ))}
           </ul>
