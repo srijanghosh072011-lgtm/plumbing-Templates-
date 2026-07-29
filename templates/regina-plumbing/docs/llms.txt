@@ -1,0 +1,48 @@
+# Coldsnap Plumbing & Heating
+
+> Licensed, insured plumbing and heating contractor serving Regina,
+> Saskatchewan and surrounding communities. 24/7 emergency call-out,
+> flat-rate pricing quoted in writing before work begins.
+
+Established 2011. Saskatchewan journeyman plumber licence
+SK-JP-118472. Service-area business — no public storefront.
+
+- Phone: (306) 555-0142
+- Email: service@coldsnapplumbing.example
+- Service area: Regina and roughly 60 km around it
+- Hours: Mon–Fri 07:00–17:00, Sat 08:00–16:00, plus 24/7 emergency
+
+## Services
+
+- [Emergency Plumbing](/services/emergency-plumbing/): burst and frozen pipes, active leaks, sewer backups, no heat. 60–90 min typical arrival in Regina.
+- [Drain Cleaning](/services/drain-cleaning/): snaking, hydro-jetting, camera inspection. Root intrusion in older clay laterals is the common Regina cause.
+- [Water Heater Repair & Replacement](/services/water-heater-repair/): tank and tankless repair, replacement and sizing. Hard Regina water shortens tank life to 8–12 years.
+- [Furnace & Heating](/services/furnace-heating/): no-heat diagnosis, igniter and flame sensor replacement, high-efficiency replacement, annual service.
+- [Bathroom & Kitchen Plumbing](/services/bathroom-kitchen-plumbing/): fixture installation, renovation rough-ins, drain relocation.
+- [Sump Pumps & Backwater Valves](/services/sump-pumps-backwater-valves/): flood protection, battery backup, backwater valve installation.
+
+## Service areas
+
+- [Regina](/service-areas/regina/): full city coverage, ~20 min from base.
+- [White City](/service-areas/white-city/): including Emerald Park, ~25 min.
+- [Pilot Butte](/service-areas/pilot-butte/): ~25 min.
+- [Lumsden](/service-areas/lumsden/): Qu'Appelle Valley, ~30 min. Spring flood protection priority.
+- [Balgonie](/service-areas/balgonie/): ~30 min via Highway 1.
+
+## Company
+
+- [About](/about/): history, credentials, how we price.
+- [Reviews](/reviews/): customer reviews.
+- [FAQ](/faq/): pricing, response times, licensing, warranty.
+- [Get a Quote](/quote/): free estimates for planned work.
+
+## Legal
+
+- [Privacy Policy](/privacy/): PIPEDA-compliant.
+- [Terms of Service](/terms/)
+- [Accessibility Statement](/accessibility/): WCAG 2.2 AA.
+
+## Notes
+
+Prices shown on service pages are typical ranges for guidance, not quotes.
+The binding price is the written flat rate given after seeing the job.
