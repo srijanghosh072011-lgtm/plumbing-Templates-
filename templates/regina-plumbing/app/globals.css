@@ -166,6 +166,18 @@ p {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.34'/%3E%3C/svg%3E");
 }
 
+/* Dotted halftone field — the reference site's signature motif, used beside
+   the collage and behind section corners. Dots, not a line grid: a grid
+   reads as a wireframe, a dot field reads as print. */
+.dot-field {
+  background-image: radial-gradient(rgb(29 42 82 / 0.28) 1.6px, transparent 1.6px);
+  background-size: 14px 14px;
+}
+.dot-field-light {
+  background-image: radial-gradient(rgb(255 255 255 / 0.22) 1.6px, transparent 1.6px);
+  background-size: 14px 14px;
+}
+
 /* Soft sheen for dark sections — a wide, very low-contrast diagonal that
    gives the surface some direction without drawing a shape on it. */
 .dark-surface {

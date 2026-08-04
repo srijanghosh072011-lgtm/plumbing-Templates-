@@ -114,7 +114,7 @@ export function Results() {
           role="tablist"
           aria-label="Types of work"
           onKeyDown={onKeyDown}
-          className="mt-10 flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-10 flex gap-6 overflow-x-auto border-b border-white/10 pb-1 sm:gap-9 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {tabs.map((t, i) => {
             const selected = i === active;
@@ -128,10 +128,13 @@ export function Results() {
                 aria-controls={`${baseId}-panel-${t.id}`}
                 tabIndex={selected ? 0 : -1}
                 onClick={() => setActive(i)}
-                className={`min-h-11 shrink-0 rounded-full px-5 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+                // Underlined text, not pills — the reference's treatment.
+                // The underline is a pseudo-element so switching tabs never
+                // changes the button's box and nothing reflows.
+                className={`relative min-h-11 shrink-0 px-1 pb-2 text-sm font-semibold transition-colors duration-400 ease-[cubic-bezier(0.32,0.72,0,1)] after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:rounded-full after:bg-white after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.32,0.72,0,1)] sm:px-2 ${
                   selected
-                    ? 'bg-white text-ink-900 shadow-[0_10px_30px_-14px_rgb(255_255_255/0.5)]'
-                    : 'bg-white/[0.06] text-bone-200/75 ring-1 ring-white/10 hover:bg-white/12 hover:text-white'
+                    ? 'text-white after:scale-x-100'
+                    : 'text-bone-200/65 hover:text-white after:scale-x-0'
                 }`}
               >
                 {t.label}

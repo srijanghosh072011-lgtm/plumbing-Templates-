@@ -196,9 +196,16 @@ function Intro() {
             become a plain 2-up grid, because overlapping cards create
             touch-target conflicts and unpredictable tap zones. */}
         <Reveal className="relative">
+          {/* Solid offset block behind the collage and a dotted halftone
+              field beside it — the two flat motifs the reference uses to
+              stop the collage floating on plain white. */}
           <div
             aria-hidden="true"
-            className="absolute -left-4 -top-4 hidden h-40 w-40 rounded-3xl bg-tide-100/70 md:block"
+            className="absolute -bottom-5 -left-5 hidden h-44 w-44 rounded-lg bg-tide-500/85 md:block"
+          />
+          <div
+            aria-hidden="true"
+            className="dot-field absolute -right-6 -top-8 hidden h-36 w-44 md:block"
           />
           <div className="relative grid grid-cols-2 gap-4">
             <IntroPlate
@@ -383,41 +390,42 @@ function ServicesGrid() {
    ───────────────────────────────────────────────────────────────────────── */
 function Process() {
   return (
-    <section className="relative overflow-hidden bg-ink-950 py-24 lg:py-36">
-      <div className="dark-surface absolute inset-0" aria-hidden="true" />
+    <section className="relative overflow-hidden bg-bone-50 py-24 lg:py-36">
+      {/* Dotted halftone in the corner, as in the reference. */}
       <div
         aria-hidden="true"
-        className="absolute -left-24 top-1/3 h-80 w-80 rounded-full bg-tide-500/12 blur-3xl"
+        className="dot-field absolute right-0 top-16 hidden h-48 w-72 opacity-70 lg:block"
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
-        <Reveal className="max-w-2xl">
-          <Eyebrow tone="dark">How it works</Eyebrow>
-          <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white">
+      <div className="relative mx-auto max-w-6xl px-6 text-center lg:px-8">
+        <Reveal className="mx-auto max-w-2xl">
+          <Eyebrow>How it works</Eyebrow>
+          <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-ink-900">
             No waiting on a callback that never comes.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-bone-200/70">
+          <p className="mt-5 text-lg leading-relaxed text-ink-700">
             Three steps, no surprises, and a real person on the phone at every one of them.
           </p>
         </Reveal>
 
-        <ol className="mt-14 grid gap-5 lg:grid-cols-3">
+        {/* Outlined cards on white with oversized numerals — the reference's
+            treatment. The hairline border does the work here, so there is no
+            nested shell: a double bezel on a white card over a white section
+            just reads as mud. */}
+        <ol className="mt-14 grid gap-6 text-left lg:grid-cols-3">
           {process.map((step, i) => (
             <Reveal key={step.n} delay={i * 110} as="li">
-              <div className="h-full rounded-[2rem] bg-white/[0.04] p-1.5 ring-1 ring-white/10">
-                <div className="h-full rounded-[1.625rem] bg-ink-900/60 p-8 shadow-[inset_0_1px_1px_rgb(255_255_255/0.07)]">
-                  <span
-                    className="block font-display text-6xl font-extrabold leading-none tracking-tight text-transparent lg:text-7xl"
-                    style={{ WebkitTextStroke: '1.5px rgb(77 155 234 / 0.65)' }}
-                    aria-hidden="true"
-                  >
-                    {step.n}
-                  </span>
-                  <h3 className="mt-6 font-display text-xl font-extrabold tracking-tight text-white">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-bone-200/70">{step.body}</p>
-                </div>
+              <div className="h-full rounded-[1.75rem] border-2 border-ink-600/25 bg-white p-8 transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-ink-600/50">
+                <span
+                  className="block font-display text-6xl font-extrabold leading-none tracking-tight text-ink-900 lg:text-7xl"
+                  aria-hidden="true"
+                >
+                  {step.n}
+                </span>
+                <h3 className="mt-5 font-display text-xl font-extrabold tracking-tight text-ink-900">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-700">{step.body}</p>
               </div>
             </Reveal>
           ))}
