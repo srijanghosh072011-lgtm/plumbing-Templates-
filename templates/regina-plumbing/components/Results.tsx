@@ -2,71 +2,71 @@
 
 import { useId, useRef, useState } from 'react';
 import { asset } from '@/lib/asset';
-import { Eyebrow, Cta } from './ui';
+import { Cta } from './ui';
 
 /**
  * "Results we can guarantee" — the reference site's dark tabbed band.
  *
- * Tabs follow the WAI-ARIA tabs pattern properly: roving tabindex, arrow-key
- * navigation with Home/End, and one panel visible at a time. A row of
- * buttons that merely look like tabs is worse than none, because a screen
- * reader user is told nothing about what changed.
+ * Structure follows the reference: a darkened photograph behind the whole
+ * band, a centred heading, underlined text tabs, and a ROW of work photos
+ * under them rather than one large image.
  *
- * Panels are all rendered and toggled with hidden rather than unmounted, so
- * switching tabs never re-requests an image.
+ * Tabs follow the WAI-ARIA tabs pattern properly: roving tabindex, arrow
+ * keys with Home/End, and one panel visible at a time. A row of buttons that
+ * merely looks like tabs tells a screen reader nothing about what changed.
+ *
+ * Panels stay mounted and toggle with `hidden`, so switching tabs never
+ * re-requests an image that has already been fetched.
  */
 
+type Shot = { src: string; alt: string };
 type Tab = {
   id: string;
   label: string;
-  image: string;
-  alt: string;
-  heading: string;
-  body: string;
-  stat: string;
-  statLabel: string;
+  line: string;
+  shots: [Shot, Shot, Shot];
 };
 
 const tabs: Tab[] = [
   {
     id: 'water-heaters',
     label: 'Water heaters',
-    image: '/images/result-waterheater.webp',
-    alt: 'Technician servicing the internals of a wall-mounted combi boiler',
-    heading: 'Hot water back the same day',
-    body: 'Most tank failures are diagnosed and replaced in a single visit. We size the unit to the household rather than the label, and haul the old tank away.',
-    stat: '1 visit',
-    statLabel: 'typical replacement',
+    line: 'Most tank failures are diagnosed and replaced in a single visit — sized to the household, old unit hauled away.',
+    shots: [
+      { src: '/images/result-waterheater.webp', alt: 'Technician servicing the internals of a wall-mounted combi boiler' },
+      { src: '/images/svc-waterheater.webp', alt: 'Installed tankless water heater with its valve manifold below' },
+      { src: '/images/plate-valves.webp', alt: 'Labelled isolation valve fitted on a clean white wall' },
+    ],
   },
   {
     id: 'drains',
     label: 'Drains',
-    image: '/images/result-drains.webp',
-    alt: 'Clean grey waste pipework running along a basement wall after clearing',
-    heading: 'Cleared, then shown on camera',
-    body: 'Every main-line clear ends with a camera pass, so you see whether it was grease, roots, or a broken section — and you get the footage.',
-    stat: '< 1 hr',
-    statLabel: 'most single-fixture clogs',
+    line: 'Every main-line clear ends with a camera pass, so you see whether it was grease, roots or a broken section.',
+    shots: [
+      { src: '/images/result-drains.webp', alt: 'Waste pipework running along a basement wall after clearing' },
+      { src: '/images/svc-drain.webp', alt: 'Grey PVC drainage stack and elbows on a wall' },
+      { src: '/images/plate-pipe.webp', alt: 'Failed pipe joint dripping before repair' },
+    ],
   },
   {
     id: 'bathrooms',
     label: 'Bathrooms',
-    image: '/images/result-bathroom.webp',
-    alt: 'Finished bathroom with wall-hung basin, heated towel rail and walk-in shower',
-    heading: 'Renovation plumbing that passes',
-    body: 'Rough-in coordinated around your framing schedule, inspected before anything is closed up, and every shut-off labelled when we leave.',
-    stat: 'Permit',
-    statLabel: 'pulled and closed by us',
+    line: 'Rough-in coordinated around your framing schedule, inspected before anything is closed up, every shut-off labelled.',
+    shots: [
+      { src: '/images/result-bathroom.webp', alt: 'Finished bathroom with walk-in shower and wall-hung basin' },
+      { src: '/images/svc-bathroom.webp', alt: 'Kitchen mixer tap running over a stainless sink' },
+      { src: '/images/plate-technician.webp', alt: 'Plumber tightening a compression fitting beneath a sink' },
+    ],
   },
   {
     id: 'basements',
     label: 'Basements',
-    image: '/images/result-basement.webp',
-    alt: 'Dry finished basement with carpet and painted walls',
-    heading: 'Dry through the spring melt',
-    body: 'Sump pump sized to the lot, battery backup load-tested rather than just installed, and a backwater valve with an access cover you can actually reach.',
-    stat: 'Feb',
-    statLabel: 'when we test, before melt',
+    line: 'Sump pump sized to the lot, battery backup load-tested rather than just installed, backwater valve left accessible.',
+    shots: [
+      { src: '/images/result-basement.webp', alt: 'Dry finished basement with carpet and painted walls' },
+      { src: '/images/svc-sump.webp', alt: 'Finished basement room kept dry through spring melt' },
+      { src: '/images/svc-emergency.webp', alt: 'Dripping tap showing the kind of leak caught before it floods' },
+    ],
   },
 ];
 
@@ -90,31 +90,38 @@ export function Results() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-ink-950 py-24 lg:py-32">
-      <div className="dark-surface absolute inset-0" aria-hidden="true" />
-      <div
+    <section className="relative isolate overflow-hidden py-24 lg:py-32">
+      {/* Darkened photograph behind the whole band, as in the reference. */}
+      <img
+        src={asset('/images/svc-furnace.webp')}
+        alt=""
         aria-hidden="true"
-        className="absolute -right-32 top-1/4 h-[30rem] w-[30rem] rounded-full bg-tide-500/12 blur-3xl"
+        width={1000}
+        height={750}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
+      <div className="absolute inset-0 -z-10 bg-ink-950/88" aria-hidden="true" />
+      <div className="dark-surface absolute inset-0 -z-10" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <Eyebrow tone="dark">Our work</Eyebrow>
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="inline-flex items-center rounded-full bg-white/[0.07] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-tide-300 ring-1 ring-white/10">
+            Our work
+          </p>
           <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white">
             Results we can guarantee.
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-bone-200/70">
-            Four things we do most, and what finishing them properly actually looks like.
-          </p>
         </div>
 
-        {/* Tab strip. Scrolls horizontally on a phone rather than wrapping to
-            two cramped rows. */}
+        {/* Centred underlined tabs. Horizontally scrollable on a phone rather
+            than wrapping into two cramped rows. */}
         <div
           role="tablist"
           aria-label="Types of work"
           onKeyDown={onKeyDown}
-          className="mt-10 flex gap-6 overflow-x-auto border-b border-white/10 pb-1 sm:gap-9 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-10 flex justify-start gap-6 overflow-x-auto border-b border-white/10 pb-1 sm:justify-center sm:gap-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {tabs.map((t, i) => {
             const selected = i === active;
@@ -128,13 +135,10 @@ export function Results() {
                 aria-controls={`${baseId}-panel-${t.id}`}
                 tabIndex={selected ? 0 : -1}
                 onClick={() => setActive(i)}
-                // Underlined text, not pills — the reference's treatment.
-                // The underline is a pseudo-element so switching tabs never
-                // changes the button's box and nothing reflows.
-                className={`relative min-h-11 shrink-0 px-1 pb-2 text-sm font-semibold transition-colors duration-400 ease-[cubic-bezier(0.32,0.72,0,1)] after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:rounded-full after:bg-white after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.32,0.72,0,1)] sm:px-2 ${
+                className={`relative min-h-11 shrink-0 px-1 pb-3 text-sm font-semibold transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:rounded-full after:bg-white after:transition-transform after:duration-500 after:ease-[cubic-bezier(0.32,0.72,0,1)] sm:px-2 sm:text-base ${
                   selected
                     ? 'text-white after:scale-x-100'
-                    : 'text-bone-200/65 hover:text-white after:scale-x-0'
+                    : 'text-bone-200/60 after:scale-x-0 hover:text-white'
                 }`}
               >
                 {t.label}
@@ -150,36 +154,36 @@ export function Results() {
             id={`${baseId}-panel-${t.id}`}
             aria-labelledby={`${baseId}-tab-${t.id}`}
             hidden={i !== active}
-            className="mt-6"
+            className="mt-10"
           >
-            <div className="grid gap-6 overflow-hidden rounded-[2rem] bg-white/[0.04] p-1.5 ring-1 ring-white/10 lg:grid-cols-[1.25fr_0.75fr]">
-              <div className="overflow-hidden rounded-[1.625rem]">
-                <img
-                  src={asset(t.image)}
-                  alt={t.alt}
-                  width={1400}
-                  height={900}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[14/9] w-full object-cover"
-                />
-              </div>
+            {/* Row of work photos. First card spans two columns on a phone so
+                the row never collapses into three unreadable slivers. */}
+            <ul className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3">
+              {t.shots.map((s, j) => (
+                <li
+                  key={s.src}
+                  className={`overflow-hidden rounded-[1.5rem] bg-white/[0.06] p-1.5 ring-1 ring-white/12 ${
+                    j === 0 ? 'col-span-2 lg:col-span-1' : ''
+                  }`}
+                >
+                  <img
+                    src={asset(s.src)}
+                    alt={s.alt}
+                    width={1000}
+                    height={750}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/3] w-full rounded-[1.125rem] object-cover"
+                  />
+                </li>
+              ))}
+            </ul>
 
-              <div className="flex flex-col justify-center p-6 lg:p-8">
-                <p className="font-display text-5xl font-extrabold tracking-tight text-tide-300">
-                  {t.stat}
-                </p>
-                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-bone-200/45">
-                  {t.statLabel}
-                </p>
-                <h3 className="mt-6 font-display text-2xl font-extrabold tracking-tight text-white">
-                  {t.heading}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-bone-200/70">{t.body}</p>
-                <Cta href="/quote/" variant="onDark" className="mt-7 self-start">
-                  Get a quote
-                </Cta>
-              </div>
+            <div className="mt-8 flex flex-col items-center gap-5 text-center">
+              <p className="max-w-2xl text-base leading-relaxed text-bone-200/75">{t.line}</p>
+              <Cta href="/quote/" variant="onDark">
+                Get a quote
+              </Cta>
             </div>
           </div>
         ))}
