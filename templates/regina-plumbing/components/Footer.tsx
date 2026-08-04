@@ -12,7 +12,7 @@ export function Footer() {
 
   return (
     <footer className="no-print relative overflow-hidden bg-ink-950 text-bone-100">
-      <div className="blueprint-field absolute inset-0" aria-hidden="true" />
+      <div className="dark-surface absolute inset-0" aria-hidden="true" />
       {/* Angled wedge, echoing the source template's diagonal cut but as a
           soft gradient rather than a hard halftone triangle. */}
       <div

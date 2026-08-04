@@ -131,6 +131,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
 
+        {/* One document-wide grain layer. Fixed, so it never repaints as the
+            page scrolls, and pointer-events-none so it cannot intercept a
+            click. Replaces the per-section grid that read as a wireframe. */}
+        <div className="grain-layer no-print" aria-hidden="true" />
+
         {/* Sentinel the header watches to know whether it is still over the
             dark hero. An IntersectionObserver on this beats a scroll
             listener, which fires on every frame and forces reflow. */}

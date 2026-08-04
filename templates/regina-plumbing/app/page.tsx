@@ -384,7 +384,7 @@ function ServicesGrid() {
 function Process() {
   return (
     <section className="relative overflow-hidden bg-ink-950 py-24 lg:py-36">
-      <div className="blueprint-field absolute inset-0" aria-hidden="true" />
+      <div className="dark-surface absolute inset-0" aria-hidden="true" />
       <div
         aria-hidden="true"
         className="absolute -left-24 top-1/3 h-80 w-80 rounded-full bg-tide-500/12 blur-3xl"
@@ -530,7 +530,7 @@ function FinalCta() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] bg-ink-950 px-8 py-16 text-center sm:px-16 lg:py-24">
-            <div className="blueprint-field absolute inset-0" aria-hidden="true" />
+            <div className="dark-surface absolute inset-0" aria-hidden="true" />
             <div
               aria-hidden="true"
               className="absolute left-1/2 top-0 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-tide-500/20 blur-3xl"

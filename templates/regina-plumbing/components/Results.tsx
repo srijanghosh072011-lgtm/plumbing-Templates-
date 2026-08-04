@@ -91,7 +91,7 @@ export function Results() {
 
   return (
     <section className="relative overflow-hidden bg-ink-950 py-24 lg:py-32">
-      <div className="blueprint-field absolute inset-0" aria-hidden="true" />
+      <div className="dark-surface absolute inset-0" aria-hidden="true" />
       <div
         aria-hidden="true"
         className="absolute -right-32 top-1/4 h-[30rem] w-[30rem] rounded-full bg-tide-500/12 blur-3xl"

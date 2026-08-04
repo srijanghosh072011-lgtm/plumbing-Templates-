@@ -14,7 +14,7 @@ import { Cta } from '@/components/ui';
 export default function NotFound() {
   return (
     <section className="relative flex min-h-dvh items-center overflow-hidden bg-ink-950 px-6 py-32">
-      <div className="blueprint-field absolute inset-0" aria-hidden="true" />
+      <div className="dark-surface absolute inset-0" aria-hidden="true" />
       <div
         aria-hidden="true"
         className="absolute left-1/2 top-1/4 h-96 w-[32rem] -translate-x-1/2 rounded-full bg-tide-500/15 blur-3xl"
