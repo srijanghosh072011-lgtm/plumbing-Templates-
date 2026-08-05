@@ -25,7 +25,7 @@ export function Shell({
 }) {
   const outer =
     tone === 'dark'
-      ? 'bg-white/[0.04] ring-1 ring-white/10'
+      ? 'bg-white/[0.09] ring-1 ring-white/18'
       : 'bg-ink-900/[0.035] ring-1 ring-ink-900/[0.07]';
   const inner =
     tone === 'dark'
@@ -124,7 +124,7 @@ export function Eyebrow({
 }) {
   const skin =
     tone === 'dark'
-      ? 'bg-white/[0.06] text-tide-300 ring-white/10'
+      ? 'bg-white/[0.11] text-tide-300 ring-white/18'
       : 'bg-ink-900/[0.04] text-ink-600 ring-ink-900/[0.08]';
   return (
     <span

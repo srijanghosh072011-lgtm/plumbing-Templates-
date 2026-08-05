@@ -33,7 +33,7 @@ export default function ReviewsPage() {
         trail={trail}
       >
         {aggregateRating && (
-          <div className="mt-8 inline-flex items-center gap-4 rounded-full bg-white/[0.06] px-5 py-3 ring-1 ring-white/10">
+          <div className="mt-8 inline-flex items-center gap-4 rounded-full bg-white/[0.11] px-5 py-3 ring-1 ring-white/18">
             <StarRow rating={Math.round(aggregateRating.value)} />
             <span className="text-sm text-bone-200/80">
               {aggregateRating.value.toFixed(1)} from {aggregateRating.count} reviews

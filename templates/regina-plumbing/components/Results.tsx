@@ -107,7 +107,7 @@ export function Results() {
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex items-center rounded-full bg-white/[0.07] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-tide-300 ring-1 ring-white/10">
+          <p className="inline-flex items-center rounded-full bg-white/[0.07] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-tide-300 ring-1 ring-white/18">
             Our work
           </p>
           <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white">
@@ -162,7 +162,7 @@ export function Results() {
               {t.shots.map((s, j) => (
                 <li
                   key={s.src}
-                  className={`overflow-hidden rounded-[1.5rem] bg-white/[0.06] p-1.5 ring-1 ring-white/12 ${
+                  className={`overflow-hidden rounded-[1.5rem] bg-white/[0.11] p-1.5 ring-1 ring-white/20 ${
                     j === 0 ? 'col-span-2 lg:col-span-1' : ''
                   }`}
                 >

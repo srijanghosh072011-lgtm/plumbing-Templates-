@@ -52,7 +52,7 @@ export function Footer() {
                     href={url}
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="grid h-11 w-11 place-items-center rounded-full bg-white/[0.06] text-bone-100 ring-1 ring-white/10 transition-colors hover:bg-white/12"
+                    className="grid h-11 w-11 place-items-center rounded-full bg-white/[0.11] text-bone-100 ring-1 ring-white/18 transition-colors hover:bg-white/12"
                   >
                     <span className="text-xs font-semibold uppercase">{key.slice(0, 2)}</span>
                     <span className="sr-only">{client.name} on {key}</span>

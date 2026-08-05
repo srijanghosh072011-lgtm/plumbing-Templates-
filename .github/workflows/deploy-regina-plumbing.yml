@@ -55,12 +55,24 @@ jobs:
       - name: Pre-launch content check
         run: npm run check
 
+      # A custom domain serves from the domain root, so basePath must be
+      # empty; a project site serves from /<repo>/, so it must be the repo
+      # name. Committing public/CNAME is what selects between them — no
+      # workflow edit needed to move the demo onto a real domain.
+      - name: Resolve basePath
+        id: base
+        run: |
+          if [ -f public/CNAME ]; then
+            echo "path=" >> "$GITHUB_OUTPUT"
+            echo "Custom domain $(cat public/CNAME) — basePath empty."
+          else
+            echo "path=/${{ github.event.repository.name }}" >> "$GITHUB_OUTPUT"
+            echo "Project site — basePath /${{ github.event.repository.name }}."
+          fi
+
       - name: Build static export
-        # BASE_PATH must match the repo name for a project site served from
-        # https://<user>.github.io/<repo>/. Set it to an empty string when
-        # using a custom domain or a <user>.github.io repo.
         env:
-          BASE_PATH: /${{ github.event.repository.name }}
+          BASE_PATH: ${{ steps.base.outputs.path }}
         run: npm run build
 
       # Pages runs the output through Jekyll otherwise, which strips

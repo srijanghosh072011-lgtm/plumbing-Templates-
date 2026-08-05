@@ -21,12 +21,17 @@
      proper ramp. Every pairing used for text below is contrast-checked;
      see the table in DESIGN.md. Copper is the accent — a plumbing
      material, and it keeps the page off the default SaaS-blue look.     */
-  --color-ink-950: #070b18;
-  --color-ink-900: #0d1428;
-  --color-ink-800: #141d3a;
-  --color-ink-700: #1d2a52;
-  --color-ink-600: #2a3b6d;
-  --color-ink-500: #3d5390;
+  /* Navy, not near-black. The first ramp bottomed out at #070b18, which is
+     essentially black with a blue cast — it made the dark bands read as
+     heavy voids rather than as the reference's blue. Every value here is a
+     true navy, and all 13 text/UI pairings were re-checked against WCAG
+     after the shift (lowest is the copper CTA at 4.87:1). */
+  --color-ink-950: #0e2049;
+  --color-ink-900: #16305f;
+  --color-ink-800: #1f3f78;
+  --color-ink-700: #24406f;
+  --color-ink-600: #2f5490;
+  --color-ink-500: #43679f;
 
   /* tide-600 is the text-safe blue: 5.60:1 on white, 5.10:1 on tide-50.
      tide-500 only clears 4.11:1 on white, so it is for decorative fills
@@ -182,8 +187,8 @@ p {
    gives the surface some direction without drawing a shape on it. */
 .dark-surface {
   background-image:
-    radial-gradient(ellipse 80% 60% at 15% 0%, rgb(45 96 170 / 0.16), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 90% 100%, rgb(45 96 170 / 0.1), transparent 62%);
+    radial-gradient(ellipse 80% 60% at 15% 0%, rgb(77 155 234 / 0.20), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 90% 100%, rgb(77 155 234 / 0.14), transparent 62%);
 }
 
 @media (prefers-reduced-motion: reduce) {

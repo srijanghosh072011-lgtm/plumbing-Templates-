@@ -125,7 +125,7 @@ export function PageHero({
       />
       <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
         <Breadcrumbs tone="dark" trail={trail} />
-        <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-tide-300 ring-1 ring-white/10">
+        <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/[0.11] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-tide-300 ring-1 ring-white/18">
           {eyebrow}
         </p>
         <h1 className="mt-5 font-display text-[clamp(2.25rem,6vw,4rem)] font-extrabold leading-[0.98] tracking-[-0.04em] text-white">

@@ -52,7 +52,7 @@ export default function NotFound() {
             <li key={s.slug}>
               <Link
                 href={`/services/${s.slug}/`}
-                className="inline-flex min-h-10 items-center rounded-full bg-white/[0.06] px-4 text-sm text-bone-200/80 ring-1 ring-white/10 transition-colors hover:bg-white/12 hover:text-white"
+                className="inline-flex min-h-10 items-center rounded-full bg-white/[0.11] px-4 text-sm text-bone-200/80 ring-1 ring-white/18 transition-colors hover:bg-white/12 hover:text-white"
               >
                 {s.name}
               </Link>
