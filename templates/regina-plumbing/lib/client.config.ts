@@ -59,7 +59,7 @@ export const client = {
 
   // ── Web ───────────────────────────────────────────────────────────────
   // No trailing slash. Used for absolute canonicals, OG tags and sitemap.
-  siteUrl: 'https://srijanghosh072011-lgtm.github.io/plumbing-Templates-',
+  siteUrl: 'https://demo.ghoshdesigns.ca',
   // Typed as string rather than inheriting `as const` literal types — an
   // empty literal '' narrows to never at any truthiness check downstream.
   social: {
