@@ -37,5 +37,5 @@ Allow: /
 User-Agent: Bingbot
 Allow: /
 
-Host: https://srijanghosh072011-lgtm.github.io/plumbing-Templates-
-Sitemap: https://srijanghosh072011-lgtm.github.io/plumbing-Templates-/sitemap.xml
+Host: https://demo.ghoshdesigns.ca
+Sitemap: https://demo.ghoshdesigns.ca/sitemap.xml
