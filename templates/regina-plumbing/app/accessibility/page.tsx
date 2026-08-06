@@ -77,8 +77,8 @@ export default function AccessibilityPage() {
         <h2>Tell us about a barrier</h2>
         <p>
           If something on this site stops you doing what you came to do, tell us and we will
-          fix it. Email <a href={`mailto:${client.email}`}>{client.email}</a> or call{' '}
-          <a href={`tel:${client.phoneRaw}`}>{client.phone}</a>. We aim to respond within two
+          fix it. Email <a href={`mailto:${client.email}`}>{client.email}</a>. We aim to
+          respond within two
           business days.
         </p>
         <p>

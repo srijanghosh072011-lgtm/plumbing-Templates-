@@ -33,14 +33,8 @@ export default function NotFound() {
         </p>
 
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-          <Cta
-            href={`tel:${client.phoneRaw}`}
-            external
-            icon="phone"
-            variant="onDark"
-            data-analytics="phone_call_click"
-          >
-            Call {client.phone}
+          <Cta href="/quote/" variant="onDark">
+            Request a quote
           </Cta>
           <Cta href="/" variant="ghost">
             Back to home

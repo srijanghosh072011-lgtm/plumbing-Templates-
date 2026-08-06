@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { client } from '@/lib/client.config';
 import { asset } from '@/lib/asset';
 import { services, areas } from '@/lib/content';
-import { PhoneIcon } from './ui';
+import { ArrowIcon } from './ui';
 
 const dayLabel = (days: readonly string[]) =>
   days.length === 1 ? days[0] : `${days[0].slice(0, 3)}–${days[days.length - 1].slice(0, 3)}`;
@@ -82,28 +82,24 @@ export function Footer() {
               Get in touch
             </h2>
             <div className="mt-5 space-y-4">
-              <a
-                href={`tel:${client.phoneRaw}`}
-                data-analytics="phone_call_click"
-                className="flex items-start gap-3 text-white"
-              >
+              <Link href="/quote/" className="flex items-start gap-3 text-white">
                 <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-copper-500/15 text-copper-400 ring-1 ring-copper-500/25">
-                  <PhoneIcon />
+                  <ArrowIcon />
                 </span>
                 <span>
                   <span className="block text-[11px] uppercase tracking-[0.16em] text-bone-200/45">
-                    Call us today
+                    Start here
                   </span>
                   <span className="font-display text-lg font-bold tracking-tight">
-                    {client.phone}
+                    Request a quote
                   </span>
                 </span>
-              </a>
+              </Link>
 
               <a
                 href={`mailto:${client.email}`}
                 data-analytics="email_click"
-                className="block text-sm text-bone-200/70 underline-offset-4 hover:text-white hover:underline"
+                className="inline-flex min-h-6 items-center text-sm text-bone-200/70 underline-offset-4 hover:text-white hover:underline"
               >
                 {client.email}
               </a>
@@ -152,7 +148,7 @@ export function Footer() {
                 Link would try to prefetch it as an RSC payload and 404. */}
             <a
               href={asset('/sitemap.xml')}
-              className="text-xs text-bone-200/70 underline-offset-4 transition-colors hover:text-white hover:underline"
+              className="inline-flex min-h-6 items-center text-xs text-bone-200/70 underline-offset-4 transition-colors hover:text-white hover:underline"
             >
               Sitemap
             </a>
@@ -183,7 +179,11 @@ function FooterLink({
   children: React.ReactNode;
   small?: boolean;
 }) {
-  const cls = `text-bone-200/70 underline-offset-4 transition-colors hover:text-white hover:underline ${
+  // inline-flex + min-h-6 puts every footer link over the 24x24 floor of
+  // WCAG 2.2 SC 2.5.8. Left at their natural line-height they measured 18px
+  // tall on a phone, which fails — and a footer is exactly where a cold,
+  // gloved thumb is least accurate.
+  const cls = `inline-flex min-h-6 items-center text-bone-200/70 underline-offset-4 transition-colors hover:text-white hover:underline ${
     small ? 'text-xs' : 'text-sm'
   }`;
   if (small) {

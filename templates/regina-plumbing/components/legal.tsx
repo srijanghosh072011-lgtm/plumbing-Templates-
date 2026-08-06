@@ -29,7 +29,7 @@ export function LegalPage({
       <JsonLd data={graph(breadcrumbSchema(trail))} />
       <PageHero eyebrow="Legal" title={title} lede={lede} trail={trail} />
 
-      <section className="bg-bone-50 py-20 lg:py-28">
+      <section className="bg-bone-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
           {children}
 

@@ -32,7 +32,7 @@ export default function AboutPage() {
         trail={trail}
       />
 
-      <section className="bg-bone-50 py-20 lg:py-28">
+      <section className="bg-bone-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
             <div className="grid gap-8 sm:grid-cols-[0.8fr_1.2fr] sm:items-start">
@@ -118,16 +118,9 @@ export default function AboutPage() {
             <div className="mt-12 text-center">
               <Eyebrow>Work with us</Eyebrow>
               <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-                <Cta
-                  href={`tel:${client.phoneRaw}`}
-                  external
-                  icon="phone"
-                  data-analytics="phone_call_click"
-                >
-                  Call {client.phone}
-                </Cta>
-                <Cta href="/quote/" variant="ghost">
-                  Request a quote
+                <Cta href="/quote/">Request a quote</Cta>
+                <Cta href="/services/" variant="ghost">
+                  Browse services
                 </Cta>
               </div>
             </div>

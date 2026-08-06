@@ -90,24 +90,18 @@ export default async function ServicePage({
           </Reveal>
           <Reveal delay={150}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Cta
-                href={`tel:${client.phoneRaw}`}
-                external
-                icon="phone"
-                variant="onDark"
-                data-analytics="phone_call_click"
-              >
-                Call {client.phone}
-              </Cta>
-              <Cta href="#quote" variant="ghost">
+              <Cta href="#quote" variant="onDark">
                 Get a quote
+              </Cta>
+              <Cta href="/services/" variant="ghost">
+                All services
               </Cta>
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="bg-bone-50 py-20 lg:py-28">
+      <section className="bg-bone-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div>
             <Reveal>
@@ -192,7 +186,7 @@ export default async function ServicePage({
         </div>
       </section>
 
-      <section id="quote" className="scroll-mt-28 bg-bone-100 py-20 lg:py-28">
+      <section id="quote" className="scroll-mt-28 bg-bone-100 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal className="text-center">
             <Eyebrow>Get a quote</Eyebrow>
@@ -200,7 +194,7 @@ export default async function ServicePage({
               Request a price for {service.name.toLowerCase()}
             </h2>
             <p className="mt-4 text-ink-700">
-              Emergency? Call {client.phone} instead — we answer 24/7.
+              Mark it urgent and it jumps the queue — we answer 24/7.
             </p>
           </Reveal>
           <Reveal delay={100} className="mt-10">
@@ -209,7 +203,7 @@ export default async function ServicePage({
         </div>
       </section>
 
-      <section className="bg-bone-50 py-20 lg:py-28">
+      <section className="bg-bone-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <Reveal>
             <h2 className="font-display text-3xl font-extrabold tracking-[-0.03em] text-ink-900">

@@ -395,8 +395,8 @@ export const aggregateRating: { value: number; count: number } | null = null;
 export const process = [
   {
     n: '01',
-    title: 'Call or request a quote',
-    body: 'A person answers, day or night. Tell us what is happening and we will tell you whether it is an emergency, something that can wait until morning, or something you can fix yourself in ten minutes.',
+    title: 'Send us the details',
+    body: 'Tell us what is happening and we will tell you whether it is an emergency, something that can wait until morning, or something you can fix yourself in ten minutes. Urgent requests are monitored day and night.',
   },
   {
     n: '02',

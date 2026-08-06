@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { client } from '@/lib/client.config';
 import { asset } from '@/lib/asset';
-import { services, areas, process, generalFaqs } from '@/lib/content';
+import { services, areas, process, generalFaqs, reviews } from '@/lib/content';
 import { graph, faqSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/JsonLd';
 import { Reveal } from '@/components/Reveal';
-import { Shell, Cta, Eyebrow, CheckIcon, ArrowIcon } from '@/components/ui';
+import { Shell, Cta, Eyebrow, CheckIcon, ArrowIcon, StarRow } from '@/components/ui';
 import { Results } from '@/components/Results';
 
 export const metadata: Metadata = {
@@ -29,6 +29,7 @@ export default function HomePage() {
       <ServicesGrid />
       <Results />
       <Process />
+      <Testimonials />
       <Coverage />
       <Faq />
       <FinalCta />
@@ -108,8 +109,8 @@ function Hero() {
             {/* Social proof, mirroring the reference's review line. The count
                 is a placeholder because an invented review count is a lie
                 that Google can check. */}
-            180+ reviews across Google and Facebook. Licensed, insured, and answering
-            the phone 24/7.
+            180+ reviews across Google and Facebook. Licensed, insured, and on call
+            24/7.
           </p>
         </Reveal>
 
@@ -119,15 +120,11 @@ function Hero() {
               Get a fast quote
             </Cta>
             <Cta
-              href={`tel:${client.phoneRaw}`}
-              external
-              icon="phone"
+              href="/services/emergency-plumbing/"
               variant="ghost"
               className="w-full justify-center sm:w-auto"
-              data-analytics="phone_call_click"
-              aria-label={`Call ${client.name} on ${client.phone}`}
             >
-              {client.phone}
+              24/7 emergency service
             </Cta>
           </div>
         </Reveal>
@@ -190,7 +187,7 @@ function Intro() {
   ];
 
   return (
-    <section className="bg-bone-50 py-24 lg:py-32">
+    <section className="bg-bone-50 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16 lg:px-8">
         {/* Collage. Rotations and overlaps are md+ only — on a phone they
             become a plain 2-up grid, because overlapping cards create
@@ -322,7 +319,7 @@ function TrustBar() {
    ───────────────────────────────────────────────────────────────────────── */
 function ServicesGrid() {
   return (
-    <section className="bg-bone-50 py-24 lg:py-36" id="services">
+    <section className="bg-bone-50 py-16 sm:py-24 lg:py-36" id="services">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="max-w-2xl">
           <Eyebrow>What we do</Eyebrow>
@@ -335,7 +332,7 @@ function ServicesGrid() {
           </p>
         </Reveal>
 
-        <ul className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-5 sm:mt-14 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 90} as="li">
               <Shell as="div" className="h-full transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1">
@@ -353,7 +350,7 @@ function ServicesGrid() {
                         height={750}
                         loading="lazy"
                         decoding="async"
-                        className="aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]"
+                        className="aspect-[16/9] w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04] sm:aspect-[4/3]"
                       />
                     </div>
                     <span className="absolute -bottom-6 left-7 grid h-12 w-12 place-items-center rounded-2xl bg-white text-tide-600 shadow-[0_10px_28px_-12px_rgb(13_20_40/0.5)] ring-1 ring-ink-900/[0.07]">
@@ -361,7 +358,7 @@ function ServicesGrid() {
                     </span>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-7 pt-10">
+                  <div className="flex flex-1 flex-col p-6 pt-9 sm:p-7 sm:pt-10">
                     <h3 className="font-display text-xl font-extrabold tracking-tight text-ink-900">
                       {s.name}
                     </h3>
@@ -390,7 +387,7 @@ function ServicesGrid() {
    ───────────────────────────────────────────────────────────────────────── */
 function Process() {
   return (
-    <section className="relative overflow-hidden bg-bone-50 py-24 lg:py-36">
+    <section className="relative overflow-hidden bg-bone-50 py-16 sm:py-24 lg:py-36">
       {/* Dotted halftone in the corner, as in the reference. */}
       <div
         aria-hidden="true"
@@ -404,7 +401,7 @@ function Process() {
             No waiting on a callback that never comes.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-700">
-            Three steps, no surprises, and a real person on the phone at every one of them.
+            Three steps, no surprises, and a real person answering you at every one of them.
           </p>
         </Reveal>
 
@@ -435,10 +432,69 @@ function Process() {
   );
 }
 
+/* ── Testimonials ─────────────────────────────────────────────────────────
+   The same Shell card and StarRow the /reviews page uses, so this reads as
+   an excerpt of that page rather than a separate design. Deliberately plain:
+   no avatars (we do not have photographs of these people and generating them
+   would be a fabrication), no carousel, no floating quotation marks.
+
+   Sits between Process and Coverage — after the pitch, before the logistics,
+   which is where a reader starts asking "says who?".
+   ───────────────────────────────────────────────────────────────────────── */
+function Testimonials() {
+  return (
+    <section className="bg-bone-50 py-16 sm:py-24 lg:py-36">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <Reveal>
+          <div className="max-w-2xl">
+            <Eyebrow>What people say</Eyebrow>
+            <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-ink-900">
+              Published as written.
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-ink-700">
+              We do not edit reviews and we do not write them. These are lifted from
+              Google and Facebook exactly as they were left.
+            </p>
+          </div>
+        </Reveal>
+
+        <ul className="mt-14 grid gap-5 md:grid-cols-3">
+          {reviews.slice(0, 3).map((r, i) => (
+            <Reveal key={`${r.author}-${i}`} delay={i * 90} as="li">
+              <Shell className="h-full">
+                <figure className="flex h-full flex-col p-7">
+                  <StarRow rating={r.rating} />
+                  <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-700">
+                    {r.body}
+                  </blockquote>
+                  <figcaption className="mt-6 border-t border-ink-900/[0.08] pt-4">
+                    <span className="block font-display text-sm font-bold tracking-tight text-ink-900">
+                      {r.author}
+                    </span>
+                    <span className="block text-xs text-ink-500">{r.area}</span>
+                  </figcaption>
+                </figure>
+              </Shell>
+            </Reveal>
+          ))}
+        </ul>
+
+        <Reveal delay={280}>
+          <div className="mt-12">
+            <Cta href="/reviews/" variant="ghost">
+              Read all reviews
+            </Cta>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ── Coverage ─────────────────────────────────────────────────────────── */
 function Coverage() {
   return (
-    <section className="bg-bone-100 py-24 lg:py-36">
+    <section className="bg-bone-100 py-16 sm:py-24 lg:py-36">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
         <Reveal>
           <Eyebrow>Where we work</Eyebrow>
@@ -488,7 +544,7 @@ function Coverage() {
    ───────────────────────────────────────────────────────────────────────── */
 function Faq() {
   return (
-    <section className="bg-bone-50 py-24 lg:py-36">
+    <section className="bg-bone-50 py-16 sm:py-24 lg:py-36">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <Reveal>
           <Eyebrow>Common questions</Eyebrow>
@@ -534,7 +590,7 @@ function Faq() {
 /* ── Final CTA ────────────────────────────────────────────────────────── */
 function FinalCta() {
   return (
-    <section className="bg-bone-50 pb-24 lg:pb-36">
+    <section className="bg-bone-50 pb-16 sm:pb-24 lg:pb-36">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] bg-ink-950 px-8 py-16 text-center sm:px-16 lg:py-24">
@@ -549,21 +605,15 @@ function FinalCta() {
                 Get it fixed properly, the first time.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-lg text-bone-200/70">
-                Call for anything urgent. For planned work, send a request and we will get
-                back to you with a flat price.
+                Send a request with a few details and we will come back with a flat
+                price. Mark it urgent and it goes to the top of the list.
               </p>
               <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-                <Cta
-                  href={`tel:${client.phoneRaw}`}
-                  external
-                  icon="phone"
-                  variant="onDark"
-                  data-analytics="phone_call_click"
-                >
-                  Call {client.phone}
-                </Cta>
-                <Cta href="/quote/" variant="ghost">
+                <Cta href="/quote/" variant="onDark">
                   Request a quote
+                </Cta>
+                <Cta href="/services/" variant="ghost">
+                  Browse services
                 </Cta>
               </div>
             </div>

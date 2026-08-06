@@ -44,7 +44,8 @@ export function organizationSchema() {
     legalName: client.legalName,
     description: client.answerSentence,
     url: abs('/'),
-    telephone: client.phoneRaw,
+    // No `telephone`. Schema.org marks it recommended, not required, and an
+    // invented number is worse than an absent one — Google cross-checks it.
     email: client.email,
     priceRange: '$$',
     currenciesAccepted: 'CAD',

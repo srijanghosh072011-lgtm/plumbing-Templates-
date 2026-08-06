@@ -37,7 +37,7 @@ export default function FaqPage() {
         trail={trail}
       />
 
-      <section className="bg-bone-50 py-20 lg:py-28">
+      <section className="bg-bone-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal>
             <h2 className="font-display text-3xl font-extrabold tracking-[-0.03em] text-ink-900">
@@ -64,20 +64,13 @@ export default function FaqPage() {
                   Still have a question?
                 </h2>
                 <p className="mt-3 text-ink-700">
-                  Call and ask. We would rather spend five minutes on the phone than have you
+                  Send us a note and ask. We would rather spend five minutes answering than have you
                   guess.
                 </p>
                 <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-                  <Cta
-                    href={`tel:${client.phoneRaw}`}
-                    external
-                    icon="phone"
-                    data-analytics="phone_call_click"
-                  >
-                    {client.phone}
-                  </Cta>
-                  <Cta href="/quote/" variant="ghost">
-                    Send a message
+                  <Cta href="/quote/">Send a message</Cta>
+                  <Cta href="/services/" variant="ghost">
+                    Browse services
                   </Cta>
                 </div>
               </div>

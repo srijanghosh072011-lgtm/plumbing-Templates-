@@ -84,16 +84,9 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
             Request received
           </h2>
           <p className="mt-3 text-ink-700">
-            We will call you back shortly. If this is an emergency — active leak, no heat,
-            sewer backup — please call instead so we can dispatch immediately.
+            We will get back to you shortly. Emergencies — active leak, no heat, sewer
+            backup — jump the queue and are answered around the clock.
           </p>
-          <a
-            href={`tel:${client.phoneRaw}`}
-            data-analytics="phone_call_click"
-            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-ink-900 px-6 font-semibold text-white"
-          >
-            {client.phone}
-          </a>
         </div>
       </Shell>
     );
@@ -165,6 +158,29 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
             hint="So we can confirm we cover your area"
             className="sm:col-span-2"
           />
+
+          {/* With no phone number on the site, this checkbox is the only way
+              an emergency can be flagged as one. It sits last but is styled
+              to be findable — a full-width target, not a 16px box. */}
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="urgent"
+              className="flex min-h-12 cursor-pointer items-start gap-3 rounded-2xl bg-copper-500/[0.07] px-4 py-3.5 ring-1 ring-copper-500/20 transition-shadow focus-within:ring-2 focus-within:ring-copper-600/50"
+            >
+              <input
+                id="urgent"
+                name="urgent"
+                type="checkbox"
+                value="Yes — emergency"
+                className="mt-0.5 h-5 w-5 shrink-0 rounded border-0 bg-white text-copper-600 ring-1 ring-ink-900/20 focus:ring-2 focus:ring-copper-600/60"
+              />
+              <span className="text-sm leading-relaxed text-ink-800">
+                <strong className="font-semibold text-ink-900">This is an emergency.</strong>{' '}
+                Active leak, no heat, or a sewer backup. Flagged requests are monitored
+                around the clock.
+              </span>
+            </label>
+          </div>
         </div>
 
         {/*
@@ -175,9 +191,9 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
 
         {status === 'error' && (
           <p role="alert" className="mt-5 rounded-2xl bg-copper-600/10 px-4 py-3 text-sm text-copper-600">
-            {error} You can also call us directly on{' '}
-            <a href={`tel:${client.phoneRaw}`} className="font-semibold underline">
-              {client.phone}
+            {error} You can also email us at{' '}
+            <a href={`mailto:${client.email}`} className="font-semibold underline">
+              {client.email}
             </a>
             .
           </p>

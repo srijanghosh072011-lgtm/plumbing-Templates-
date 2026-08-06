@@ -90,7 +90,7 @@ export function Results() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden py-24 lg:py-32">
+    <section className="relative isolate overflow-hidden py-16 sm:py-24 lg:py-32">
       {/* Darkened photograph behind the whole band, as in the reference. */}
       <img
         src={asset('/images/svc-furnace.webp')}

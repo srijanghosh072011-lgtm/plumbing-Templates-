@@ -33,7 +33,7 @@ export default function TermsPage() {
         <p>
           Any guidance on this site about what to do in an emergency is general information.
           It does not replace professional judgement on site, and following it is at your own
-          risk. If you are unsure, call us before you act.
+          risk. If you are unsure, get in touch before you act.
         </p>
 
         <h2>Quotes and work</h2>

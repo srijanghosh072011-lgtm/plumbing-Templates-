@@ -31,11 +31,15 @@ export const client = {
   answerSentence:
     'Coldsnap Plumbing & Heating is a licensed, insured plumbing and heating contractor serving Regina, Saskatchewan, offering 24/7 emergency repair, drain cleaning, water heater replacement, and furnace service with upfront flat-rate pricing.',
 
-  // ── NAP (Name, Address, Phone) ────────────────────────────────────────
+  // ── NA(P) ─────────────────────────────────────────────────────────────
   // This is a service-area business: no public storefront, so streetAddress
   // is intentionally omitted from schema. See lib/schema.ts.
-  phone: '(306) 555-0142',            // display form, e.g. (306) 555-0142
-  phoneRaw: '+13065550142',     // tel: form,     e.g. +13065550142
+  //
+  // No phone number, deliberately. Every enquiry runs through the quote form
+  // so there is one intake channel with a written record, rather than a
+  // half-remembered call. Nothing in the codebase reads a `phone` field — if
+  // a client wants one back, it is a config key plus a Cta variant, not a
+  // rewrite. See CONTACT.md.
   email: 'service@coldsnapplumbing.example',
   address: {
     locality: 'Regina',

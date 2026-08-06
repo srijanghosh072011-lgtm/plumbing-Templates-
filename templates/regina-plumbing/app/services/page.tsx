@@ -33,19 +33,13 @@ export default function ServicesIndex() {
         trail={trail}
       >
         <div className="mt-8">
-          <Cta
-            href={`tel:${client.phoneRaw}`}
-            external
-            icon="phone"
-            variant="onDark"
-            data-analytics="phone_call_click"
-          >
-            Call {client.phone}
+          <Cta href="/quote/" variant="onDark">
+            Get a fast quote
           </Cta>
         </div>
       </PageHero>
 
-      <section className="bg-bone-50 py-20 lg:py-28">
+      <section className="bg-bone-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <ul className="grid gap-5 md:grid-cols-2">
             {services.map((s, i) => (

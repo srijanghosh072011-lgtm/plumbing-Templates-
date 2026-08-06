@@ -52,22 +52,16 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         trail={trail}
       >
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Cta
-            href={`tel:${client.phoneRaw}`}
-            external
-            icon="phone"
-            variant="onDark"
-            data-analytics="phone_call_click"
-          >
-            Call {client.phone}
-          </Cta>
-          <Cta href="#quote" variant="ghost">
+          <Cta href="#quote" variant="onDark">
             Get a quote
+          </Cta>
+          <Cta href="/service-areas/" variant="ghost">
+            All service areas
           </Cta>
         </div>
       </PageHero>
 
-      <section className="bg-bone-50 py-20 lg:py-28">
+      <section className="bg-bone-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div>
             <Reveal>
@@ -115,7 +109,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                   <p className="mt-1 text-sm text-ink-500">typical drive from base</p>
                   <p className="mt-4 text-sm leading-relaxed text-ink-700">
                     Winter road conditions change this. We give you a realistic arrival time
-                    on the phone rather than an optimistic one.
+                    up front rather than an optimistic one.
                   </p>
                 </div>
               </Shell>
@@ -146,7 +140,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
-      <section id="quote" className="scroll-mt-28 bg-bone-100 py-20 lg:py-28">
+      <section id="quote" className="scroll-mt-28 bg-bone-100 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Reveal className="text-center">
             <Eyebrow>Get a quote</Eyebrow>

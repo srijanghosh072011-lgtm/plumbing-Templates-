@@ -31,7 +31,7 @@ export default function AreasIndex() {
         trail={trail}
       />
 
-      <section className="bg-bone-50 py-20 lg:py-28">
+      <section className="bg-bone-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <ul className="grid gap-5 md:grid-cols-2">
             {areas.map((a, i) => (

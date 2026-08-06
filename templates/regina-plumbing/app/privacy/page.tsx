@@ -36,7 +36,7 @@ export default function PrivacyPage() {
         <p>
           PIPEDA requires us to designate a person accountable for our compliance. That person
           is <strong>Ravi Chandra</strong>, reachable at{' '}
-          <a href={`mailto:${client.email}`}>{client.email}</a> or {client.phone}. Direct any
+          <a href={`mailto:${client.email}`}>{client.email}</a>. Direct any
           privacy question, access request or complaint to them.
         </p>
 
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
             about your request and to carry out work you ask us to do.
           </li>
           <li>
-            <strong>Phone calls:</strong> the details you give us on the phone, recorded in
+            <strong>Enquiries:</strong> the details you give us when you get in touch, recorded in
             our job system so the technician who attends knows what they are attending.
           </li>
           <li>

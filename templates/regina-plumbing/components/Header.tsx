@@ -124,19 +124,15 @@ export function Header() {
         </nav>
 
         <Cta
-          href={`tel:${client.phoneRaw}`}
-          external
-          icon="phone"
+          href="/quote/"
           // White, not copper: the hero's primary CTA owns the one accent
           // colour on screen. Two competing oranges means neither reads as
           // the primary action.
           variant={scrolled ? 'primary' : 'ghost'}
           className="hidden text-sm sm:inline-flex"
-          data-analytics="phone_call_click"
-          aria-label={`Call ${client.name} on ${client.phone}`}
         >
-          <span className="hidden md:inline">{client.phone}</span>
-          <span className="md:hidden">Call</span>
+          <span className="hidden md:inline">Get a quote</span>
+          <span className="md:hidden">Quote</span>
         </Cta>
 
         <button
@@ -202,14 +198,8 @@ export function Header() {
             <Cta href="/quote/" variant="onDark">
               Get a fast quote
             </Cta>
-            <Cta
-              href={`tel:${client.phoneRaw}`}
-              external
-              icon="phone"
-              variant="ghost"
-              data-analytics="phone_call_click"
-            >
-              {client.phone}
+            <Cta href="/services/emergency-plumbing/" variant="ghost">
+              24/7 emergency service
             </Cta>
           </div>
         </nav>
