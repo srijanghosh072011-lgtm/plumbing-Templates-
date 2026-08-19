@@ -13,7 +13,7 @@
  * <Illustration> usages for <img> — see README.
  *
  * Drawing conventions: 1.5px strokes on a 400×500 or 640×360 canvas, round
- * caps and joins, copper reserved for the single focal detail in each scene
+ * caps and joins, accent blue reserved for the single focal detail per scene
  * so the eye lands somewhere specific.
  */
 
@@ -88,10 +88,10 @@ export function IllustrationTechnician({ className = '', title }: Props) {
         strokeLinecap="round"
       />
 
-      {/* shut-off valve, the copper focal point */}
-      <circle cx="150" cy="292" r="16" fill="#fff" stroke="#b4561f" strokeWidth="5" />
-      <path d="M150 276v-22" stroke="#b4561f" strokeWidth="5" strokeLinecap="round" />
-      <path d="M138 254h24" stroke="#b4561f" strokeWidth="5" strokeLinecap="round" />
+      {/* shut-off valve, the focal point */}
+      <circle cx="150" cy="292" r="16" fill="#fff" stroke="#1f4aa8" strokeWidth="5" />
+      <path d="M150 276v-22" stroke="#1f4aa8" strokeWidth="5" strokeLinecap="round" />
+      <path d="M138 254h24" stroke="#1f4aa8" strokeWidth="5" strokeLinecap="round" />
 
       {/* hands at work */}
       <path
@@ -148,16 +148,16 @@ export function IllustrationWaterHeater({ className = '', title }: Props) {
         strokeLinejoin="round"
       />
 
-      {/* T&P relief valve — copper focal point */}
+      {/* T&P relief valve — focal point */}
       <path
         d="M278 214h44v96"
         fill="none"
-        stroke="#b4561f"
+        stroke="#1f4aa8"
         strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="278" cy="214" r="13" fill="#fff" stroke="#b4561f" strokeWidth="5" />
+      <circle cx="278" cy="214" r="13" fill="#fff" stroke="#1f4aa8" strokeWidth="5" />
 
       {/* control dial */}
       <circle cx="203" cy="246" r="27" fill="#eef5fd" stroke="#2569b3" strokeWidth="4" />
@@ -166,8 +166,8 @@ export function IllustrationWaterHeater({ className = '', title }: Props) {
       {/* burner glow */}
       <path
         d="M186 356c0-12 17-16 17-30 0 14 17 18 17 30a17 17 0 1 1-34 0z"
-        fill="#e89a5c"
-        stroke="#b4561f"
+        fill="#6b9bf0"
+        stroke="#1f4aa8"
         strokeWidth="3"
         strokeLinejoin="round"
       />
@@ -230,19 +230,19 @@ export function IllustrationDrain({ className = '', title }: Props) {
         opacity="0.7"
       />
 
-      {/* camera head + cable — copper focal point */}
+      {/* camera head + cable — focal point */}
       <path
         d="M40 232h150"
-        stroke="#b4561f"
+        stroke="#1f4aa8"
         strokeWidth="5"
         strokeLinecap="round"
         opacity="0.9"
       />
-      <circle cx="206" cy="232" r="22" fill="#0d1428" stroke="#d4762f" strokeWidth="5" />
-      <circle cx="206" cy="232" r="8" fill="#e89a5c" />
+      <circle cx="206" cy="232" r="22" fill="#0d1428" stroke="#2a5bc7" strokeWidth="5" />
+      <circle cx="206" cy="232" r="8" fill="#6b9bf0" />
 
       {/* light cone */}
-      <path d="M228 232l124-46v92z" fill="#e89a5c" opacity="0.16" />
+      <path d="M228 232l124-46v92z" fill="#6b9bf0" opacity="0.16" />
 
       {/* readout ticks */}
       <g opacity="0.55">

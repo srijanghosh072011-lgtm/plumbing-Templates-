@@ -83,7 +83,7 @@ export function Footer() {
             </h2>
             <div className="mt-5 space-y-4">
               <Link href="/quote/" className="flex items-start gap-3 text-white">
-                <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-copper-500/15 text-copper-400 ring-1 ring-copper-500/25">
+                <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-tide-500/15 text-tide-300 ring-1 ring-tide-500/25">
                   <ArrowIcon />
                 </span>
                 <span>
@@ -111,7 +111,7 @@ export function Footer() {
                     {dayLabel(h.days)} · {h.open}–{h.close}
                   </p>
                 ))}
-                <p className="mt-2 text-copper-400">{client.emergencyNote}</p>
+                <p className="mt-2 text-tide-300">{client.emergencyNote}</p>
               </div>
 
               <p className="pt-2 text-sm text-bone-200/70">

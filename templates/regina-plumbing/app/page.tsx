@@ -68,28 +68,36 @@ function Hero() {
           stay legible. A hero photo nobody can see is just an expensive
           background colour.
 
-          Tuned against the actual WCAG threshold rather than by eye. White
-          text needs its background at 119 or darker for 4.5:1, so the three
-          layers compose to ~0.58 total alpha: a pure-white photograph lands
-          near 111, which clears the threshold while leaving the image
-          plainly visible. An earlier version stacked to 0.83 and rendered
-          white gloves at rgb(50,53,64) — technically a superb contrast
-          ratio, and a hero nobody could see. Darker is not safer past the
-          threshold; it just deletes the photograph. */}
-      <div className="absolute inset-0 -z-10 bg-ink-950/30" aria-hidden="true" />
+          Target sampled from the reference recording, not chosen by eye.
+          Its hero backdrop measures rgb(72,84,120) raw; the recording is a
+          camera pointed at a screen with roughly 1.5x of exposure falloff
+          from top to bottom, calibrated against browser chrome that is
+          known to be white, which puts the true value near #54618b — a mid
+          slate blue, not a navy.
+
+          That is much lighter than a naive reading of the contrast rules
+          suggests is safe, and it is still fine: the greyscale rule of
+          thumb (backdrop <=119 for white text) is about luminance, and
+          #54618b has the luminance of about #5f5f5f, giving white text
+          ~6:1. Blue buys headroom that grey does not.
+
+          Composite is verified in a real browser after every change to
+          these numbers — see scripts/hero-contrast.mjs. Do not adjust the
+          alphas by eye; re-run it. */}
+      <div className="absolute inset-0 -z-10 bg-ink-800/16" aria-hidden="true" />
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-ink-950/55 via-ink-950/15 to-ink-950/65"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-ink-900/38 via-transparent to-ink-900/45"
         aria-hidden="true"
       />
-      {/* Contained scrim behind the text column only. Tight (50% x 40%)
-          and strong (0.68) rather than wide and weak: this photograph is
-          bright exactly where the copy sits, so a broad wash dark enough to
-          fix the text flattened the whole image. Confining it keeps the
-          edges of the photo bright while the centre carries the contrast.
-          Parameters were solved numerically against the real pixels, not
-          eyeballed — see the note above. */}
+      {/* Scrim across the headline BAND, full width — not an ellipse in the
+          middle. The bright region in this photograph is a pair of white
+          gloves at the left edge, sitting directly behind the first word of
+          the h1, and a centred ellipse cannot reach it: measured p95 moved
+          only 4.01 -> 4.07 when the ellipse was strengthened. A horizontal
+          band covers the whole text row at every x, so it fixes the hotspot
+          without darkening the photo above or below it. */}
       <div
-        className="absolute inset-0 -z-10 [background:radial-gradient(ellipse_50%_40%_at_50%_46%,rgb(7_11_24/0.68),transparent_100%)]"
+        className="absolute inset-0 -z-10 [background:linear-gradient(to_bottom,transparent_0%,rgb(14_32_70/0.52)_14%,rgb(14_32_70/0.52)_44%,transparent_62%)]"
         aria-hidden="true"
       />
 
@@ -133,7 +141,7 @@ function Hero() {
           <ul className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2.5 text-sm text-bone-100/65">
             {['Licensed & insured', 'Flat-rate pricing', '24/7 emergency'].map((item) => (
               <li key={item} className="flex items-center gap-2">
-                <CheckIcon className="h-4 w-4 text-copper-400" />
+                <CheckIcon className="h-4 w-4 text-tide-300" />
                 {item}
               </li>
             ))}

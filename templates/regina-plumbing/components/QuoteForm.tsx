@@ -77,7 +77,7 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
     return (
       <Shell>
         <div className="p-8 text-center sm:p-12">
-          <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-copper-500/12 text-copper-600 ring-1 ring-copper-500/25">
+          <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-accent-600/10 text-accent-700 ring-1 ring-accent-600/25">
             <CheckIcon className="h-6 w-6" />
           </span>
           <h2 className="mt-5 font-display text-2xl font-extrabold tracking-tight text-ink-900">
@@ -165,14 +165,14 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
           <div className="sm:col-span-2">
             <label
               htmlFor="urgent"
-              className="flex min-h-12 cursor-pointer items-start gap-3 rounded-2xl bg-copper-500/[0.07] px-4 py-3.5 ring-1 ring-copper-500/20 transition-shadow focus-within:ring-2 focus-within:ring-copper-600/50"
+              className="flex min-h-12 cursor-pointer items-start gap-3 rounded-2xl bg-accent-600/[0.06] px-4 py-3.5 ring-1 ring-accent-600/20 transition-shadow focus-within:ring-2 focus-within:ring-accent-600/50"
             >
               <input
                 id="urgent"
                 name="urgent"
                 type="checkbox"
                 value="Yes — emergency"
-                className="mt-0.5 h-5 w-5 shrink-0 rounded border-0 bg-white text-copper-600 ring-1 ring-ink-900/20 focus:ring-2 focus:ring-copper-600/60"
+                className="mt-0.5 h-5 w-5 shrink-0 rounded border-0 bg-white text-accent-600 ring-1 ring-ink-900/20 focus:ring-2 focus:ring-accent-600/60"
               />
               <span className="text-sm leading-relaxed text-ink-800">
                 <strong className="font-semibold text-ink-900">This is an emergency.</strong>{' '}
@@ -190,7 +190,7 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
         */}
 
         {status === 'error' && (
-          <p role="alert" className="mt-5 rounded-2xl bg-copper-600/10 px-4 py-3 text-sm text-copper-600">
+          <p role="alert" className="mt-5 rounded-2xl bg-alert-50 px-4 py-3 text-sm text-alert-600">
             {error} You can also email us at{' '}
             <a href={`mailto:${client.email}`} className="font-semibold underline">
               {client.email}
@@ -249,7 +249,7 @@ function Field({
       <label htmlFor={name} className="block text-sm font-semibold text-ink-800">
         {label}
         {required && (
-          <span className="text-copper-600" aria-hidden="true">
+          <span className="text-alert-600" aria-hidden="true">
             {' '}
             *
           </span>

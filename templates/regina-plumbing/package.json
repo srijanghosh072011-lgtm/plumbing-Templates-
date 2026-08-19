@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "hero-contrast": "node scripts/hero-contrast.mjs",
     "check": "node scripts/prelaunch-check.mjs",
     "serve": "python3 -m http.server 8899 -d out",
     "qa": "node scripts/qa-pages.mjs"

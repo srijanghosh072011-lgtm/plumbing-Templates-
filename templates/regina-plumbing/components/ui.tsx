@@ -72,7 +72,7 @@ export function Cta({
     ghost:
       'bg-white text-ink-900 ring-1 ring-ink-900/12 hover:ring-ink-900/25 shadow-[0_10px_28px_-20px_rgb(13_20_40/0.5)]',
     onDark:
-      'bg-copper-500 text-ink-950 hover:bg-copper-400 ring-1 ring-copper-600/40 shadow-[0_16px_36px_-18px_rgb(180_86_31/0.7)]',
+      'bg-accent-600 text-white hover:bg-accent-500 ring-1 ring-accent-700/40 shadow-[0_16px_36px_-18px_rgb(31_74_168/0.75)]',
   }[variant];
 
   const well =
@@ -199,7 +199,7 @@ export function StarRow({ rating }: { rating: number }) {
         <svg
           key={i}
           viewBox="0 0 20 20"
-          className={`h-4 w-4 ${i < rating ? 'fill-copper-500' : 'fill-ink-900/15'}`}
+          className={`h-4 w-4 ${i < rating ? 'fill-tide-500' : 'fill-ink-900/15'}`}
           aria-hidden="true"
         >
           <path d="M10 1.6l2.5 5.3 5.5.8-4 4 .9 5.7L10 14.7 5.1 17.4l.9-5.7-4-4 5.5-.8z" />

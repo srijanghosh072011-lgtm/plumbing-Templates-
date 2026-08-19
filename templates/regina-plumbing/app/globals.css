@@ -19,13 +19,26 @@
   /* ── Palette ──────────────────────────────────────────────────────────
      Carries the source template's navy/blue identity but rebuilt as a
      proper ramp. Every pairing used for text below is contrast-checked;
-     see the table in DESIGN.md. Copper is the accent — a plumbing
-     material, and it keeps the page off the default SaaS-blue look.     */
+     see the table in DESIGN.md.
+
+     MONOCHROME BLUE, no warm accent. An earlier ramp carried a copper
+     accent, on the theory that the reference used orange. It does not —
+     the orange in the source recording is the page builder's selection
+     handles sitting on top of the design, not part of it. Sampled from
+     the recording, the reference's own call-to-action is a deep blue
+     (~#1b286b after correcting for the camera's exposure falloff). So the
+     accent here is a deep blue too, and the palette is blue end to end.
+
+     Two roles that a warm accent used to cover, and where they went:
+       - highlight text on dark  → tide-300 (a dark accent cannot do this)
+       - form error states       → --color-alert-*, below. An error in
+         brand blue reads as information, not as something wrong, so the
+         error colour is deliberately outside the brand ramp.            */
   /* Navy, not near-black. The first ramp bottomed out at #070b18, which is
      essentially black with a blue cast — it made the dark bands read as
      heavy voids rather than as the reference's blue. Every value here is a
      true navy, and all 13 text/UI pairings were re-checked against WCAG
-     after the shift (lowest is the copper CTA at 4.87:1). */
+     after the shift. */
   --color-ink-950: #0e2049;
   --color-ink-900: #16305f;
   --color-ink-800: #1f3f78;
@@ -43,9 +56,19 @@
   --color-tide-100: #d6e8fa;
   --color-tide-50: #eef5fd;
 
-  --color-copper-600: #b4561f;
-  --color-copper-500: #d4762f;
-  --color-copper-400: #e89a5c;
+  /* Accent — the CTA fill. A clear medium blue, not a navy: at CTA size a
+     near-navy button on a navy-tinted hero disappears into its own
+     background, which is the failure mode the previous ramp had.
+     White on accent-600 is 6.2:1. Never used for small text on dark. */
+  --color-accent-700: #1f4aa8;
+  --color-accent-600: #2a5bc7;
+  --color-accent-500: #3b74e0;
+  --color-accent-400: #6b9bf0;
+
+  /* Error only. Outside the brand ramp on purpose — see the note above.
+     alert-600 on white is 6.4:1. */
+  --color-alert-600: #b42318;
+  --color-alert-50: #fef3f2;
 
   --color-bone-50: #fbfaf8;
   --color-bone-100: #f4f2ee;
@@ -92,7 +115,7 @@ p {
 /* Visible focus everywhere, never removed. Copper reads at 3:1+ against
    both the bone and ink surfaces, satisfying SC 1.4.11 for UI components. */
 :focus-visible {
-  outline: 2px solid var(--color-copper-500);
+  outline: 2px solid var(--color-accent-500);
   outline-offset: 3px;
   border-radius: 4px;
 }

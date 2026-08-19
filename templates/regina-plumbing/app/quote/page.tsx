@@ -41,7 +41,7 @@ export default function QuotePage() {
           <Reveal delay={110} className="space-y-5">
             <Shell>
               <div className="p-7">
-                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-copper-500/12 text-copper-600 ring-1 ring-copper-500/20">
+                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-accent-600/10 text-accent-700 ring-1 ring-accent-600/20">
                   <ClockIcon className="h-5 w-5" />
                 </span>
                 <h2 className="mt-5 font-display text-xl font-extrabold tracking-tight text-ink-900">

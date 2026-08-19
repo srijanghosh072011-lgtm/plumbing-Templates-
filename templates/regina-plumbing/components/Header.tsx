@@ -72,80 +72,78 @@ export function Header() {
       {client.isDemo && (
         <div
           role="note"
-          className="pointer-events-auto -mx-4 -mt-4 mb-3 bg-copper-600 px-4 py-2 text-center text-[12px] font-semibold leading-snug text-white sm:-mt-6 sm:text-[13px]"
+          className="pointer-events-auto -mx-4 -mt-4 mb-3 bg-ink-800 px-4 py-2 text-center text-[12px] font-semibold leading-snug text-white sm:-mt-6 sm:text-[13px]"
         >
           Demo site — &ldquo;{client.name}&rdquo; is fictional. Contact details, licence
           numbers and reviews are all invented.
         </div>
       )}
-      {/* Floating glass pill, detached from the top edge.
-          Dark-tinted rather than white: every page on this site opens with a
-          dark hero, so a light slab would sit on top of the photograph like
-          a sticker. This reads as part of the image instead. */}
+      {/* Solid white bar with the mark centred and the links split either
+          side of it — the reference's defining header structure, and the
+          thing that stops it reading as a generic logo-left SaaS nav.
+
+          A three-column grid ([1fr auto 1fr]) rather than flex + margins:
+          it centres the mark against the BAR, not against whatever the two
+          link groups happen to measure. With flex the mark drifts whenever
+          a label changes length, which is exactly the sort of thing nobody
+          notices until the client renames a page.
+
+          White at all times, not dark-glass-over-hero: the hero tint is now
+          a mid slate blue rather than a near-navy, so a white bar separates
+          cleanly from it, and the reference's bar is solid white too. The
+          scrolled state now only deepens the shadow. */}
       <div
-        className={`pointer-events-auto mx-auto flex w-full max-w-6xl items-center gap-3 rounded-full p-1.5 pl-5 backdrop-blur-2xl transition-[background-color,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        className={`pointer-events-auto mx-auto grid w-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-3 rounded-2xl border border-ink-900/[0.06] bg-white/95 p-1.5 backdrop-blur-2xl transition-shadow duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
           scrolled
-            ? 'border border-ink-900/[0.06] bg-white/85 shadow-[0_18px_44px_-26px_rgb(13_20_40/0.45)]'
-            : 'border border-white/12 bg-ink-950/55 shadow-[0_20px_50px_-28px_rgb(7_11_24/0.7)]'
+            ? 'shadow-[0_18px_44px_-26px_rgb(13_20_40/0.45)]'
+            : 'shadow-[0_22px_54px_-30px_rgb(13_20_40/0.55)]'
         }`}
       >
+        {/* Left group — first three links. Hidden below lg, where the bar
+            becomes mark + hamburger. */}
+        <nav aria-label="Primary" className="hidden items-center gap-1 pl-2 lg:flex">
+          {nav.slice(0, 3).map((item) => (
+            <NavLink key={item.href} item={item} pathname={pathname} />
+          ))}
+        </nav>
+        <span className="lg:hidden" aria-hidden="true" />
+
+        {/* The mark, centred. Deliberately taller than the bar's inner
+            height and pulled up with a negative margin so it breaks the
+            bar's top and bottom edges, as the reference's badge does. */}
         <Link
           href="/"
-          className={`mr-auto flex items-center gap-2.5 font-display text-[15px] font-extrabold tracking-tight transition-colors duration-500 ${
-            scrolled ? 'text-ink-900' : 'text-white'
-          }`}
+          className="-my-3.5 flex flex-col items-center justify-center gap-1.5 rounded-2xl bg-ink-900 px-5 py-3 shadow-[0_12px_28px_-14px_rgb(13_20_40/0.8)] transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5"
         >
-          <Logo scrolled={scrolled} />
-          <span className="hidden sm:inline">{client.shortName}</span>
+          <Logo />
+          <span className="font-display text-[11px] font-extrabold uppercase leading-none tracking-[0.18em] text-white">
+            {client.shortName}
+          </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
-          {nav.map((item) => {
-            const active = pathname.startsWith(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={active ? 'page' : undefined}
-                className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-                  scrolled
-                    ? active
-                      ? 'bg-ink-900/[0.07] text-ink-900'
-                      : 'text-ink-700 hover:bg-ink-900/[0.05] hover:text-ink-900'
-                    : active
-                      ? 'bg-white/12 text-white'
-                      : 'text-bone-100/75 hover:bg-white/[0.07] hover:text-white'
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+        {/* Right group — remaining links, then the quote CTA. The reference
+            has no CTA in its bar; keeping one costs nothing here and means
+            the primary action survives scrolling past the hero. */}
+        <div className="hidden items-center justify-end gap-1 pr-1 lg:flex">
+          <nav aria-label="Secondary" className="flex items-center gap-1">
+            {nav.slice(3).map((item) => (
+              <NavLink key={item.href} item={item} pathname={pathname} />
+            ))}
+          </nav>
+          <Cta href="/quote/" variant="primary" className="ml-2 text-sm">
+            Get a quote
+          </Cta>
+        </div>
 
-        <Cta
-          href="/quote/"
-          // White, not copper: the hero's primary CTA owns the one accent
-          // colour on screen. Two competing oranges means neither reads as
-          // the primary action.
-          variant={scrolled ? 'primary' : 'ghost'}
-          className="hidden text-sm sm:inline-flex"
-        >
-          <span className="hidden md:inline">Get a quote</span>
-          <span className="md:hidden">Quote</span>
-        </Cta>
-
+        {/* Right cell below lg. justify-self-end keeps it pinned right so
+            the centred mark stays centred. */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className={`grid h-12 w-12 shrink-0 place-items-center rounded-full transition-colors duration-500 lg:hidden ${
-            scrolled
-              ? 'bg-ink-900/[0.06] text-ink-900 hover:bg-ink-900/12'
-              : 'bg-white/10 text-white hover:bg-white/20'
-          }`}
+          className="grid h-12 w-12 shrink-0 place-items-center justify-self-end rounded-xl bg-ink-900/[0.06] text-ink-900 transition-colors duration-500 hover:bg-ink-900/12 lg:hidden"
         >
           {/* Two bars that rotate into an X rather than swapping glyphs. */}
           <span className="relative block h-3 w-5" aria-hidden="true">
@@ -208,14 +206,40 @@ export function Header() {
   );
 }
 
-function Logo({ scrolled }: { scrolled?: boolean }) {
+/** One nav link. Extracted because the bar now renders two groups of them
+ *  either side of the mark, and duplicating this much class string twice is
+ *  how the two halves drift apart. */
+function NavLink({
+  item,
+  pathname,
+}: {
+  item: { href: string; label: string };
+  pathname: string;
+}) {
+  const active = pathname.startsWith(item.href);
   return (
-    <span
-      className={`grid h-8 w-8 place-items-center rounded-xl transition-colors duration-500 ${
-        scrolled ? 'bg-ink-900 text-white' : 'bg-white/12 text-white ring-1 ring-white/15'
+    <Link
+      href={item.href}
+      aria-current={active ? 'page' : undefined}
+      className={`rounded-lg px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.1em] transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        active
+          ? 'bg-ink-900/[0.07] text-ink-900'
+          : 'text-ink-700 hover:bg-ink-900/[0.05] hover:text-ink-900'
       }`}
     >
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
+      {item.label}
+    </Link>
+  );
+}
+
+/** The mark inside the badge. The badge itself is the dark block in the
+ *  header — one solid shape that overhangs the bar's top and bottom edges,
+ *  the way the reference's shield emblem does. A bare wordmark hanging
+ *  below the bar on a transparent ground reads as a layout bug instead. */
+function Logo() {
+  return (
+    <span className="grid h-7 w-7 place-items-center text-white">
+      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
         {/* A droplet over a pipe elbow — reads at 16px, which a detailed
             mark would not. */}
         <path
