@@ -16,3 +16,6 @@ next-env.d.ts
 # markup from two different builds.
 docs/
 tsconfig.tsbuildinfo
+templates/*/node_modules/
+templates/*/.next/
+templates/*/out/
