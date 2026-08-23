@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { client } from '@/lib/client.config';
+import { asset } from '@/lib/asset';
 import { Cta } from './ui';
 
 const nav = [
@@ -108,17 +109,23 @@ export function Header() {
         </nav>
         <span className="lg:hidden" aria-hidden="true" />
 
-        {/* The mark, centred. Deliberately taller than the bar's inner
-            height and pulled up with a negative margin so it breaks the
-            bar's top and bottom edges, as the reference's badge does. */}
+        {/* The mark, centred and overhanging the bar's top and bottom edges
+            as the reference's emblem does. No dark plate behind it: this
+            mark is two-tone blue drawn for a light ground and carries its
+            own silhouette (the ribbon), so it reads on the white bar
+            directly. A plate would only box in a shape that already has
+            one. */}
         <Link
           href="/"
-          className="-my-3.5 flex flex-col items-center justify-center gap-1.5 rounded-2xl bg-ink-900 px-5 py-3 shadow-[0_12px_28px_-14px_rgb(13_20_40/0.8)] transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5"
+          className="-my-4 flex items-center justify-center px-4 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5"
         >
-          <Logo />
-          <span className="font-display text-[11px] font-extrabold uppercase leading-none tracking-[0.18em] text-white">
-            {client.shortName}
-          </span>
+          <img
+            src={asset('/images/logo.png')}
+            alt={`${client.name} home`}
+            width={215}
+            height={237}
+            className="h-14 w-auto sm:h-16"
+          />
         </Link>
 
         {/* Right group — remaining links, then the quote CTA. The reference
@@ -232,29 +239,3 @@ function NavLink({
   );
 }
 
-/** The mark inside the badge. The badge itself is the dark block in the
- *  header — one solid shape that overhangs the bar's top and bottom edges,
- *  the way the reference's shield emblem does. A bare wordmark hanging
- *  below the bar on a transparent ground reads as a layout bug instead. */
-function Logo() {
-  return (
-    <span className="grid h-7 w-7 place-items-center text-white">
-      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
-        {/* A droplet over a pipe elbow — reads at 16px, which a detailed
-            mark would not. */}
-        <path
-          d="M12 3.5c2.7 3.2 4.2 5.6 4.2 7.6a4.2 4.2 0 1 1-8.4 0c0-2 1.5-4.4 4.2-7.6Z"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M4 20.5h6.5a3 3 0 0 0 3-3V16"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-        />
-      </svg>
-    </span>
-  );
-}
