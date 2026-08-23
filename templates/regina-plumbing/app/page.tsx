@@ -50,16 +50,20 @@ function Hero() {
   return (
     <section className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden">
       {/* Background photograph. Not a CSS background-image: an <img> can be
-          preloaded and given fetchpriority, and this is the LCP element. */}
+          preloaded and given fetchpriority, and this is the LCP element.
+
+          object-position steps by breakpoint because the subject sits in the
+          right third of the frame: a narrow viewport centre-crops him out
+          entirely and leaves a shoe and a toolbox. */}
       <img
         src={asset("/images/hero-bg.webp")}
         alt=""
         aria-hidden="true"
-        width={2400}
-        height={1350}
+        width={1300}
+        height={731}
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        className="absolute inset-0 -z-20 h-full w-full object-cover [object-position:78%_center] sm:[object-position:62%_center] lg:[object-position:center]"
       />
 
       {/* Tint stack: a flat wash for colour, then a vertical gradient that
