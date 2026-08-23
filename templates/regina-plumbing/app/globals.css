@@ -34,12 +34,19 @@
        - form error states       → --color-alert-*, below. An error in
          brand blue reads as information, not as something wrong, so the
          error colour is deliberately outside the brand ramp.            */
-  /* Navy, not near-black. The first ramp bottomed out at #070b18, which is
-     essentially black with a blue cast — it made the dark bands read as
-     heavy voids rather than as the reference's blue. Every value here is a
-     true navy, and all 13 text/UI pairings were re-checked against WCAG
-     after the shift. */
-  --color-ink-950: #0e2049;
+  /* Navy, not near-black, and lightened twice. The first ramp bottomed out
+     at #070b18 — essentially black with a blue cast, which made the dark
+     bands read as heavy voids rather than as the reference's blue. Then
+     #0e2049, still darker than wanted.
+
+     ink-950 is now #1a3768: the lightest value the dark sections can take
+     while every text pairing on them still clears 4.5:1 — white 11.7, body
+     5.3, muted labels 4.8. One step further (#1e3f76) drops body text to
+     4.80 and tide-300 to 4.94; the step after fails both. Do not lighten
+     further without re-running the numbers. This token is the background of
+     the footer, the closing CTA, the 404 and every page hero, so it moves
+     thirteen pairings at once. */
+  --color-ink-950: #1a3768;
   --color-ink-900: #16305f;
   --color-ink-800: #1f3f78;
   --color-ink-700: #24406f;
