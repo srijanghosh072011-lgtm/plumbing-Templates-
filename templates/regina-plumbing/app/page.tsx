@@ -97,12 +97,18 @@ function Hero() {
           band covers the whole text row at every x, so it fixes the hotspot
           without darkening the photo above or below it. */}
       <div
-        className="absolute inset-0 -z-10 [background:linear-gradient(to_bottom,transparent_0%,rgb(14_32_70/0.52)_14%,rgb(14_32_70/0.52)_44%,transparent_62%)]"
+        className="absolute inset-0 -z-10 [background:linear-gradient(to_bottom,transparent_0%,rgb(14_32_70/0.55)_16%,rgb(14_32_70/0.55)_54%,transparent_70%)]"
         aria-hidden="true"
       />
 
       <div className="relative mx-auto w-full max-w-4xl px-6 py-28 text-center sm:py-32">
         <Reveal>
+          <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.28em] text-tide-300">
+            Welcome to {client.name}
+          </p>
+        </Reveal>
+
+        <Reveal delay={70}>
           {/* All-caps, tight, centred — the reference's defining move.
               clamp() means no breakpoint jumps between 360px and 1440px. */}
           <h1 className="font-display text-[clamp(2.5rem,8.5vw,5.5rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.03em] text-white">
@@ -112,7 +118,7 @@ function Hero() {
           </h1>
         </Reveal>
 
-        <Reveal delay={90}>
+        <Reveal delay={140}>
           <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-bone-100/85 sm:text-lg">
             {/* Social proof, mirroring the reference's review line. The count
                 is a placeholder because an invented review count is a lie
@@ -122,60 +128,12 @@ function Hero() {
           </p>
         </Reveal>
 
-        <Reveal delay={160}>
-          <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Cta href="/quote/" variant="onDark" className="w-full justify-center sm:w-auto">
+        <Reveal delay={210}>
+          <div className="mt-10">
+            <Cta href="/quote/" variant="onDark" icon="none">
               Get a fast quote
             </Cta>
-            <Cta
-              href="/services/emergency-plumbing/"
-              variant="ghost"
-              className="w-full justify-center sm:w-auto"
-            >
-              24/7 emergency service
-            </Cta>
           </div>
-        </Reveal>
-
-        <Reveal delay={230}>
-          <ul className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2.5 text-sm text-bone-100/65">
-            {['Licensed & insured', 'Flat-rate pricing', '24/7 emergency'].map((item) => (
-              <li key={item} className="flex items-center gap-2">
-                <CheckIcon className="h-4 w-4 text-tide-300" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        {/* Photo strip.
-            The background photograph has to sit under a scrim so the headline
-            stays legible, which necessarily mutes it. These cards carry no
-            overlay at all, so the work is shown at full brightness in the
-            hero rather than only hinted at behind the type. */}
-        <Reveal delay={290}>
-          <ul className="mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-3 sm:gap-4">
-            {[
-              { src: '/images/plate-technician.webp', alt: 'Plumber tightening a compression fitting on a waste pipe' },
-              { src: '/images/svc-waterheater.webp', alt: 'Wall-mounted tankless water heater with its valve manifold' },
-              { src: '/images/result-bathroom.webp', alt: 'Finished bathroom with walk-in shower and wall-hung basin' },
-            ].map((img) => (
-              <li
-                key={img.src}
-                className="overflow-hidden rounded-2xl bg-white/10 p-1 ring-1 ring-white/20 backdrop-blur-sm"
-              >
-                <img
-                  src={asset(img.src)}
-                  alt={img.alt}
-                  width={400}
-                  height={300}
-                  loading="eager"
-                  decoding="async"
-                  className="aspect-[4/3] w-full rounded-xl object-cover"
-                />
-              </li>
-            ))}
-          </ul>
         </Reveal>
       </div>
     </section>

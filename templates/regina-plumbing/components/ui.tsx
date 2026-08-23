@@ -49,7 +49,8 @@ type CtaProps = {
   href: string;
   children: ReactNode;
   variant?: 'primary' | 'ghost' | 'onDark';
-  icon?: 'arrow' | 'phone';
+  /** 'none' drops the icon well — squarer, plainer button, as the hero uses. */
+  icon?: 'arrow' | 'phone' | 'none';
   className?: string;
   /** Set for tel: / external links so they are not routed by next/link. */
   external?: boolean;
@@ -82,7 +83,9 @@ export function Cta({
         ? 'bg-ink-950/15'
         : 'bg-ink-900/[0.07]';
 
-  const inner = (
+  const inner = icon === 'none' ? (
+    <span>{children}</span>
+  ) : (
     <>
       <span>{children}</span>
       <span
@@ -96,7 +99,11 @@ export function Cta({
 
   // min-h-12 keeps the target above the 24x24 floor of WCAG 2.2 SC 2.5.8
   // with a comfortable margin for gloved winter hands on a phone.
-  const shared = `group inline-flex min-h-12 items-center gap-3 rounded-full py-2 pl-6 pr-2 font-semibold tracking-tight transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] ${skin} ${className}`;
+  const shape =
+    icon === 'none'
+      ? 'min-h-13 rounded-xl px-8 text-[13px] font-bold uppercase tracking-[0.12em]'
+      : 'min-h-12 gap-3 rounded-full py-2 pl-6 pr-2 font-semibold tracking-tight';
+  const shared = `group inline-flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98] ${shape} ${skin} ${className}`;
 
   if (external) {
     return (
