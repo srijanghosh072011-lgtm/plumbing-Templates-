@@ -1,0 +1,106 @@
+name: Deploy regina-plumbing to GitHub Pages
+
+# Publishes the static export to the `gh-pages` branch. Point
+# Settings → Pages at "Deploy from a branch" → gh-pages → / (root).
+#
+# Manual dispatch is enabled so a deploy can be triggered without a push.
+
+on:
+  push:
+    # The feature branch is listed because the template is not on main yet.
+    # A push-triggered workflow runs from the ref that was pushed, so this
+    # works without the file existing on the default branch. Drop the second
+    # entry once the template is merged.
+    branches:
+      - main
+      - claude/site-replica-seo-aeo-phglx9
+    # This list is also what stops the job's own commit to docs/ from
+    # retriggering the workflow in a loop: a docs-only commit matches
+    # neither entry. Do NOT add a paths-ignore alongside this — GitHub
+    # rejects a workflow that sets both paths and paths-ignore on one
+    # event, and the run fails before any job starts.
+    paths:
+      - 'templates/regina-plumbing/**'
+      - '.github/workflows/deploy-regina-plumbing.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: pages-regina-plumbing
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: templates/regina-plumbing
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: templates/regina-plumbing/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Blocks a deploy carrying lorem ipsum, 555 numbers or TODO_ markers.
+      # Remove this step only if you genuinely intend to publish placeholders.
+      - name: Pre-launch content check
+        run: npm run check
+
+      # A custom domain serves from the domain root, so basePath must be
+      # empty; a project site serves from /<repo>/, so it must be the repo
+      # name. Committing public/CNAME is what selects between them — no
+      # workflow edit needed to move the demo onto a real domain.
+      - name: Resolve basePath
+        id: base
+        run: |
+          if [ -f public/CNAME ]; then
+            echo "path=" >> "$GITHUB_OUTPUT"
+            echo "Custom domain $(cat public/CNAME) — basePath empty."
+          else
+            echo "path=/${{ github.event.repository.name }}" >> "$GITHUB_OUTPUT"
+            echo "Project site — basePath /${{ github.event.repository.name }}."
+          fi
+
+      - name: Build static export
+        env:
+          BASE_PATH: ${{ steps.base.outputs.path }}
+        run: npm run build
+
+      # Pages runs the output through Jekyll otherwise, which strips
+      # directories beginning with an underscore — including _next.
+      - name: Disable Jekyll processing
+        run: touch out/.nojekyll
+
+      # Published into docs/ on this same branch rather than to gh-pages.
+      # GitHub Pages can only serve a branch's root or its /docs directory —
+      # it cannot be pointed at templates/regina-plumbing/out — so docs/ is
+      # what makes "host straight from this branch" possible at all.
+      - name: Copy build into docs/
+        working-directory: ${{ github.workspace }}
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -r templates/regina-plumbing/out/. docs/
+          touch docs/.nojekyll
+
+      - name: Commit docs/
+        working-directory: ${{ github.workspace }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs
+          if git diff --staged --quiet; then
+            echo "No change in built output; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Publish regina-plumbing build to docs/ (${GITHUB_SHA::7})"
+          git push origin HEAD:${GITHUB_REF_NAME}
