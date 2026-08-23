@@ -25,7 +25,14 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: pages-regina-plumbing
+  # Keyed by ref, NOT a single global group. While the template lives on two
+  # branches — main, and the feature branch Pages actually serves — a shared
+  # group means pushing to one cancels the other's in-flight build. That is
+  # not theoretical: a push to the feature branch followed 16 seconds later
+  # by a push to main cancelled the feature-branch run, so the served site
+  # kept serving a stale build while main published fine and everything
+  # looked green.
+  group: pages-regina-plumbing-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
