@@ -24,11 +24,11 @@ export function Footer() {
 
             <dl className="mt-6 space-y-1 text-sm text-bone-200/70">
               <div className="flex gap-2">
-                <dt className="text-bone-200/45">Licence</dt>
+                <dt className="text-bone-200/65">Licence</dt>
                 <dd>{client.licenceNumber}</dd>
               </div>
               <div className="flex gap-2">
-                <dt className="text-bone-200/45">WCB</dt>
+                <dt className="text-bone-200/65">WCB</dt>
                 <dd>{client.wcbNumber}</dd>
               </div>
             </dl>
@@ -70,7 +70,7 @@ export function Footer() {
           </FooterCol>
 
           <div>
-            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-bone-200/45">
+            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-bone-200/65">
               Get in touch
             </h2>
             <div className="mt-5 space-y-4">
@@ -79,7 +79,7 @@ export function Footer() {
                   <ArrowIcon />
                 </span>
                 <span>
-                  <span className="block text-[11px] uppercase tracking-[0.16em] text-bone-200/45">
+                  <span className="block text-[11px] uppercase tracking-[0.16em] text-bone-200/65">
                     Start here
                   </span>
                   <span className="font-display text-lg font-bold tracking-tight">
@@ -97,7 +97,7 @@ export function Footer() {
               </a>
 
               <div className="pt-2 text-sm text-bone-200/70">
-                <p className="text-[11px] uppercase tracking-[0.16em] text-bone-200/45">Hours</p>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-bone-200/65">Hours</p>
                 {client.hours.map((h) => (
                   <p key={h.days.join()}>
                     {dayLabel(h.days)} · {h.open}–{h.close}
@@ -113,7 +113,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-white/[0.08] pt-8 text-xs text-bone-200/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-4 border-t border-white/[0.08] pt-8 text-xs text-bone-200/65 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {client.legalName}. All rights reserved.
             {client.builtByCredit && (
@@ -154,7 +154,7 @@ export function Footer() {
 function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-bone-200/45">
+      <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-bone-200/65">
         {title}
       </h2>
       <ul className="mt-5 space-y-2.5">{children}</ul>
