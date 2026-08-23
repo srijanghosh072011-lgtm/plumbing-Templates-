@@ -12,14 +12,6 @@ export function Footer() {
 
   return (
     <footer className="no-print relative overflow-hidden bg-ink-950 text-bone-100">
-      <div className="dark-surface absolute inset-0" aria-hidden="true" />
-      {/* Angled wedge, echoing the source template's diagonal cut but as a
-          soft gradient rather than a hard halftone triangle. */}
-      <div
-        aria-hidden="true"
-        className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-tide-500/15 blur-3xl"
-      />
-
       <div className="relative mx-auto max-w-6xl px-6 py-20 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           <div>

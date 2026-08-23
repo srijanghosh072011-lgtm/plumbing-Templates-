@@ -118,11 +118,6 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-ink-950 pb-20 pt-32 sm:pt-40">
-      <div className="dark-surface absolute inset-0" aria-hidden="true" />
-      <div
-        aria-hidden="true"
-        className="absolute -right-24 top-0 h-96 w-96 rounded-full bg-tide-500/15 blur-3xl"
-      />
       <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
         <Breadcrumbs tone="dark" trail={trail} />
         <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/[0.11] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-tide-300 ring-1 ring-white/18">

@@ -63,11 +63,6 @@ export default async function ServicePage({
       />
 
       <section className="relative overflow-hidden bg-ink-950 pb-20 pt-32 sm:pt-40">
-        <div className="dark-surface absolute inset-0" aria-hidden="true" />
-        <div
-          aria-hidden="true"
-          className="absolute -right-24 top-0 h-96 w-96 rounded-full bg-tide-500/15 blur-3xl"
-        />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
           <Breadcrumbs
             tone="dark"

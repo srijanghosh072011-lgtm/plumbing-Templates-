@@ -206,13 +206,11 @@ p {
   background-size: 14px 14px;
 }
 
-/* Soft sheen for dark sections — a wide, very low-contrast diagonal that
-   gives the surface some direction without drawing a shape on it. */
-.dark-surface {
-  background-image:
-    radial-gradient(ellipse 80% 60% at 15% 0%, rgb(77 155 234 / 0.20), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 90% 100%, rgb(77 155 234 / 0.14), transparent 62%);
-}
+/* Dark sections are FLAT — one solid blue, no sheen, no glow, no gradient.
+   There was a .dark-surface class here that laid two soft radial washes
+   over every dark band. It is gone on purpose: if a dark section needs
+   depth, it gets it from content, not from a gradient. Do not reintroduce
+   one without asking. */
 
 @media (prefers-reduced-motion: reduce) {
   .grain-layer { opacity: 0.25; }

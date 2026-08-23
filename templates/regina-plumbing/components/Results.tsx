@@ -103,7 +103,6 @@ export function Results() {
         className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-ink-950/88" aria-hidden="true" />
-      <div className="dark-surface absolute inset-0 -z-10" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">

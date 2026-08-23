@@ -564,11 +564,6 @@ function FinalCta() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] bg-ink-950 px-8 py-16 text-center sm:px-16 lg:py-24">
-            <div className="dark-surface absolute inset-0" aria-hidden="true" />
-            <div
-              aria-hidden="true"
-              className="absolute left-1/2 top-0 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-tide-500/20 blur-3xl"
-            />
             <div className="relative">
               <Eyebrow tone="dark">{client.emergencyNote}</Eyebrow>
               <h2 className="mx-auto mt-6 max-w-2xl font-display text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white">
