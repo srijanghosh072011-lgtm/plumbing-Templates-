@@ -80,7 +80,7 @@ export const client = {
   web3formsKey: '',
 
   // Leave empty until GA4 is live; the tag is not rendered without it.
-  gaMeasurementId: '',
+  gaMeasurementId: 'G-LQPHPNP2QT',
 
   /**
    * Agency credit in the footer copyright line. Set to '' to remove it —
