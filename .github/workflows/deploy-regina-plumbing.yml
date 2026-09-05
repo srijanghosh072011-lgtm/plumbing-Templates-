@@ -21,6 +21,7 @@ on:
     # event, and the run fails before any job starts.
     paths:
       - 'templates/regina-plumbing/**'
+      - 'templates/copper-prairie/**'
       - '.github/workflows/deploy-regina-plumbing.yml'
   workflow_dispatch:
 
@@ -91,6 +92,17 @@ jobs:
       # GitHub Pages can only serve a branch's root or its /docs directory —
       # it cannot be pointed at templates/regina-plumbing/out — so docs/ is
       # what makes "host straight from this branch" possible at all.
+      # Keep the separate Copper & Prairie concept in the combined export.
+      - name: Build Copper and Prairie
+        working-directory: templates/copper-prairie
+        env:
+          SITE_ORIGIN: https://demo.ghoshdesigns.ca
+          SITE_BASE: /copper-prairie/
+        run: |
+          node build.mjs
+          node verify.mjs
+          cp -r dist ../regina-plumbing/out/copper-prairie
+
       - name: Copy build into docs/
         working-directory: ${{ github.workspace }}
         run: |
